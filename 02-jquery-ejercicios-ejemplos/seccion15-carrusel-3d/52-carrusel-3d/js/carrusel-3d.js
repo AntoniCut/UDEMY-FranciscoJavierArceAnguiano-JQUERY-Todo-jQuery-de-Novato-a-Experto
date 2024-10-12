@@ -24,7 +24,7 @@ $(document).ready(inicio);
 //  ----------  INICIO  ----------
 function inicio() {
 
-    console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+    console.warn('----------  Documento Cargado!!!  ----- ', 'jQuery version:', $.fn.jquery, ' ----------', '\n');
 
     
     //  -----  Recorremos los items y los guardamos en un arreglo  -----
