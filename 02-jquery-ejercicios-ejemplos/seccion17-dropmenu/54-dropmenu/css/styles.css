@@ -1,0 +1,259 @@
+/*  ******************************************************************************************  */
+/*  **********  /01-todo-jquery-de-novato-a-experto/02-jquery-ejercicios-ejemplos/  **********  */
+/*  **********  /seccion17-dropmenu/54-dropmenu/css/styles.css  ******************************  */
+/*  ******************************************************************************************  */
+
+
+/*  **********  Estilos Generales  **********  */
+
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+body {
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid green;
+}
+
+h1 {
+    font-size: 56px;
+    /* color: transparent; */
+    color: #FCF7CD;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #FFA500;
+    /* font-size: 100px; */
+    /* font-weight: bold; */
+    text-align: center;
+}
+
+.main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.botones {
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    width: 100px;
+    margin: 0 auto;
+    background-color: blueviolet;
+    color: white;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
+/*  **********  Estilos Proyecto  **********  */
+
+.dropmenu-container {
+    margin-top: 50px;
+    padding: 50px;
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+}
+
+
+header, section, nav, footer, article {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 960px;
+    height: 115px;
+    background: #213F52;
+}
+
+header h1 {
+    padding-top: 20px;
+}
+article, aside {
+    background: #FCF7CD;
+}
+
+footer {
+    width: 960px;
+    height: 60px;
+    background: #213F52;
+    clear: both;
+}
+
+/*  ***** Fuentes  *****  */
+h1 {
+    font-size: 2.2em;
+    color: #FCF7CD;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #FCF7CD;
+    text-align: center;
+    padding-top: .2em;
+}
+
+h3 {
+    font-size: .8em;
+    color: #f2e3b6;
+    text-align: center;
+    padding-top: .2em;
+}
+
+p {
+    font-size: 1em;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+a {
+    font-size: 0.9em;
+    color: #f2e3b6;
+    text-align: left;
+    padding-top: .6em;
+    text-decoration: none;
+    letter-spacing: 0.5em;
+}
+
+
+/*  *****  Clases  *****  */
+
+#izq {
+    float: left;
+    width: 600px;
+    height: 460px;
+}
+
+#der {
+    float: right;
+    width: 360px;
+    height: 460px;
+}
+
+ul, li {
+    display: inline;
+}
+
+img {
+    float: left;
+    padding-right: 1em;
+}
+
+.imgIzq {
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+
+/*  *****  nav  *****  */
+
+.nav_menu {
+    width: 600px;
+    position: relative;
+    z-index: 1000;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+
+/*  *****  drop menu  *****  */
+
+.nav_menu ul.dropmenu li {
+    height: 28px;
+    text-align: left;
+    /* background-color: #FFA500; */
+}
+
+.nav_menu ul.dropmenu li:hover {
+    background-color: #006699;
+}
+
+.nav_menu ul.dropmenu li:selected {
+    background-color: black;
+}
+
+.nav_menu ul.dropmenu li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0;
+    line-height: 12px;
+    letter-spacing: 0.4em;
+}
+
+
+/*  ***** toplevel *****  */
+
+.nav_menu ul.dropmenu {
+    margin: 0;
+    padding: 0;
+}
+
+.nav_menu ul.dropmenu a.toplevel {
+    height: auto;
+    margin: 7px;
+    padding: 0px 0px 4px 0px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav_menu ul.dropmenu a.toplevel.hover {
+    color: #fff;
+}
+
+.nav_menu ul.dropmenu a.toplevel.selected {
+    color: #f7ad0b;
+}
+
+
+/*  ****** Sublevel ******  */
+
+.nav_menu ul.dropmenu li ul {
+    background-color: #006699;
+}
+
+.nav_menu ul.dropmenu li ul li a.sublevel {
+    color: #fff;
+    width: auto;
+    padding: 5px 5px 5px 20px;
+    margin: 0;
+}
+
+.nav_menu ul.dropmenu li:first-child ul li a.sublevel {
+    width: 280px;
+    color: #fff;
+}
+
+.nav_menu ul.dropmenu li ul li a.sublevel.hover {
+    color: #fff;
+    background-color: #0066ff;
+}
+
+.nav_menu ul.dropmenu li ul li a.sublevel.hover {
+    color: #f7ad0d;
+}
