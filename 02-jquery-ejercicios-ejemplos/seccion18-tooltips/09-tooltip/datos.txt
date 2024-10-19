@@ -1,0 +1,32 @@
+if(nombre=="zeus"){
+			$('#cuadro').html("<img src='imagenes/zeus.jpg' height='95px'><b>Zeus</b> es el «padre de los dioses y los hombres», que gobernaba a los dioses del monte Olimpo como un padre a una familia.");
+		}
+		if(nombre=="rea"){
+			$('#cuadro').html("<img src='imagenes/rea.png' height='95px'>La titánide <b>Rea</b> era hija de Urano y Gea, hermana y esposa de Crono, y madre con éste de Deméter, Hades, Hera, Hestia, Poseidón y Zeus.");
+		}
+		if(nombre=="crono"){
+			$('#cuadro').html("<img src='imagenes/crono.jpg' height='95px'><b>Crono</b> o <b>Cronos</b> era el principal (y en algunos mitos el más joven) de la primera generación de Titanes, descendientes divinos de Gea (la tierra) y Urano.");
+		}
+		if(nombre=="hestia"){
+			$('#cuadro').html("<img src='imagenes/hestia.jpg' height='95px'><b>Hestia</b> es la diosa de la cocina, la arquitectura, el hogar, o, más apropiadamente, del fuego que da calor y vida a los hogares.");
+		}
+		if(nombre=="demeter"){
+			$('#cuadro').html("<img src='imagenes/demeter.jpg' height='95px'><b>Deméter</b>  es la diosa griega de la agricultura, nutricia pura de la tierra verde y joven, ciclo vivificador de la vida y la muerte, y protectora del matrimonio y la ley sagrada.");
+		}
+		if(nombre=="hera"){
+			$('#cuadro').html("<img src='imagenes/hera.jpg' height='95px'><b>Hera</b> legítima esposa de Zeus y una de las tres hermanas de Zeus en el panteón olímpico de la mitología griega clásica. Además, ocupaba el cargo de Reina de los Dioses.");
+		}
+		if(nombre=="hades"){
+			$('#cuadro').html("<img src='imagenes/hades.jpg' height='95px'><b>Hades</b> alude tanto al antiguo inframundo griego como al dios de éste. La palabra hacía referencia en Homero solo al dios.");
+		}
+		if(nombre=="poseidon"){
+			$('#cuadro').html("<img src='imagenes/poseidon.jpg' height='95px'><b>Poseidón</b> es el dios del mar, las tormentas y, como «Agitador de la Tierra», de los terremotos en la mitología griega.");
+		}
+		if(nombre=="gea"){
+			$('#cuadro').html("<img src='imagenes/gea.jpg' height='95px'><b>Gea</b> literalmente: «Tierra» es la diosa primigenia que personifica la Tierra en la mitología griega. Es una deidad primordial, considerada la Tierra Madre.");
+		}
+		if(nombre=="urano"){
+			$('#cuadro').html("<img src='imagenes/urano.jpg' height='95px'><b>Urano</b> es un dios primordial personificador del cielo. Urano era hijo y esposo de Gea, la Madre Tierra, que, según cuenta Hesíodo en la Teogonía.");
+		}
+		$('#cuadro').css({'display':'block','opacity':0}).animate({opacity:1},200);
+	});>
