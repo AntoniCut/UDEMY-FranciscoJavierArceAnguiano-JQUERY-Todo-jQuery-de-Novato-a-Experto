@@ -1,0 +1,144 @@
+/*  ******************************************************************************************  */
+/*  **********  /01-todo-jquery-de-novato-a-experto/02-jquery-ejercicios-ejemplos/  **********  */
+/*  **********  /seccion20-barra-verificacion-politica-cookies/css/styles.css  ***************  */
+/*  ******************************************************************************************  */
+
+
+/*  **********  Estilos Generales  **********  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid green;
+}
+
+h1 {
+    font-size: 56px;
+    color: #FCF7CD;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #FFA500;
+    text-align: center;
+}
+
+.main {
+    width: 100%;
+    height: calc( 100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    
+    /* justify-content: center; */
+    align-items: center;
+    /* background: linear-gradient(to bottom, #aaa, #eee, #aaa); */
+}
+
+.botones {
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    width: 100px;
+    margin: 0 auto;
+    background-color: blueviolet;
+    color: white;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
+/*  **********  Estilos Proyecto  **********  */
+
+#galletas1:target {
+    display: none;
+}
+
+.galletas {
+    width: 100%;
+    height: 43px;
+    margin: 0 auto;
+    padding-left: 1%;
+    padding-top: 5px;
+    font-size: 1.2em;
+    clear: both;
+    font-weight: strong;
+    color: #333;
+    bottom: 0px;
+    position: fixed;
+    left: 0px;
+    transition: bottom 1s;
+    background-color: orange;
+    opacity: 0.7;
+    box-shadow: 3px -3px 1px rgba(50, 50, 50, 0.5);
+    z-index: 99999999;
+}
+
+.galletas:hover {
+    bottom: 0px;
+}
+
+#galletas2 {
+    background-color: orange;
+    display: inline;
+    opacity: 0.9;
+    position: absolute;
+    left: 1%;
+    top: -30px;
+    font-size: 15px;
+    height: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 3px -3px 1px rgba(50, 50, 50, 0.5);
+    cursor: pointer;
+}
+
+
+@keyframes bajar {
+    0% {
+        bottom: 0px;
+    }
+
+    80% {
+        bottom: 0px;
+    }
+
+    100% {
+        bottom: -50px;
+    }
+}
+
+@keyframes subir {
+    0% {
+        bottom: -38px;
+    }
+
+    10% {
+        bottom: 0px;
+    }
+
+    80% {
+        bottom: 0px;
+    }
+
+    100% {
+        bottom: -38px;
+    }
+}
