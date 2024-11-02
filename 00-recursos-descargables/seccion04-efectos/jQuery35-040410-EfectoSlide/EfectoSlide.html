@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Efecto Slide</title>
+<style>
+#encabezado{
+	width:800px;
+	text-align:center;
+	background-color:#e5eecc;
+	border:solid 1px #c3c3c3;
+}
+#afrodita{
+	width:800px;
+	height:502px;
+	background-image:url(imagenes/afrodita2.jpg);
+	background-repeat:no-repeat;
+	background-size:100%;
+	display:none;
+}
+</style>
+<script src="js/jquery.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#encabezado").css("cursor","pointer");
+		/*
+		$("#encabezado").click(function() {
+			$("#afrodita").slideDown();
+		});
+		$("#encabezado").dblclick(function() {
+			$("#afrodita").slideUp();
+		});
+		*/
+		$("#encabezado").click(function() {
+			$("#afrodita").slideToggle(3000);
+		});
+	});
+
+</script>
+</head>
+
+<body>
+<div id="encabezado">La Venus del espejo, por Velazquez (1599-1660)</div>
+<div id="afrodita"></div>
+</body>
+</html>

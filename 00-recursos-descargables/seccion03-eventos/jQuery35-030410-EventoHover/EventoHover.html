@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery | Evento Hover</title>
+<style>
+#afrodita{
+	width:800px;
+	height:502px;
+	background-image:url(imagenes/afrodita.jpg);
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+</style>
+<script src="js/jquery.js"></script>
+<script>
+	$(document).ready(function() {
+		//la primera funcion es para el mouseenter
+		//la segunda funcion es para el mouseleave
+		$("#afrodita").hover(function(){
+			$(this).css("background-image","url(imagenes/afrodita2.jpg)");
+		},function(){
+			$(this).css("background-image","url(imagenes/afrodita.jpg)")
+		});
+	});
+
+
+</script>
+</head>
+
+<body>
+<div id="afrodita"></div>
+</body>
+</html>

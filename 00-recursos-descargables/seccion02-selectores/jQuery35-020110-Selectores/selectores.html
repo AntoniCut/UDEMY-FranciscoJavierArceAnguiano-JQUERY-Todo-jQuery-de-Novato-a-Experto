@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selectores</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#poseidon").click(function() {
+				$(".poseidon").css("border","10px").css("border-style","solid").css("border-color","blue");
+			});
+			$("#zeus").click(function() {
+				$(".zeus").css("border","10px").css("border-style","solid").css("border-color","red");
+			});
+			$("#afrodita").click(function() {
+				$(".afrodita").css("border","10px").css("border-style","solid").css("border-color","pink");
+			});
+		});
+	</script>
+</head>
+<body>
+	  <input type="button" id="poseidon" value="Dios de los mares">
+	  <input type="button" id="zeus" value="Dios de los dioses">
+	  <input type="button" id="afrodita" value="Diosa del amor">
+	  <br>
+	  <img src="imagenes/afrodita.jpg" class="afrodita">
+	  <img src="imagenes/poseidon.jpg" class="poseidon">
+	  <img src="imagenes/zeus.jpg" class="zeus">
+</body>
+</html>

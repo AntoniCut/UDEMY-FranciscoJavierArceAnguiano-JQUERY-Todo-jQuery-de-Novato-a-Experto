@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Evento dblclick</title>
+<style>
+#afrodita{
+	width:800px;
+	height:502px;
+	background-image:url(imagenes/afrodita.jpg);
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+</style>
+<script src="js/jquery.js"></script>
+<script>
+	var foto = true;
+	$(document).ready(function() {
+		$("#afrodita").dblclick(function() {
+			if (foto) {
+				$("#afrodita").css("background-image","url(imagenes/afrodita2.jpg)");
+			} else {
+				$("#afrodita").css("background-image","url(imagenes/afrodita.jpg)");
+			}
+			foto = !foto;
+		})
+	})
+
+</script>
+</head>
+<body>
+<div id="afrodita"></div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="js/jquery.js"></script>
+<title>Afrodita Muestra/Oculta</title>
+<style>
+#afrodita{
+	width:800px;
+	height:502px;
+	background-image:url(imagenes/afrodita.jpg);
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+</style>
+<script>
+	$(document).ready(function() {
+		$("#ocultar").click(function() {
+			//fast 200 milisegundos
+			//slow 600 milisegundos
+			$("#afrodita").hide(2000);
+		});
+		$("#mostrar").click(function() {
+			$("#afrodita").show(3000);
+		});
+	})
+
+</script>
+</head>
+
+<body>
+<div id="afrodita"></div>
+<input type="button" id="mostrar" value="Muestra"/>
+<input type="button" id="ocultar" value="Oculta"/>
+</body>
+</html>

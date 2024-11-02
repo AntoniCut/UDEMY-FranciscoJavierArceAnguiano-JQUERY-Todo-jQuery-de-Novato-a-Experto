@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Animate | Callback</title>
+<script src="js/jquery.js"></script>
+<style>
+div{
+	position:absolute;
+	height:100px;
+	width:100px;
+	background-color:#f60;	
+}
+</style>
+
+<script>
+$(document).ready(function(){
+	$("#corre").click(function(){
+		var d = $("div");
+		d.animate({height:'600px', opacity:'0.2'},3000,function() {
+			alert("Terminación de la primera animación");
+		});
+		d.animate({width:'1000px', opacity:'0.8'},3000,function() {
+			alert("Terminación de la segunda animación");
+		});
+		d.animate({height:'100px', opacity:'0.5'},3000,function() {
+			alert("Terminación de la tercera animación");
+		});
+		d.animate({width:'100px', opacity:'1'},3000,final);
+	});
+	$("#detiene").click(function(){
+		$("div").stop();
+	});
+	function final() {
+		alert("Terminación de la cuarta animación");
+	}
+});
+</script>
+</head>
+
+<body>
+<input type="button" id="corre" value="Animación"/>
+<input type="button" id="detiene" value="Detiene"/>
+<div>
+</div>
+<br>
+
+</body>
+</html>

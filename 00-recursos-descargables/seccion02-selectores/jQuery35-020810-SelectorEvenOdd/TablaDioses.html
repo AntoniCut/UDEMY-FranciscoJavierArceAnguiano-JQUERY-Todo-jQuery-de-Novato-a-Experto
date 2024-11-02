@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Selectores | even odd</title>
+<script src="js/jquery.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#pares").click(function() {
+            $("tr:even").css("background-color","yellow");
+        });
+        $("#impares").click(function() {
+            $("tr:odd").css("background-color","orange");
+        })
+    })
+
+</script>
+</head>
+
+<body>
+    <table>
+    <tr><td>Zeus</td><td> Era el jefe de todos los dioses, y dueño de los cielos el rayo y el tiempo.</td></tr></tr>
+    <tr><td>Hera</td><td> Era la esposa de Zeus, reina de los cielos y las estrellas, y diosa del matrimonio y la fidelidad.</td></tr>
+    <tr><td>Demeter</td><td> Es la diosa de la tierra fertil y la agricultura. Gracias a su accion la humanidad tenia sustento.</td></tr>
+    <tr><td>Poseidon</td><td> Dios de los mares.</td></tr>
+    <tr><td>Apolo</td><td> Era el hijo de Zeus. Dios de la musica, la profecia, la luz, la enfermedad y la curacion y la arqueria.</td></tr>
+    <tr><td>Hestia</td><td> Diosa del hogar y la familia.</td></tr>
+    <tr><td>Hefesto</td><td> Dios del fuego, los trabajos manuales y patron de los artesanos.</td></tr>
+    <tr><td>Artemisa</td><td> Diosa de los animales y la caza, de la fertilidad y de la castidad.</td></tr>
+    <tr><td>Dionisio</td><td> Dios del vino y de la liberacion sexual.</td></tr>
+    <tr><td>Ares</td><td> Era el dios de la guerra y los heroes.</td></tr>
+    <tr><td>Afrodita</td><td> Diosa de la belleza, el amor y la sexualidad.</td></tr>
+   <tr><td> Atenea</td><td> La patrona de Atenas donde tenia un gran templo. Diosa de la sabiduria, las artes, la belleza interior, la educacion y la guerra.</td></tr>
+	</table>
+    <input type="button" value="impares" id="impares">
+    <input type="button" value="pares" id="pares">
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Fotos</title>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	//Eventos de los botones
+	$("#dioses").click(function(){
+		$("img[title='dios']").css("border","16px");
+		$("img[title='dios']").css("border-style","solid");
+		$("img[title='dios']").css("border-color","orange");
+	});
+
+	$("#diosas").click(function(){
+		$("img[title='diosa']").css("border","16px");
+		$("img[title='diosa']").css("border-style","solid");
+		$("img[title='diosa']").css("border-color","pink");
+	});
+
+	$("#reyes").click(function(){
+		$("img[title='rey']").css("border","16px");
+		$("img[title='rey']").css("border-style","solid");
+		$("img[title='rey']").css("border-color","red");
+	});
+
+	$("#semidioses").click(function(){
+		$("img[title='semidios']").css("border","16px");
+		$("img[title='semidios']").css("border-style","solid");
+		$("img[title='semidios']").css("border-color","blue");
+	});
+});
+</script>
+</head>
+
+<body>
+<img src="imagenes/afrodita160x196.jpg" width="160" height="196" title="diosa"/>
+<img src="imagenes/atenea.jpg" width="160" height="196" title="diosa"/>
+<img src="imagenes/damocles.jpg" width="160" height="196" title="rey"/>
+<img src="imagenes/diogenes.jpg" width="160" height="196" title="rey"/>
+<img src="imagenes/hades160x196.jpg" width="160" height="196" title="dios"/>
+<img src="imagenes/hercules.jpg" width="160" height="196" title="semidios"/>
+<img src="imagenes/poseidon160x196.jpg" width="160" height="196" title="dios"/>
+<img src="imagenes/zeus160x196.jpg" width="160" height="196" title="dios"/>
+<br />
+<input type="button" id="dioses" value="Dioses"/>
+<input type="button" id="diosas" value="Diosas"/>
+<input type="button" id="reyes" value="Reyes"/>
+<input type="button" id="semidioses" value="Semidioses"/>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Afrodita Fondo</title>
+<style>
+#afrodita{
+	width:800px;
+	height:502px;
+	background-image:url(imagenes/afrodita2.jpg);
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+</style>
+<script src="jquery.js" type="text/javascript" language="javascript"></script>
+<script type="text/javascript">
+$(document).ready(inicio);
+function inicio(){
+	$("#afrodita").dblclick(onCambia);	
+}
+function onCambia(){
+	$("#afrodita").css("background-image","url(imagenes/afrodita.jpg)");
+	
+}
+
+</script>
+</head>
+
+<body>
+<div id="afrodita"></div>
+</body>
+</html>

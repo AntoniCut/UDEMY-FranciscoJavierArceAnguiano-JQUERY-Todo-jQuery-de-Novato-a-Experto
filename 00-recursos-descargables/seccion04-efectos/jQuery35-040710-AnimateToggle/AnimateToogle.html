@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Animate | Toogle</title>
+<style>
+div{
+	position:absolute;	
+}
+</style>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	$("#corre").click(function(){
+		$("div").animate({height:"toggle",left:"+=50",opacity:0.25},2000);
+	});
+	$("#regresa").click(function(){
+		$("div").animate({height:"toggle",left:"-=50",opacity:1},2000);
+	});
+});
+</script>
+</head>
+
+<body>
+<input type="button" id="corre" value="corre"/>
+<input type="button" id="regresa" value="regresa"/>
+<div>
+<img src="imagenes/mercurio.jpg" width="201" height="251" id="mercurio">
+</div>
+<br>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Animate | Queue</title>
+<style>
+div{
+	position:absolute;
+	height: 100px;
+	width: 100px;
+	background-color: orange;	
+}
+</style>
+<script src="js/jquery.js"></script>
+<script>
+	$(document).ready(function() {
+		var d = $("div");
+		$("#corre").click(function() {
+			d.animate({height:600,opacity:0.2},4000);
+			d.animate({width:1000,opacity:0.8},4000);
+			d.animate({height:100,opacity:0.5},4000);
+			d.animate({width:100,opacity:1.0},4000);
+		});
+	});
+</script>
+</head>
+
+<body>
+<input type="button" id="corre" value="corre"/>
+<div></div>
+<br>
+
+</body>
+</html>

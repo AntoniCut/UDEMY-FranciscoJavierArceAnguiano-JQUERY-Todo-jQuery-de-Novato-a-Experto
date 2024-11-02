@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DOM | text</title>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	$("#pregunta").click(function(){
+		$("#texto").text("¿Quién pinto el Nacimiento de Venus?");
+	});
+	$("#respuesta").click(function(){
+		$("#texto").text("Sandro Bottichelli (1445-1510), en 1484");
+	});
+	$("#ventana").click(function(){
+		var t = $("#texto").text();
+		alert("El contenido del enunciado es: "+t);
+	});
+});
+</script>
+</head>
+<body>
+<p id="texto">¿Quién pinto el Nacimiento de Venus?</p>
+<input type="button" value="Pregunta" id="pregunta"/>
+<input type="button" value="Respuesta" id="respuesta"/>
+<input type="button" value="Ventana" id="ventana"/>
+</body>
+</html>

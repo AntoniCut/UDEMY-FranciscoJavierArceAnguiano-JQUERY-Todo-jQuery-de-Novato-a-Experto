@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Animate | Propiedades</title>
+<style>
+div{
+	position:absolute;	
+}
+</style>
+<script src="js/jquery.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#corre").click(function() {
+			$("div").animate({left:"500px",opacity:0.2,top:"500px"},4000,onRegresa);
+		});
+		$("#regresa").click(function() {
+			onRegresa();
+		});
+		function onRegresa() {
+			$("div").animate({left:"10px",opacity:1,top:"40px"},4000);
+		}
+	});
+</script>
+</head>
+
+<body>
+<input type="button" id="corre" value="corre"/>
+<input type="button" id="regresa" value="regresa"/>
+<div>
+<img src="imagenes/mercurio.jpg" width="201" height="251" id="mercurio">
+</div>
+<br>
+
+</body>
+</html>

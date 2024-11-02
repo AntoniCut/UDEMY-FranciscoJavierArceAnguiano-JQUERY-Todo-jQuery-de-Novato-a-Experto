@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Animate | Stop</title>
+<script src="js/jquery.js"></script>
+<style>
+div{
+	position:absolute;
+	height:100px;
+	width:100px;
+	background-color:#f60;	
+}
+</style>
+
+<script>
+$(document).ready(function(){
+	$("#corre").click(function(){
+		var d = $("div");
+		d.animate({height:'600px', opacity:'0.2'},4000);
+		d.animate({width:'1000px', opacity:'0.8'},4000);
+		d.animate({height:'100px', opacity:'0.5'},4000);
+		d.animate({width:'100px', opacity:'1'},4000);
+	});
+	$("#detiene").click(function(){
+		//.stop( [clearQueue ] [, jumpToEnd ] )
+		//
+		//Detiene animación y continua la pila en ese punto
+		//No limpia la pila, no salta al final
+
+		//Detiene la animacion y la pila de animaciones
+		//Limpia la pila, no salta al final
+
+		//Detiene la animacion y la pila de animaciones y se va al final
+		//Limpia la pila y se va al final
+
+		//Detiene la animacion y la pila de animaciones y se va al final
+		//No limpia la pila, salta al final
+	});
+});
+</script>
+</head>
+
+<body>
+<input type="button" id="corre" value="Animación"/>
+<input type="button" id="detiene" value="Detiene"/>
+<div>
+</div>
+<br>
+
+</body>
+</html>

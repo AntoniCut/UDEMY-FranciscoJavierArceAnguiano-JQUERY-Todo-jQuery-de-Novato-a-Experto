@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Afrodita Fondo | MouseUp MouseDown</title>
+<style>
+#afrodita{
+	width:800px;
+	height:502px;
+	background-image:url(imagenes/afrodita.jpg);
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+</style>
+<script src="js/jquery.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#afrodita").mousedown(function() {
+			$(this).css("background-image","url(imagenes/afrodita2.jpg)");
+		});
+		$("#afrodita").mouseup(function() {
+			$(this).css("background-image","url(imagenes/afrodita.jpg)");
+		});
+	});
+
+</script>
+</head>
+
+<body>
+<div id="afrodita"></div>
+</body>
+</html>
