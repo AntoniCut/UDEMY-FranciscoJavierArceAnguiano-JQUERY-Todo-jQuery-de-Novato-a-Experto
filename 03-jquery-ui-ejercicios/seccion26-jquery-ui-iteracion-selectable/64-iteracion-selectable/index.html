@@ -1,0 +1,235 @@
+<!--  ****************************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/03-jquery-ui-ejercicios/  **************************  -->
+<!--  **********  /seccion26-jquery-ui-iteracion-selectable/64-iteracion-selectable/index.html  **********  -->
+<!--  ****************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> jQuery UI - Seccion 26 - Iteración Selectable - jQuery UI </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="../../assets/favicon/jquery-icon.png">
+
+    <!--  **********  Librerías de jQuery y jQuery UI  **********  -->
+
+    <script src="../../assets/js/jquery-1.9.1.js"> </script>
+    <link rel="stylesheet" href="../../assets/css/ui-lightness/jquery-ui-1.10.1.custom.min.css">
+    <script src="../../assets/js/jquery-ui-1.10.1.custom.min.js"> </script>
+
+
+    <!-- -----  jQuery UI 1.14.1 para que funcione resizable con id resizable  ----- -->
+    <!-- <script src="../../assets/jquery-ui-1.14.1.custom/external/jquery/jquery.js"> </script>
+    <link rel="stylesheet" href="../../assets/jquery-ui-1.14.1.custom/jquery-ui.min.css">
+    <script src="../../assets/jquery-ui-1.14.1.custom/jquery-ui.min.js"> </script> -->
+
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+        }
+
+        .header {
+            width: 100%;
+            height: 10vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            width: 100%;
+            height: 85vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* align-items: center; */
+            gap: 50px;
+            padding-top: 50px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+
+        .input {
+            width: 200px;
+            height: 20px;
+        }
+
+
+        /*  *****  Estilos mas especificos  *****  */
+
+        .ejercicio {
+            height: 400px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            background-color: #ffffff;
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+        }
+
+
+        /*  **********  */
+        ul {
+            list-style: none;
+        }
+
+        li {
+            border: 1px solid black;
+            width: 300px;
+            height: 30px;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            line-height: 30px;
+            cursor: pointer;
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+        }
+
+        ul .ui-selecting {
+            background: yellow;
+        }
+
+        ul .ui-selected {
+            background: orange;
+            color: white;
+        }
+
+
+        /*  **********  */
+        #lista {
+            list-style: none;
+            width: 450px;
+        }
+
+        #lista li {
+            width: 100px;
+            margin: 3px;
+            padding: 1px;
+            float: left;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            font-size: 4em;
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+        }
+
+        #lista .ui-selecting {
+            background: yellow;
+        }
+
+        #lista .ui-selected {
+            background: orange;
+            color: white;
+        }
+
+
+        /*  **********  */
+        span {
+            font-size: 24px;
+            color: #ffffff;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 26 - Iteración Selectable - jQuery UI. </h1>
+        <hr>
+
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <ul>
+            <li class="ui-selected"> Zeus </liclass=>
+            <li> Poseidon </liclass=>
+            <li> Afrodita </liclass=>
+            <li> Atenea </liss=>
+            <li> Apolo </li>
+            <li> Hades </li=>
+        </ul>
+
+        <ol id="lista">
+            <li class="ui-widget-content"> 1 </li>
+            <li class="ui-widget-content"> 2 </li>
+            <li class="ui-widget-content"> 3 </li>
+            <li class="ui-widget-content"> 4 </li>
+            <li class="ui-widget-content"> 5 </li>
+            <li class="ui-widget-content ui-selected"> 6 </li>
+            <li class="ui-widget-content"> 7 </li>
+            <li class="ui-widget-content"> 8 </li>
+            <li class="ui-widget-content"> 9 </li>
+            <li class="ui-widget-content"> 10 </li>
+            <li class="ui-widget-content"> 11 </li>
+            <li class="ui-widget-content"> 12 </li>
+        </ol>
+
+        <p id="cuadro">
+
+            <span> Has seleccionado: </span>
+            <span id="resultado"> ... </span>
+
+        </p>
+
+
+    </main>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+
+        $(function () {
+
+            //console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+            console.warn('----------  Documento Cargado!!!  ----- ', 'jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+
+            //  -----  SELECTABLE  -----
+
+            $("ul").selectable();
+
+            $("#lista").selectable({
+
+                stop: function () {
+                    
+                    const resultado = $("#resultado").empty();
+                    
+                    $(".ui-selected", this).each(function () {
+                        
+                        const index = $("#lista li").index(this);
+                        resultado.append(index + 1 + ", ");
+                    });
+                }
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

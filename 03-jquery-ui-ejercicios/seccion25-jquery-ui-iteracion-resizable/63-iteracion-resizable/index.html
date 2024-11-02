@@ -1,0 +1,181 @@
+<!--  **************************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/03-jquery-ui-ejercicios/  ************************  -->
+<!--  **********  /seccion25-jquery-ui-iteracion-resizable/63-iteracion-resizable/index.html  **********  -->
+<!--  **************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> jQuery UI - Seccion 25 - Iteración Resizable - jQuery UI </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="../../assets/favicon/jquery-icon.png">
+
+    <!--  **********  Librerías de jQuery y jQuery UI  **********  -->
+    
+    <!-- <script src="../../assets/js/jquery-1.9.1.js"> </script>
+    <link rel="stylesheet" href="../../assets/css/ui-lightness/jquery-ui-1.10.1.custom.min.css"> 
+    <script src="../../assets/js/jquery-ui-1.10.1.custom.min.js"> </script> -->
+    
+    
+    <!-- -----  jQuery UI 1.14.1 para que funcione resizable con id resizable  ----- -->
+    <script src="../../assets/jquery-ui-1.14.1.custom/external/jquery/jquery.js"> </script>
+    <link rel="stylesheet" href="../../assets/jquery-ui-1.14.1.custom/jquery-ui.min.css">
+    <script src="../../assets/jquery-ui-1.14.1.custom/jquery-ui.min.js"> </script>
+
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+        }
+
+        .header {
+            width: 100%;
+            height: 10vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            width: 100%;
+            height: 85vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            /* align-items: center; */
+            gap: 50px;
+            padding-top: 50px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+
+        .input {
+            width: 200px;
+            height: 20px;
+        }
+
+
+        /*  *****  Estilos mas especificos  *****  */
+
+        .ejercicio {
+            height: 400px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            background-color: #ffffff;
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+        }
+
+        #foto {
+            background-image: url(../../assets/imagenes/afrodita208x312.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            width: 208px;
+            height: 312px;
+        }
+
+        #contenedor {
+            width: 600px;
+            height: 600px;
+            border: 2px solid black;
+            background-color: gray;
+        }
+
+        #resizable {
+            margin: 0;
+            width: 250px;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            background-color: #ffffff;
+        }
+
+        img {
+            width: 90%;
+            height: 90%;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 25 - Iteración Resizable - jQuery UI. </h1>
+        <hr>
+
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <div id="foto"> </div>
+
+        <div id="contenedor">
+            <div id="resizable">
+                <img src="../../assets/imagenes/damocles.jpg">
+            </div>
+        </div>
+
+    </main>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+
+        $(function () {
+
+            //console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+            console.warn('----------  Documento Cargado!!!  ----- ', 'jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+
+            //  -----  RESIZABLE  -----
+
+            $("#foto").resizable({
+                maxHeight: 350,
+                maxWidth: 450,
+                minHeight: 150,
+                minWidth: 200
+            });
+
+            
+            $("#resizable").resizable({
+                containment: '#contenedor',
+                animate: true,
+                animateDuration: "slow",        // Ajusta la duración de la animación
+                animateEasing: "linear",        // Prueba diferentes efectos de easing
+                ghost: true                     // Muestra una guía mientras redimensionas
+                
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

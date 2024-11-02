@@ -6,7 +6,7 @@
 /*  *****  Estilos Generales  *****  */
 .header {
     width: 100%;
-    height: 100px;
+    height: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,7 +14,14 @@
     border: 1px solid green;
 }
 
+html, body {
+    /* background: linear-gradient(var(--gray-gradient)) no-repeat; */
+    /* background: linear-gradient(to bottom, #f8f8f7, #ffffff, #fafafa); */
+    background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+}
+
 .main {
+    height: 80vh;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
