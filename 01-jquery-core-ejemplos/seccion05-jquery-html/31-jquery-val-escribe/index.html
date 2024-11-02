@@ -1,0 +1,143 @@
+<!--  ******************************************************************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/01-jquery-core-ejemplos/seccion05-jquery-html/31-jquery-val-escribe/index.html  **********  -->
+<!--  ******************************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Seccion 5 - jQuery y HTML - Todo jQuery de Novato a Experto - Udemy - Francisco
+        Javier Arce Anguiano
+    </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/icon-jquery.png">
+
+    <!-- **********  Librería de jQuery - CDN de Google  **********   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
+
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+            margin-top: 20px;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        #afrodita {
+            width: 800px;
+            height: 502px;
+            background-image: url(imagenes/afrodita.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        p {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .botones {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .input {
+            width: 200px;
+            height: 20px;
+        }
+
+        button {
+            width: 180px;
+            margin: 0 auto;
+            background-color: blueviolet;
+            color: white;
+            padding: 7px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <!-- **********  Código jQuery  --  Script Interno  **********   -->
+    <script>
+
+        //  -----  Método READY  -----
+        $(document).ready(function () {
+
+            console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+            console.log("\n");
+
+            //  -----  Referencia al HTML  -----
+            $inputNombre = $("#nombre");
+            $inputApellido = $("#apellidos");
+
+            $("#normal").click(function () {
+                $inputNombre.val('Antonio Francisco');
+                $inputApellido.val('Cutillas Garcia');
+            });
+
+            $("#secreto").click(function () {
+                $inputNombre.val('James');
+                $inputApellido.val('Bond');
+            });
+
+            $("#artistico").click(function () {
+                $inputNombre.val('Antony');
+                $inputApellido.val('Cut'); 
+            });
+
+        });
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 5 - Escribe en una Caja de Texto con Val(). </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+
+        <input type="text" id="nombre">
+        <input type="text" id="apellidos">
+        <br>
+        <div class="botones">
+            <button type="button" id="normal"> Nombre Normal </button>
+            <button type="button" id="secreto"> Nombre Secreto </button>
+            <button type="button" id="artistico"> Nombre Artistico </button>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

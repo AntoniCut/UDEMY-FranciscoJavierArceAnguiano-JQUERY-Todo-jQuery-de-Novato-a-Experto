@@ -1,0 +1,111 @@
+<!--  ****************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/03-jquery-ui-ejercicios/  **************  -->
+<!--  **********  /seccion22-jquery-ui-conceptos/58-jquery-ui-conceptos/index.html  **********  -->
+<!--  ****************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> jQuery UI - Seccion 22 - Conceptos jQuery UI </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="../../assets/favicon/jquery-icon.png">
+
+    <!--  **********  Libreria de Estilos  **********  -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+
+    <!--  **********  Librerías de jQuery y jQuery UI  **********  -->
+    <script src="../../assets/js/jquery-1.9.1.js"> </script>
+    <link rel="stylesheet" href="../../assets/css/ui-lightness/jquery-ui-1.10.1.custom.min.css">
+    <script src="../../assets/js/jquery-ui-1.10.1.custom.min.js"> </script>
+
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
+    <link rel="stylesheet" href="../../assets/jquery-ui-1.14.1.custom/jquery-ui.min.css">
+    <script src="../../assets/jquery-ui-1.14.1.custom/jquery-ui.min.js"> </script> -->
+
+</head>
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 22 - Conceptos de jQuery UI. </h1>
+        <hr>
+
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <div class="conceptos"> 1. Bajar la Libreria de jQuery UI. </div>
+        <div class="conceptos"> 2. Conectar jQuery UI con Nuestra Página. </div>
+        <div class="conceptos"> 3. Estructura de Archivos de jQuery UI. </div>
+        <div class="conceptos"> 4. Introducción a los Métodos de los Componentes de jQuery UI. </div>
+        <div class="conceptos"> 5. Introducción al Manejo de Eventos de jQuery UI. </div>
+        <div class="conceptos"> 6. El Framework CSS de Estilos en Cascada. </div>
+
+
+        <br>
+        <div class="conceptos"> 7. Las Interacciones en jQuery UI. </div>
+        <br>
+        <div class="ui-widget">
+
+            <div class="ui-state-default ui-state-active ui-corner-all">
+                <a href="#"> Elemento Seleccionable </a>
+            </div>
+
+            <br>
+
+            <div class="ui-state-default ui-corner-all">
+                <a href="#"> Elemento No Seleccionable </a>
+            </div>
+
+        </div>
+
+
+        <br>
+        <div class="conceptos"> 8. Crear Iconos Personalizados dentro de jQuery UI. </div>
+        <br>
+
+        <button> Mi Botón </button>
+
+        <br> <br> <br> <br> <br>
+
+
+    </main>
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+        $(function () {
+
+            //console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+            console.warn('----------  Documento Cargado!!!  ----- ', 'jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+
+            //  ----------  INTERACCIONES  ----------
+            $(".ui-widget a").hover(function () {
+                $(this).parent().addClass('ui-state-hover');
+            }, function () {
+                $(this).parent().removeClass('ui-state-hover');
+            })
+
+
+            //  ----------  ICONOS PERSONALIZADOS  ----------
+            $("button").button({
+                icons: { primary: "mi-icono" }
+            })
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!--  **************************************************************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/01-jquery-core-ejemplos/seccion02-selectores/03-selectores-this/index.html  **********  -->
+<!--  **************************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> jQuery Selectores THIS - Todo jQuery de Novato a Experto - Udemy - Francisco Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/icon-jquery.png">
+
+    <!-- **********  Librería de jQuery - CDN de Google  **********   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
+
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* align-items: center; */
+            text-align: center;
+            margin-top: 20px;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        p {
+            text-align: left;
+            margin-left: 100px;
+            margin-right: 100px;
+            cursor: pointer;
+        }
+        
+    </style>
+
+
+    <!-- **********  Código jQuery  --  Script Interno  **********   -->
+    <script>
+
+        //  -----  Forma Corta  -----
+        $(document).ready(function () {
+
+            console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+            console.log("\n");
+
+            $("p").click(function() {
+                $(this).css({
+                    color: "red",
+                    fontSize: "200%"
+                });
+            });
+
+        });
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 02 - Selectores THIS. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <h1> Afrodita </h1>
+
+        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Amet dignissimos quis soluta, quaerat aspernatur sed, odit facere itaque pariatur ipsum necessitatibus fuga provident dolorum incidunt, 
+            voluptate saepe enim delectus repellat.
+        </p>
+
+        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Amet dignissimos quis soluta, quaerat aspernatur sed, odit facere itaque pariatur ipsum necessitatibus fuga provident dolorum incidunt, 
+            voluptate saepe enim delectus repellat.
+        </p>
+
+        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Amet dignissimos quis soluta, quaerat aspernatur sed, odit facere itaque pariatur ipsum necessitatibus fuga provident dolorum incidunt, 
+            voluptate saepe enim delectus repellat.
+        </p>
+
+        <h3> Fuente: Wikipedia </h3>
+
+    </main>
+
+</body>
+
+</html>

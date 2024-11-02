@@ -1,0 +1,166 @@
+<!--  *****************************************************************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/01-jquery-core-ejemplos/seccion02-selectores/09-selector-event-odd/index.html  **********  -->
+<!--  *****************************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> jQuery Selector Even y Odd - Todo jQuery de Novato a Experto - Udemy - Francisco Javier Arce Anguiano
+    </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/icon-jquery.png">
+
+    <!-- **********  Librería de jQuery - CDN de Google  **********   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
+
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center; 
+            text-align: left;
+            margin-top: 20px;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            /* text-align: left; */
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        input {
+            width: 100px;
+            margin: 0 auto;
+            background-color: blueviolet;
+            color: white;
+            padding: 7px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <!-- **********  Código jQuery  --  Script Interno  **********   -->
+    <script>
+
+        //  -----  Método READY  -----
+        $(document).ready(function () {
+
+            console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+            console.log("\n");
+
+            $("#pares").click(function () {
+                $("tr:even").css("background-color", "yellow");
+            });
+
+            $("#impares").click(function () {
+                $("tr:odd").css("background-color", "orange");
+            });
+        });
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 02 - Selectores Even y Odd. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <input type="button" value="pares" id="impares">
+        <input type="button" value="impares" id="pares">
+
+        <table>
+            <tr>
+                <td>Zeus</td>
+                <td> Era el jefe de todos los dioses, y dueño de los cielos el rayo y el tiempo.</td>
+            </tr>
+            </tr>
+            <tr>
+                <td>Hera</td>
+                <td> Era la esposa de Zeus, reina de los cielos y las estrellas, y diosa del matrimonio y la fidelidad.
+                </td>
+            </tr>
+            <tr>
+                <td>Demeter</td>
+                <td> Es la diosa de la tierra fertil y la agricultura. Gracias a su accion la humanidad tenia sustento.
+                </td>
+            </tr>
+            <tr>
+                <td>Poseidon</td>
+                <td> Dios de los mares.</td>
+            </tr>
+            <tr>
+                <td>Apolo</td>
+                <td> Era el hijo de Zeus. Dios de la musica, la profecia, la luz, la enfermedad y la curacion y la
+                    arqueria.</td>
+            </tr>
+            <tr>
+                <td>Hestia</td>
+                <td> Diosa del hogar y la familia.</td>
+            </tr>
+            <tr>
+                <td>Hefesto</td>
+                <td> Dios del fuego, los trabajos manuales y patron de los artesanos.</td>
+            </tr>
+            <tr>
+                <td>Artemisa</td>
+                <td> Diosa de los animales y la caza, de la fertilidad y de la castidad.</td>
+            </tr>
+            <tr>
+                <td>Dionisio</td>
+                <td> Dios del vino y de la liberacion sexual.</td>
+            </tr>
+            <tr>
+                <td>Ares</td>
+                <td> Era el dios de la guerra y los heroes.</td>
+            </tr>
+            <tr>
+                <td>Afrodita</td>
+                <td> Diosa de la belleza, el amor y la sexualidad.</td>
+            </tr>
+            <tr>
+                <td> Atenea</td>
+                <td> La patrona de Atenas donde tenia un gran templo. Diosa de la sabiduria, las artes, la belleza
+                    interior, la educacion y la guerra.</td>
+            </tr>
+        </table>
+        
+    </main>
+
+</body>
+
+</html>

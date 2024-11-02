@@ -1,0 +1,147 @@
+/*  ************************************************************************************************************  */
+/*  **********  /01-todo-jquery-de-novato-a-experto/02-jquery-ejercicios-ejemplos/  ****************************  */
+/*  **********  /seccion16-juego-palabras-arrastrables/53-juego-palabras-arrastrables/css/styles.css  **********  */
+/*  ************************************************************************************************************  */
+
+
+body {
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid green;
+}
+
+h1 {
+    font-size: 56px;
+    color: #FCF7CD;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #FFA500;
+    text-align: center;
+}
+
+.main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.botones {
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    width: 100px;
+    margin: 0 auto;
+    background-color: blueviolet;
+    color: white;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+/*  **********  */
+
+.arrastra-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* padding: 50px; */
+    /* padding-top: 10px; */
+    margin-top: 50px;
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+}
+
+
+.secciones {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #FFA500; */
+    /* gap: 30px; */
+}
+
+.seccion-palabras {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    /* background-color: blue; */
+}
+
+.palabra {
+    width: 200px;
+    height: 30px;
+    margin-bottom: 10px; 
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: rgb(149, 149, 165);
+}
+
+.seccion-titulos {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+}
+
+#titulo1,
+#titulo2,
+#titulo3,
+#titulo4,
+#titulo5 {
+    height: 50px;
+    line-height: 0;
+    border-radius: 5px;
+    background-color: rgb(202, 158, 36);
+}
+
+.seccion-areas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.area {
+    padding-top: 10px;
+    border-radius: 5px;
+    width:200px;
+	height:200px;
+	text-align:center;
+	background:#F96;
+}
+
+.title {
+    font-size: 24px;
+}
+
+h2{
+	width:200px;
+	text-align:center;
+}

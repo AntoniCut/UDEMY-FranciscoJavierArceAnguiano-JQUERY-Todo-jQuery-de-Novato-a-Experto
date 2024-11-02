@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Memoria</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+var numCartas = 10;
+var carta1 = " ";
+var carta2 = " ";
+
+$(document).ready(inicio);
+
+function inicio(){
+	cargaCartas();
+	$(".carta").on("click",voltear);
+}
+function voltear(){
+	//Despliega numero
+	$(this).children().css("display","block");
+	//Primera carta
+	if(carta1==" "){
+		carta1 = $(this);
+	} else {
+		carta2 = $(this);
+		$(".carta").off();
+		setTimeout(verificar,1000);
+	}
+}
+function verificar(){
+	if(carta1.attr("data-num")==carta2.attr("data-num")){
+		carta1.removeClass('carta').addClass('desaparece');	
+		carta2.removeClass('carta').addClass("desaparece");
+	} else {
+		carta1.children().css("display","none");
+		carta2.children().css("display","none");	
+	}
+	carta1 = " ";
+	$(".carta").on("click",voltear);
+}
+function cargaCartas(){
+	//Generar un arreglo vacio
+	var numeros_array = new Array();
+	var num = 0;
+	//Generar el arreglo
+	for(var i=1; i<=numCartas; i++){
+		numeros_array.push(i,i);
+	}
+	//
+	$('.carta').each(function(i){
+		num = numeros_array.length;
+		n = Math.floor(Math.random()*num);
+		$(this).html("<p>"+numeros_array[n]+"</p>");
+		$(this).attr("data-num",numeros_array[n]);
+		numeros_array.splice(n,1);
+	});
+}
+
+</script>
+<style>
+#tablero{
+	width:650px;
+	margin:10px auto;
+}
+.carta{
+	border-radius:1em;
+	border: 3px solid white;
+	background-color:#F93;
+	cursor:pointer;
+	display:inline-block;
+	height:110px;
+	width:110px;
+	margin:.3em;
+	overflow:hidden;
+	vertical-align:top;	
+}
+.desaparece{
+	background-color:white;
+	border: 3px solid white;
+	color: white;
+	display:inline-block;
+	height:110px;
+	width:110px;
+	vertical-align:top;	
+	margin:.3em;
+}
+#tiempo{
+	float:left;
+	font-size:30px;
+}
+#puntos{
+	float:right;
+	font-size:30px;
+}
+#tablero p{
+	color: white;
+	margin-top:1.2em;
+	z-index:1;
+	font-size:30px;
+	text-align:center;	
+	display:none;
+}
+</style>
+</head>
+
+<body>
+<div id="tablero">
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<br>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<br>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<br>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<br>
+<div id="score">
+<div id="tiempo">00:00:00</div>
+<div id="puntos">Score: 0</div>
+</div>
+</div>
+</body>
+</html>

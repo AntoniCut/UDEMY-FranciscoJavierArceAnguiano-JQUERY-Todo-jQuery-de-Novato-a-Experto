@@ -1,0 +1,111 @@
+<!--  ***********************************************************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/01-jquery-core-ejemplos/seccion05-jquery-html/28-jquery-html/index.html  **********  -->
+<!--  ***********************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Seccion 5 - jQuery y HTML - Todo jQuery de Novato a Experto - Udemy - Francisco
+        Javier Arce Anguiano
+    </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/icon-jquery.png">
+
+    <!-- **********  Librería de jQuery - CDN de Google  **********   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
+
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+            margin-top: 20px;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        p {
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .botones {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        input {
+            width: 180px;
+            margin: 0 auto;
+            background-color: blueviolet;
+            color: white;
+            padding: 7px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <!-- **********  Código jQuery  --  Script Interno  **********   -->
+    <script>
+
+        //  -----  Método READY  -----
+        $(document).ready(function () {
+
+            console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+            console.log("\n");
+
+            $("p").click(function() {
+                const texto = $(this).html();   //  recogemos el html
+                $(this).text(texto);            //  añadimos al html.
+            })
+
+        });
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 5 - Leer y Escribir Código HTML. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <p> <strong> Este </strong> es <em> un párrafo </em> </p>
+        <p> Este <input type="button" value="botoncito" /> no es otra cosa que código HTML </p>
+        <p> Esta imagen <img src="imagenes/medusa.png" /> también es código HTML </p>
+
+    </main>
+
+</body>
+
+</html>

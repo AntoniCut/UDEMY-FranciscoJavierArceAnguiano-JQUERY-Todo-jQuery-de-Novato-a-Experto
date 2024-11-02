@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Palabras 02</title>
+<style>
+body{
+	width:1000px;
+	margin:0 auto;	
+}
+h1{
+	text-align:center;
+}
+h2{
+	width:200px;
+	text-align:center;
+}
+.palabra{
+	width:200px;
+	text-align:center;
+}
+.area{
+	width:200px;
+	height:220px;
+	text-align:center;
+	background:#f96;
+}
+</style>
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script>
+
+
+</script>
+</head>
+
+<body>
+<h1>Arrastra la palabra a la sección correcta</h1>
+<table border="1">
+<tr>
+	<td><div id="p1"></div></td>
+	<td><div id="p2"></div></td>
+    <td><div id="p3"></div></td>
+    <td><div id="p4"></div></td>
+    <td><div id="p5"></div></td>
+</tr>
+<tr>
+	<td><div id="t1"></div></td>
+	<td><div id="t2"></div></td>
+    <td><div id="t3"></div></td>
+    <td><div id="t4"></div></td>
+    <td><div id="t5"></div></td>
+</tr>
+<tr>
+	<td><div id="a1" class="area"></div></td>
+	<td><div id="a2" class="area"></div></td>
+    <td><div id="a3" class="area"></div></td>
+    <td><div id="a4" class="area"></div></td>
+    <td><div id="a5" class="area"></div></td>
+</tr>
+</table>
+<button id="evaluar">Evaluar</button>
+<button id="reiniciar">Reiniciar</button>
+</body>
+</html>

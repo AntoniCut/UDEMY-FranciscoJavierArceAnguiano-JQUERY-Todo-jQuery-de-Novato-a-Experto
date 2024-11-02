@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 3 | Load con Ajax</title>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	$("#poema1").click(onPoema1);
+	$("#poema2").click(onPoema2);
+});
+function onPoema1(){
+	$("div").load("poema1.txt");	
+}
+function onPoema2(){
+	$("div").load("poema2.txt");	
+}
+</script>
+</head>
+
+<body>
+<button id="poema1">Poema 1</button>
+<button id="poema2">Poema 2</button>
+<div></div>
+</body>
+</html>

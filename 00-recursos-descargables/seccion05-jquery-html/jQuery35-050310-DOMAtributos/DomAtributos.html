@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery DOM | Atributos</title>
+<script src="js/jquery.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#titulo").click(function(){
+			var tt = $("img").attr("title");
+			$("#texto").text(tt);
+		});
+		$("#chica").click(function(){
+			$("img").attr({width:"160px",height:"196px"});
+		});
+		$("#mediana").click(function(){
+			$("img").attr({width:"320",height:"392px"});
+		});
+		$("#grande").click(function(){
+			$("img").attr({width:"480",height:"588px"});
+		});
+	});
+</script>
+</head>
+
+<body>
+<input id="chica" type="button" value="Chica">
+<input id="mediana" type="button" value="Mediana">
+<input id="grande" type="button" value="Grande">
+<input id="titulo" type="button" value="Titulo">
+<br>
+<img src="imagenes/afrodita160x196.jpg" width="160" height="196" alt="Afrodita" title="El nacimiento de Venus, William-Adolphe Bouguereau, 1879">
+<p id="texto"></p>
+</body>
+</html>

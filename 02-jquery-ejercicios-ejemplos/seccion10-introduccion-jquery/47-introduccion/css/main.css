@@ -1,0 +1,247 @@
+@charset "UTF-8";
+html, body, p{
+	margin:0;
+	padding:0;
+}
+html{
+	background:url(../imagenes/fondo.jpg) repeat;
+}
+body{
+	width:1024px;	
+	margin:0 auto;
+	position:relative;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+}
+p, li, ul{
+	font-weight:normal;
+	opacity:.85;
+}
+/*******************
+DIVISIONES
+********************/
+#lineaMenu{
+	position: absolute;
+	border-bottom:solid 10px gray;
+	margin-top:40px;
+	z-index: 12;
+}
+#home {
+	position: absolute;
+	left: 162px;
+	top: 32px;
+	width: 84px;
+	height: 20px;
+	z-index: 12;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 15px;
+}
+#home a{
+	color:black;
+	text-decoration:none;
+}
+#home a:hover{
+	color:gray;
+	text-decoration:underline;
+}
+#somos {
+	position: absolute;
+	left: 540px;
+	top: 32px;
+	width: 90px;
+	height: 20px;
+	z-index: 13;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 15px;
+}
+#somos a{
+	color:black;
+	text-decoration:none;
+}
+#somos a:hover{
+	color:gray;
+	text-decoration:underline;
+}
+#fotografia {
+	position: absolute;
+	left: 620px;
+	top: 32px;
+	width: 144px;
+	height: 20px;
+	z-index: 14;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 15px;
+}
+#fotografia a{
+	color:black;
+	text-decoration:none;
+}
+#fotografia a:hover{
+	color:gray;
+	text-decoration:underline;
+}
+#contacto a{
+	color:white;
+	text-decoration:none;
+}
+#contacto a:hover{
+	color:gray;
+	text-decoration:underline;
+}
+#complementos {
+	position: absolute;
+	left: 738px;
+	top: 32px;
+	width: 130px;
+	height: 20px;
+	z-index: 15;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size: 15px;
+}
+#complementos a{
+	color:black;
+	text-decoration:none;
+}
+#complementos a:hover{
+	color:gray;
+	text-decoration:underline;
+}
+#menuAbajo {
+	position: absolute;
+	left: -20px;
+	top: 825px;
+	width: 800px;
+	height: 62px;
+	z-index: 16;
+	color:white;	
+	padding-top:10px;
+	padding-left:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	font-size:12px;
+}
+#menuAbajo li{
+	display:inline;
+	list-style-type:none;
+	margin:0 10px 0 0;	
+}
+#menuAbajo a{
+	color: white;
+	text-decoration: none;
+}
+#menuAbajo a:hover{
+	color: white;
+	text-decoration: underline;
+}
+#contacto {
+	position: absolute;
+	left: 807px;
+	top: 820px;
+	width: 193px;
+	height: 48px;
+	z-index: 15;
+}
+#mail {
+	position: absolute;
+	left: 24px;
+	top: 890px;
+	width: 193px;
+	height: 48px;
+	z-index: 15;
+	font-size:14px;
+}
+#mail a{
+	color:gray;
+	text-decoration:none;
+}
+#mail a:hover{
+	color:white;
+	text-decoration:underline;
+}
+#contacto p{
+	margin:0;
+	padding:0;
+	font-size:20px;
+}
+#derechos {
+	position: absolute;
+	left: 390px;
+	top: 892px;
+	width: 338px;
+	height: 31px;
+	z-index: 18;
+	color:gray;
+	font-size:14px;
+}
+#linea {
+	position: absolute;
+	left: 158px;
+	top: 55px;
+	width: 708px;
+	height: 5px;
+	z-index: 11;
+	background-image: url(../imagenes/home/linea.fw.png);
+	background-repeat:repeat-y;
+}
+#iconos {
+	position: absolute;
+	left: 935px;
+	top: 912px;
+	width: 90px;
+	height: 90px;
+	z-index: 25;
+	background-image: url(../imagenes/home/iconos.png);
+	background-repeat:no-repeat;
+}
+#feis {
+	position: absolute;
+	left: 962px;
+	top: 922px;
+	width: 33px;
+	height: 33px;
+	z-index: 26;
+}
+#twitter {
+	position: absolute;
+	left: 941px;
+	top: 962px;
+	width: 31px;
+	height: 40px;
+	z-index: 27;
+}
+#google {
+	position: absolute;
+	left: 987px;
+	top: 960px;
+	width: 31px;
+	height: 42px;
+	z-index: 28;
+}
+/*********************
+CLASES
+**********************/
+.trans50{
+	/*opacity:.50;*/
+}
+.catorce{
+	font-size: 14px;
+}
+.quince{
+	font-size: 15px;
+}
+.doce{
+	font-size: 12px;
+}
+.transparencia{
+	opacity:.70;
+}
+.blanco{
+	color:white;
+}
+.gris{
+	color:#555;
+}

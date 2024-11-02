@@ -1,0 +1,80 @@
+<!--  *****************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/02-jquery-ejercicios-ejemplos  **********  -->
+<!--  **********  /seccion12-juego-drag-and-drop/49-juego-drag-and-drop/index.html   **********  -->
+<!--  *****************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Arrastra Foto - Seccion 12 - Crea un juego con el Drag And Drop con jQuery y jQuery UI </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/jquery-icon.png">
+
+    <!--  **********  Estilos CSS  ----------  -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--  **********  Librerías de jQuery, jQuery UI  **********  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
+    <script src="jquery-ui/jquery-ui.min.js"> </script>
+    <!-- <script src="js/prefixfree.min.js"> </script> -->
+
+</head>
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Juego de Drag and Drop </h1>
+        <hr>
+
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <div id="juego">
+
+            <section class="fotos">
+                <div class="foto" data-num=""> </div>
+                <div class="foto" data-num=""> </div>
+                <div class="foto" data-num=""> </div>
+                <div class="foto" data-num=""> </div>
+                <div class="foto" data-num=""> </div>
+                <div class="foto" data-num=""> </div>
+            </section>
+
+            <section class="marcos">
+                <div class="marco" data-num="" data-cuadro=""> </div>
+                <div class="marco" data-num="" data-cuadro=""> </div>
+                <div class="marco" data-num="" data-cuadro=""> </div>
+                <div class="marco" data-num="" data-cuadro=""> </div>
+                <div class="marco" data-num="" data-cuadro=""> </div>
+                <div class="marco" data-num="" data-cuadro=""> </div>
+            </section>
+
+            <section class="resultados">
+                <div class="res" id="res0"> </div>
+                <div class="res" id="res1"> </div>
+                <div class="res" id="res2"> </div>
+                <div class="res" id="res3"> </div>
+                <div class="res" id="res4"> </div>
+                <div class="res" id="res5"> </div>
+            </section>
+
+            <button class="boton" id="verifica"> Verifica </button>
+            <button class="boton" id="jugar"> Volver a Jugar </button>
+
+        </div>
+
+    </main>
+
+</body>
+
+<script src="js/drag-and-drop.js"> </script>
+
+</html>

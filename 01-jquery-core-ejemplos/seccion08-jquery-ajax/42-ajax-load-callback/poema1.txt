@@ -1,0 +1,14 @@
+<h2>POEMA POPULAR</H2>
+<p>EN EL AGUA CLARA</p>
+<p>QUE BROTA EN LA FUENTE,</p>
+<p>UN LINDO PESCADO</p>
+<p>SALE DE REPENTE.</p>
+<p>-LINDO PESCADITO,</p>
+<p>NO QUIERES VENIR</p>
+<p>A JUGAR CON MI ARO?</p>
+<p>VAMOS AL JARD&Iacute;N.</p>
+<p>-MI MAM&Aacute; ME HA DICHO:</p>
+<p>"NO SALGAS DE AQU&Iacute;,</p>
+<p>PORQUE SI TE SALES</p>
+<p>TE VAS A MORIR".</p>
+<p id="autor">An&oacute;nimo</p>

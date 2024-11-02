@@ -1,0 +1,78 @@
+<!--  *******************************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/03-jquery-ui-ejercicios/  *****************************  -->
+<!--  **********  /seccion22-jquery-ui-conceptos/59-jquery-ui-conceptos-version-1.11.2/index.html  **********  -->
+<!--  *******************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> jQuery UI - Seccion 22 - Conceptos jQuery UI </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="../../assets/favicon/jquery-icon.png">
+
+    <!--  **********  Libreria de Estilos  **********  -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+
+    <!--  **********  Librerías de jQuery y jQuery UI  **********  -->
+    <script src="../../assets/js/jquery-1.9.1.js"> </script>
+    <link rel="stylesheet" href="../../assets/css/ui-darkness-1.11.2/jquery-ui.min.css">
+    <script src="../../assets/js/jquery-ui-1.11.2.min.js"> </script>
+
+
+</head>
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 22 - Conceptos de jQuery UI - Version 1.11.2 </h1>
+        <hr>
+
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <br> <br>
+        <div class="conceptos"> 9. Modificaciones de la Version jQuery UI 1.11.2. </div>
+        <br>
+
+        <button> Bienvenido </button>
+        
+        <br> <br>
+        <div class="conceptos"> 10. Modificaciones de la Version jQuery UI 1.12. </div>
+        <br>
+
+
+    </main>
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+        $(function () {
+
+            //console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+            console.warn('----------  Documento Cargado!!!  ----- ', 'jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+
+            //  ----------  jQuery UI Version 1.11.2  ----------
+            $("button").button();
+
+
+            $("button").click(function() {
+                alert('Bienvenido a la Version 1.11.2 de jQuery UI');
+            })
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>

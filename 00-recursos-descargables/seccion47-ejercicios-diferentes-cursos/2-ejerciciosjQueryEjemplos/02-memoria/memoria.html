@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<title>Memoria</title>
+<style>
+#tablero{
+	width:650px;
+	margin:10px auto;
+}
+.carta{
+	border-radius: 1em;
+	border: 3px solid #fff;
+	background-color:#F93;
+	cursor: pointer;
+	display: inline-block;
+	height: 110px;
+	width: 110px;
+	margin: .3em;
+	overflow: hidden;
+	vertical-align: top;
+}
+#tablero p
+{
+	color: #fff;
+	margin-top:1.2em; 
+	text-align: center;
+	z-index: -1;
+	font-size:30px;
+	display: none;
+}
+.apaga
+{
+	background-color: #fff;
+	border: 3px solid #fff;
+	color:#fff;
+	display: inline-block;
+	height: 110px;
+	margin: .3em;
+	vertical-align: top;
+	width: 110px;
+}
+#tiempo{
+	float:left;
+	font-size:32px;
+}
+#score{
+	float:right;
+	font-size:32px;
+}
+</style>
+<script>
+var numCartas = 10;
+var carta1=" ";
+var carta2=" ";
+var score = 0;
+$(document).ready(inicio);
+
+function inicio(){
+	cargaCartas()
+	$('.carta').on('click', voltea);	
+}
+
+function cargaCartas(){
+	var numeros_array = new Array();
+	//
+	for(var i=1; i<=numCartas; i++){
+		numeros_array.push(i,i);	
+	}
+	//Carga cartas
+	$('.carta').each(function(i){
+		l=numeros_array.length;
+		r=Math.floor(Math.random() *(l));
+		$(this).html("<p>"+numeros_array[r]+"</p>");
+		$(this).attr('data-num',numeros_array[r] );
+		numeros_array.splice(r,1);
+	});
+	tiempo(10);
+}
+function voltea(){
+	//Despliega numero
+	$(this).children().css('display','block');
+	//Score
+	score++
+	$("#score").html("Score: "+score);
+	//Primera carta
+	if(carta1==" ")
+		carta1=$(this);
+	else {
+		carta2=$(this);
+		$('.carta').off();
+		setTimeout(verifica,1000);
+	}
+}
+function verifica(){
+	if(carta1.attr('data-num')==carta2.attr('data-num')){
+		carta1.removeClass('carta').addClass('apaga');
+		carta2.removeClass('carta').addClass('apaga');
+		carta1.html('');
+		carta2.html('');
+		carta1=" ";
+	} else {
+		carta2.children().css('display','none');
+		carta1.children().css('display','none');
+		carta1=" ";
+	}
+	$('.carta').on('click', voltea);	
+}
+function tiempo(limit)
+{
+	var min=limit-1;
+	var seg=59;
+	time=setInterval(function(){
+		$('#tiempo').html("");
+		if(seg<10) {
+			$('#tiempo').append('00:0'+min+':0'+seg);
+		} else {
+			$('#tiempo').append('00:0'+min+':'+seg);
+		}
+		seg=seg-1;
+		if(seg<0){seg=59;min--;}
+		if(min<0)
+		{
+		clearInterval(tiempo);
+		}
+		
+	},1000);
+
+}
+
+</script>
+</head>
+
+<body>
+<div id="tablero">
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<br>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<br>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<br>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<div class="carta" data-num=""></div>
+<br>
+<div id="marcador">
+<div id="score">Score: 0</div>
+<div id="tiempo">00:00:00</div>
+</div>
+</div>
+</body>
+</html>

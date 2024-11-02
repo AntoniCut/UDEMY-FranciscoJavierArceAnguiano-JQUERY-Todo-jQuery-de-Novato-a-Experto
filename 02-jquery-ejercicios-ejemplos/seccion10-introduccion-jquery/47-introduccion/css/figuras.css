@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/* CSS Document */
+#perro {
+	position: absolute;
+	left: 47px;
+	top: 582px;
+	width: 105px;
+	height: 117px;
+	z-index: 6;
+	background-image: url(../imagenes/home/perrito.png);
+	background-repeat:no-repeat;
+}
+#mesa {
+	position: absolute;
+	left: 378px;
+	top: 717px;
+	width: 264px;
+	height: 83px;
+	z-index: 1;
+	background-image: url(../imagenes/home/mesa.png);
+	background-repeat:no-repeat;
+}

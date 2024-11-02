@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery DOM | Val</title>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	$("input").keyup(function(){
+		//recuperamos el valor de la caja de entrada
+		var t = $("input").val();
+		t = t.toUpperCase();
+		$("p").text(t);
+	}).keyup();
+});
+</script>
+</head>
+
+<body>
+	<input type="text" value="Hola...">
+<p></p>
+</body>
+</html>

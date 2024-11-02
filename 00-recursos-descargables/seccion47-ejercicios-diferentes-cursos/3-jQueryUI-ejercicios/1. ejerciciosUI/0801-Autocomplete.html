@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>JQUI057-Autocomplete</title>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css" />
+<style>
+
+</style>
+<script>
+$(function(){
+	var paises = new Array();
+	paises.push("México");
+	paises.push("Canadá");
+	paises.push("Estados Unidos");
+	paises.push("Guatemala");
+	paises.push("Honduras");
+	paises.push("Nicaragua");
+	paises.push("Costa Rica");
+	paises.push("Cuba");
+	paises.push("República Dominicana");
+	
+	$("#pais").autocomplete({source:paises});
+})
+</script>
+</head>
+<body>
+<div class="ui-widget">
+	<label for="pais">País:</label>
+	<input id="pais"/>
+</div>
+
+
+</body>
+</html>

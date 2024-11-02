@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title></title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<style>
+#format{margin-top: 2em; }
+</style>
+<script>
+$(function(){
+	$("button:first").button({icons: {primary:"ui-icon-locked"},text:false}).
+	next().button({icons: {primary:"ui-icon-locked"}}).
+	next().button({icons: {primary:"ui-icon-locked", secondary: "ui-icon-gear"}}).
+	next().button({icons: {primary:"ui-icon-locked", secondary: "ui-icon-gear"}, text:false});
+});
+</script>
+</head>
+<body>
+<button>solo el icono</button>
+<button>Icono izquierda</button>
+<button>Dos iconos</button>
+<button>Dos iconos sin texto</button>
+
+</body>
+</html>

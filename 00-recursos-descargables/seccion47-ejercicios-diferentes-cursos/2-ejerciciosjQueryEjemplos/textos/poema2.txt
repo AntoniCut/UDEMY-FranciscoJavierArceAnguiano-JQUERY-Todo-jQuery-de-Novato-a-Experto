@@ -1,0 +1,11 @@
+<h2>REDONDILLAS</h2>
+<p>Hombres necios que acusxxxxxxx&aacute;is</p>
+<p>a la mujer, sin razón,</p>
+<p>sin ver que sois la ocasión</p>
+<p>de lo mismo que culpáis;</p>
+<p></p>
+<p>si con ansia sin igual</p>
+<p>solicitáis su desdén,</p>
+<p>por qué queréis que obren bien</p>
+<p>si las incitáis al mal?</p>
+<p id="autor">Sor Juana Ines de la Cruz</p>

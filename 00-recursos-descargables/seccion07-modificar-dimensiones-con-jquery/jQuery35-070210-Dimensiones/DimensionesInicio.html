@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery | Dimensiones</title>
+<style>
+#div1{
+	height:100px;
+	width:300px;
+	padding:10px;
+	margin:10px;
+	border:5px solid blue;
+	background-color:lightblue;	
+}
+
+</style>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	$("#dim").click(function(){
+		var txt = "";
+		txt += "Ancho: " + $("#div1").width() + "<br>";
+		txt += "Alto : " + $("#div1").height();
+		$("#div1").html(txt);
+	});
+	$("#int").click(function(){
+		var txt = "";
+		txt += "Ancho + padding: " + $("#div1").innerWidth() + "<br>";
+		txt += "Alto + padding : " + $("#div1").innerHeight();
+		$("#div1").html(txt);
+	});
+	$("#ext").click(function(){
+		var txt = "";
+		txt += "Ancho + padding + borde: " + $("#div1").outerWidth() + "<br>";
+		txt += "Alto + padding + borde : " + $("#div1").outerHeight();
+		$("#div1").html(txt);
+	});
+	$("#tot").click(function(){
+		var txt = "";
+		txt += "Ancho + padding + borde + márgen: " + $("#div1").outerWidth(true) + "<br>";
+		txt += "Alto + padding + borde + márgen : " + $("#div1").outerHeight(true);
+		$("#div1").html(txt);
+	});
+});
+
+</script>
+</head>
+
+<body>
+<div id="div1"></div>
+<br>
+<button id="dim">Dimensiones</button>
+<button id="int">Dimensiones internas</button>
+<button id="ext">Dimensiones externas</button>
+<button id="tot">Dimensiones total</button>
+</body>
+</html>

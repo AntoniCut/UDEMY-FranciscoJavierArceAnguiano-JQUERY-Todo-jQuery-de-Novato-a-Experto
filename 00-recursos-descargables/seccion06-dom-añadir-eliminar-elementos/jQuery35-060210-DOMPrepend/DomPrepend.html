@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery | prepend</title>
+<script src="js/jquery.js"></script>
+<script>
+var poema = new Array();
+poema.push("En el agua clara");
+poema.push("que brota en la fuente");
+poema.push("un lindo pescado");
+poema.push("sale de repente");
+poema.push("Lindo pescadito");
+poema.push("no quieres salir");
+poema.push("a jugar con mi aro");
+poema.push("vamos al jardín.");
+var ii = i = poema.length-1;
+$(document).ready(function(){
+	$("#boton1").click(function(){
+		if (i>=0) {
+			$("p").prepend(poema[i]+"<br>");
+			i--;
+		}
+	});
+	$("#boton2").click(function(){
+		if (ii>=0) {
+			$("ul").prepend("<li>"+poema[ii]+"</li>");
+			ii--;
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+<input type="button" value="Añadir texto" id="boton1"/>
+<input type="button" value="Añadir lista" id="boton2"/>
+<p></p>
+<ul></ul>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery | HTML</title>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	$("p").click(function(){
+		var tt = $(this).html();
+		$(this).text(tt);
+	});
+})
+</script>
+</head>
+
+<body>
+<p><strong>Este</strong> es <em>un párrafo</em></p>
+<p>Este <input type="button" value="botoncito"/> no es otra cosa que código HTML</p>
+<p>Esta imagen <img src="imagenes/medusa.png"/> también es código HTML</p>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!--  *********************************************************************************************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/01-jquery-core-ejemplos/seccion07-modificar-dimensiones-con-jquery/40-dimensiones-width-height/index.html  **********  -->
+<!--  *********************************************************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Seccion 7 - Modificar las Dimensiones con jQuery </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/jquery-icon.png">
+
+    <!--  **********  Librería de jQuery - CDN de Google  **********  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
+
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+            margin-top: 20px;
+            gap: 20px;
+            font-size: 16px;
+        }
+
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+
+        .input {
+            width: 200px;
+            height: 20px;
+        }
+
+        input {
+            width: 180px;
+            margin: 0 auto;
+            background-color: blueviolet;
+            color: white;
+            padding: 7px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #div1 {
+            height: 100px;
+            width: 300px;
+            padding: 10px;
+            margin: 10px;
+            border: 5px solid blue;
+            background-color: lightblue;
+        }
+    </style>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+        $(document).ready(function () {
+
+            console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+            $imgAfro = $("#afro");
+            
+            $width = $imgAfro.width();
+            $height = $imgAfro.height();
+            
+            console.log($width, $height);
+
+
+            $("#chica").click(function() {
+                $("#afro")
+                    .width(400)
+                    .height(251)
+            });
+
+            $("#mediana").click(function() {
+                $("#afro")
+                    .width(800)
+                    .height(502)
+            });
+
+            $("#grande").click(function() {
+                $("#afro")
+                    .width(1200)
+                    .height(754)
+            });
+            
+            $("#original").click(function() {
+                $("#afro")
+                    .width($width)
+                    .height($height)
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 7 - Modificar las Dimensiones por medio de width() y height(). </h1>
+        <hr>
+
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <input type="button" id="chica" value="Chica">
+        <input type="button" id="mediana" value="Mediana">
+        <input type="button" id="grande" value="Grande">
+        <input type="button" id="original" value="Original">
+        <br>
+        <img id="afro" src="imagenes/afrodita.jpg" />
+        <p></p>
+
+    </main>
+
+</body>
+
+</html>

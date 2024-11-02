@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Palabras 07</title>
+<style>
+body{
+	width:1000px;
+	margin:0 auto;	
+}
+h1{
+	text-align:center;
+}
+h2{
+	width:200px;
+	text-align:center;
+}
+.palabra{
+	width:200px;
+	text-align:center;
+}
+.area{
+	width:200px;
+	height:220px;
+	text-align:center;
+	background:#f96;
+}
+</style>
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script>
+var secciones_array = new Array({a:"Dioses", n:1},{a:"Diosas", n:2},{a:"Semidioses", n:3},{a:"Animales", n:4},{a:"Ciudades", n:5});
+var dioses_array = new Array({a:"Zeus", n:1},{a:"Poseidón", n:1},{a:"Ares", n:1},{a:"Ades", n:1},{a:"Hermes", n:1});
+var diosas_array = new Array({a:"Atenea", n:2},{a:"Afrodita", n:2},{a:"Caliope", n:2},{a:"Artemisa", n:2},{a:"Hera", n:2});
+var semidioses_array = new Array({a:"Perseo", n:3},{a:"Heracles", n:3},{a:"Aquiles", n:3},{a:"Ajax", n:3},{a:"Teseo", n:3});
+var animales_array = new Array({a:"Pegaso", n:4},{a:"Unicornio", n:4},{a:"Fénix", n:4},{a:"Hidra", n:4},{a:"Arpía", n:4});
+var ciudades_array = new Array({a:"Atenas", n:5},{a:"Troya", n:5},{a:"Argos", n:5},{a:"Esparta", n:5},{a:"Maratón", n:5});
+var todos_array = dioses_array.concat(diosas_array, semidioses_array, animales_array, ciudades_array);
+$(document).ready(inicio);
+function inicio(){
+	var numSecciones = secciones_array.length;
+	var sec = 0;
+	$("#reiniciar").hide();
+	$("#evaluar").show();
+	$("#evaluar").click(evaluar);
+	//
+	for(var i=0; i<numSecciones; i++){
+		sec = i + 1;
+		r = Math.floor(Math.random()*secciones_array.length);
+		$("#t"+sec).html("<h2>"+secciones_array[r].a+"</h2>");
+		$("#a"+sec).attr("data-sec", secciones_array[r].n);
+		secciones_array.splice(r,1);	
+	}
+	
+	//Desplegamos palabras
+	numPalabras = todos_array.length;
+	sec = 0;
+	for(i=0; i<numPalabras; i++){
+		sec++;
+		if(sec>numSecciones) sec = 1;
+		r = Math.floor(Math.random()*todos_array.length);
+		$("#p"+sec).append("<div class='palabra' data-sec='"+todos_array[r].n+"'>"+todos_array[r].a+"</div>");
+		todos_array.splice(r,1);	
+	}
+	
+	//Hacemos a las palabras arrastrables
+	$(".palabra").draggable({
+		revert:"invalid",
+		drag: function(){
+			d = $(this);	
+		}
+	});
+	
+	$(".area").droppable({
+		accept:".palabra",
+		tolerance: "pointer",
+		drop: function(){
+			t = d.html();
+			n = d.attr("data-sec");
+			a = $(this).attr("data-sec");
+			if(n==a){
+				$(this).append("<div class='palabra' data-res='1'>"+t+"</div><br>");	
+			} else {
+				$(this).append("<div class='palabra' data-res='0'>"+t+"</div><br>");
+			}
+			d.remove();
+		}	
+	});
+	
+}
+function evaluar(){
+	var buenas = 0;
+	var malas = 0;
+	$(".palabra").each(function(i){
+		r = $(this).attr("data-res");
+		if(r==1){
+			$(this).css("background","#6e9");
+			buenas++;
+		} else {
+			$(this).css("background","#930");
+			malas++;
+		} 
+		$(this).off();
+	});	
+	alert("Tuviste "+buenas+" palabras correctas y "+malas+" palabras incorrectas");
+	$("#reiniciar").show();
+	$("#evaluar").hide();
+	$("#reiniciar").click(reiniciar);
+}
+function reiniciar(){
+		location.reload(true);
+}
+</script>
+</head>
+
+<body>
+<h1>Arrastra la palabra a la sección correcta</h1>
+<table border="1">
+<tr>
+	<td><div id="p1"></div></td>
+	<td><div id="p2"></div></td>
+    <td><div id="p3"></div></td>
+    <td><div id="p4"></div></td>
+    <td><div id="p5"></div></td>
+</tr>
+<tr>
+	<td><div id="t1"></div></td>
+	<td><div id="t2"></div></td>
+    <td><div id="t3"></div></td>
+    <td><div id="t4"></div></td>
+    <td><div id="t5"></div></td>
+</tr>
+<tr>
+	<td><div id="a1" class="area"></div></td>
+	<td><div id="a2" class="area"></div></td>
+    <td><div id="a3" class="area"></div></td>
+    <td><div id="a4" class="area"></div></td>
+    <td><div id="a5" class="area"></div></td>
+</tr>
+</table>
+<button id="evaluar">Evaluar</button>
+<button id="reiniciar">Reiniciar</button>
+</body>
+</html>

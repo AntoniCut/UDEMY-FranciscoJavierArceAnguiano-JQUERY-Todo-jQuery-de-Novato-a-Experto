@@ -1,0 +1,108 @@
+/*  ********************************************************************************************  */
+/*  **********  /01-todo-jquery-de-novato-a-experto/02-jquery-ejercicios-ejemplos/  ************  */
+/*  **********  /seccion15-carrusel-3d/52-carrusel-3d/css/styles.css  **************************  */
+/*  ********************************************************************************************  */
+
+
+body {
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid green;
+}
+
+h1 {
+    font-size: 56px;
+    color: #FCF7CD;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #FFA500;
+    /* font-size: 100px; */
+    /* font-weight: bold; */
+    text-align: center;
+}
+
+.main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+
+/*  **********  */
+
+#contenedor {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    margin: 50px;
+    gap: 50px;
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+}
+
+#contenedorCarrusel,
+#contenedorTexto {
+    width: 760px;
+    height: 340px;
+    margin: 0px;
+    background-image: url(../fondos/fondo6.jpg);
+    border-radius: 20px;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+#contenedorTexto {
+    width: 725px;
+    padding: 30px;
+    height: auto;
+}
+
+
+#carrusel {
+    margin: 0px auto 0px auto;
+    width: 600px;
+    height: 300px;
+}
+
+#datos {
+    display: none;
+}
+
+img {
+    cursor: pointer;
+}
+
+#descripcion {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+#descripcion h2 {
+    font-family: Georgia;
+    font-size: 28px;
+    font-weight: normal;
+    margin: 20px 0px 5px 0px;
+    text-align: center;
+    color: #aaa;
+}
+
+#descripcion p {
+    font-family: Arial;
+    font-size: 14px;
+    color: #ffffff;
+    margin: 0px 0px 0px 3px;
+    text-align: justify;
+}

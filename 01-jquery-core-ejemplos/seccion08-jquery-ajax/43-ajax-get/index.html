@@ -1,0 +1,116 @@
+<!--  ********************************************************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/01-jquery-core-ejemplos/seccion08-jquery-ajax/43-ajax-get/index.html  **********  -->
+<!--  ********************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Seccion 8 - jQuery y AJAX </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/jquery-icon.png">
+
+    <!--  **********  Librería de jQuery - CDN de Google  **********  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
+
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* align-items: center; */
+            text-align: left;
+            margin-top: 20px;
+            gap: 50px;
+            font-size: 16px;
+        }
+
+        .load {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .input {
+            width: 200px;
+            height: 20px;
+        }
+
+        button {
+            width: 180px;
+            margin: 0 auto;
+            background-color: blueviolet;
+            color: white;
+            padding: 7px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+        $(document).ready(function () {
+
+            console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+            $("button").click(function () {
+
+                $.get("poema.php", function (data, estatus) {
+
+                    $(".poema").html(data);
+                });
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 8 - El Comando GET en jQuery. </h1>
+        <hr>
+
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <div class="load">
+            <button> Lee archivo </button>
+            <div class="poema"> </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

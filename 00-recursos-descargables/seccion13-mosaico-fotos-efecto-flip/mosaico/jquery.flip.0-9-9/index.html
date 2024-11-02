@@ -1,0 +1,60 @@
+
+<html> 
+	<head> 
+		<title>Flip! jQuery plugin v0.9.9 (Ejemplo)</title> 
+		<link rel="stylesheet" type="text/css" href="css/reset_html5.css"/> 
+		<link rel="stylesheet" type="text/css" href="css/flip_099.css"/> 
+		<!--[if IE]>
+			<script src="js/html5.js"></script>
+		<![endif]-->		
+		<script src="js/jsapi"></script> 
+		<script type="text/javascript"> 
+		  // Load jQuery
+		  google.load("jquery", "1");	
+		</script> 
+		<script src="js/jquery-ui-1.7.2.custom.min.js"></script> 
+		<script src="js/jquery.flip.min.js"></script> 
+		<script type="text/javascript"> 
+			$(function(){
+				
+				$("#flipPad a:not(.revert)").bind("click",function(){
+					var $this = $(this);
+					$("#flipbox").flip({
+						direction: $this.attr("rel"),
+						color: $this.attr("rev"),
+						content: $this.attr("title"),//(new Date()).getTime(),
+						onBefore: function(){$(".revert").show()}
+					})
+					return false;
+				});
+				
+				$(".revert").bind("click",function(){
+					$("#flipbox").revertFlip();
+					return false;
+				});
+	
+				
+			});
+		</script>					
+	</head> 
+	<body> 
+	
+	
+					
+				<center>
+					
+					<div id="flipbox">Bienvenidos a Flip Plugin Jquery</div> 
+					<div id="flipPad"> 
+						<a href="#" class="left" rel="rl" rev="#39AB3E" title="Conenido con etiquetas <b>HTML</b>">left</a> 
+						<a href="#" class="top" rel="bt" rev="#B0EB17" title="Efecto TOP">top</a> 
+						<a href="#" class="bottom" rel="tb" rev="#82BD2E" title="Efectos Bottom">bottom</a> 
+						<a href="#" class="right" rel="lr" rev="#C8D97E" title="Efectos Right">right</a> 
+						<a href="#" class="revert">Regresar</a> 
+					</div>					
+ 
+		</center>
+		
+			
+	</body> 
+</html> 
+</html> 

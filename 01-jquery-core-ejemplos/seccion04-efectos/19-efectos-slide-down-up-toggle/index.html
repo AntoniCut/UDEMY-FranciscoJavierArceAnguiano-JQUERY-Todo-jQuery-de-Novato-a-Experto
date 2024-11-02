@@ -1,0 +1,132 @@
+<!--  ************************************************************************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/01-jquery-core-ejemplos/seccion04-efectos/19-efectos-slide-down-up-toggle/index.html  **********  -->
+<!--  ************************************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> jQuery Efectos SlideDown, SlideUp y SlideToggle - Todo jQuery de Novato a Experto - Udemy - Francisco
+        Javier Arce Anguiano
+    </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/icon-jquery.png">
+
+    <!-- **********  Librería de jQuery - CDN de Google  **********   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
+
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+            margin-top: 20px;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        #encabezado {
+            width: 800px;
+            text-align: center;
+            background-color: #e5eecc;
+            border: solid 1px #c3c3c3;
+            cursor: pointer;
+        }
+
+        #afrodita {
+            width: 800px;
+            height: 502px;
+            background-image: url(imagenes/afrodita2.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            display: none;
+        }
+
+        .botones {
+            display: flex;
+            gap: 20px;
+        }
+
+        input {
+            width: 180px;
+            margin: 0 auto;
+            background-color: blueviolet;
+            color: white;
+            padding: 7px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <!-- **********  Código jQuery  --  Script Interno  **********   -->
+    <script>
+
+        //  -----  Método READY  -----
+        $(document).ready(function () {
+
+            console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+            console.log("\n");
+
+            //  -----  Referencia al HTML  -----
+            const $encabezado = $("#encabezado");
+            const $afrodita = $("#afrodita");
+
+            $encabezado.click(function () {
+                $afrodita.slideDown("slow");
+            });
+
+            $encabezado.dblclick(function () {
+                $afrodita.slideUp("slow");
+            });
+
+            $("#toggle").click(function() {
+                $afrodita.slideToggle(3000);
+            });
+
+        });
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 04 - Efectos SlideDown, SlideUp y SlideToggle. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <input type="button" id="toggle" value="slide toggle">
+        <div id="encabezado">La Venus del espejo, por Velazquez (1599-1660)</div>
+        <div id="afrodita"></div>
+
+    </main>
+
+</body>
+
+</html>

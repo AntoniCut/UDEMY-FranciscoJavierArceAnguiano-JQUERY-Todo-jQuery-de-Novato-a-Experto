@@ -1,0 +1,155 @@
+<!--  ********************************************************************************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/01-jquery-core-ejemplos/seccion07-modificar-dimensiones-con-jquery/39-dimensiones/index.html  **********  -->
+<!--  ********************************************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Seccion 7 - Modificar las Dimensiones con jQuery </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/jquery-icon.png">
+
+    <!--  **********  Librería de jQuery - CDN de Google  **********  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
+
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+            margin-top: 20px;
+            gap: 20px;
+            font-size: 16px;
+        }
+
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+
+        .input {
+            width: 200px;
+            height: 20px;
+        }
+
+        button {
+            width: 180px;
+            margin: 0 auto;
+            background-color: blueviolet;
+            color: white;
+            padding: 7px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #div1 {
+            height: 100px;
+            width: 300px;
+            padding: 10px;
+            margin: 10px;
+            border: 5px solid blue;
+            background-color: lightblue;
+        }
+    </style>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+        $(document).ready(function () {
+
+            console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+            $("#dim").click(function () {
+                var txt = "";
+                txt += "Ancho: " + $("#div1").width() + "<br>";
+                txt += "Alto : " + $("#div1").height();
+                $("#div1").html(txt);
+            });
+
+            $("#int").click(function () {
+                var txt = "";
+                txt += "Ancho + padding: " + $("#div1").innerWidth() + "<br>";
+                txt += "Alto + padding : " + $("#div1").innerHeight();
+                $("#div1").html(txt);
+            });
+
+            $("#ext").click(function () {
+                var txt = "";
+                txt += "Ancho + padding + borde: " + $("#div1").outerWidth() + "<br>";
+                txt += "Alto + padding + borde : " + $("#div1").outerHeight();
+                $("#div1").html(txt);
+            });
+
+            $("#tot").click(function () {
+                var txt = "";
+                txt += "Ancho + padding + borde + márgen: " + $("#div1").outerWidth(true) + "<br>";
+                txt += "Alto + padding + borde + márgen : " + $("#div1").outerHeight(true);
+                $("#div1").html(txt);
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 7 - Metodos para Manejar las Dimensiones del Modelo de Caja. </h1>
+        <hr>
+
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <div id="div1"> </div>
+
+        <div class="botones">
+            <button id="dim">Dimensiones</button>
+            <button id="int">Dimensiones internas</button>
+            <button id="ext">Dimensiones externas</button>
+            <button id="tot">Dimensiones total</button>
+        </div>
+
+        <code>
+            height: 100px; <br>
+            width: 300px; <br><br>
+            padding: 10px; <br>
+            margin: 10px; <br><br>
+            border: 5px solid blue; <br>
+            background-color: lightblue;
+        </code>
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Zeus</title>
+<script type="text/javascript" src="includes/jquery-1.7.1.min.js"></script>
+<style>
+header, section, nav, footer, article{
+	display:block;
+	margin:0;
+	padding:0;
+}
+html, body, h1, h2, h3, h4, h5, h6, p{
+	margin:0;
+	padding:0;
+}
+html{
+	background:#fff;
+}
+body{
+	width:960px;
+	margin:0 auto;
+	background:#FF6;
+	font-family:Verdana, Geneva, sans-serif;
+}
+header{
+	height:90px;
+	background:#213F52;
+}
+article, aside{
+	background:#FCF7CD;
+}
+footer{
+	height:60px;
+	background:#213F52;
+	clear:both;
+}
+nav{
+	font-size:.8em;
+	color:#f2e3b6;
+ 	text-align: center;
+	padding-top:.5em;
+}
+/* Fuentes */
+h1{
+	font-size:2.2em;
+	color:#FCF7CD;
+ 	text-align: center;
+}
+h2{
+	font-size:1.8em;
+	color:#FCF7CD;
+ 	text-align: center;
+	padding-top:.2em;
+}
+h3{
+	font-size:.8em;
+	color:#f2e3b6;
+ 	text-align: center;
+	padding-top:.2em;
+}
+p{
+	font-size:1em;
+	padding-top:1em;
+	padding-left:1em;
+	padding-right:1em;
+}
+a{
+	font-size:0.8em;
+	color:#f2e3b6;
+	text-align: center;
+	padding-top:.6em;
+	text-decoration: none;
+	letter-spacing: 0.5em;
+}
+/*Clases*/
+#izq{
+	float:left;
+	width:600px;
+	height:460px;
+}
+#der{
+	float:right;
+	width:360px;
+	height:460px;
+}
+ul, li{
+	display:inline;
+}
+img{
+	float:left;
+	padding-right:1em;
+}
+.imgIzq{
+	clear:both;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:0;
+	margin-bottom:1em;
+}
+article a{
+	font-size:1em;
+	color:#CC6600;
+	text-align:left;
+	padding-top:1em;
+	text-decoration: none;
+	letter-spacing:normal;
+}
+.foto{
+	text-decoration:none;
+}
+#cuadro{
+	width:310px;
+	height:auto;
+	border-radius:5px;
+	background-color:gray;
+	text-align:justify;	
+	padding:15px;
+	display:none;
+	position: absolute;
+	color:white;
+	font-size:1em;
+}
+img{
+	float:left;
+	margin-right:10px;
+}
+</style>
+<script>
+$(document).ready(function() {
+	$('.foto').mouseover(function(e) {
+		var nombre = $(this).attr("data-nombre");
+		//alert(nombre);
+		if(nombre=="zeus"){
+			$('#cuadro').html("<img src='imagenes/zeus.jpg' height='95px'><b>Zeus</b> es el «padre de los dioses y los hombres», que gobernaba a los dioses del monte Olimpo como un padre a una familia.");
+		}
+		if(nombre=="rea"){
+			$('#cuadro').html("<img src='imagenes/rea.png' height='95px'>La titánide <b>Rea</b> era hija de Urano y Gea, hermana y esposa de Crono, y madre con éste de Deméter, Hades, Hera, Hestia, Poseidón y Zeus.");
+		}
+		if(nombre=="crono"){
+			$('#cuadro').html("<img src='imagenes/crono.jpg' height='95px'><b>Crono</b> o <b>Cronos</b> era el principal (y en algunos mitos el más joven) de la primera generación de Titanes, descendientes divinos de Gea (la tierra) y Urano.");
+		}
+		if(nombre=="hestia"){
+			$('#cuadro').html("<img src='imagenes/hestia.jpg' height='95px'><b>Hestia</b> es la diosa de la cocina, la arquitectura, el hogar, o, más apropiadamente, del fuego que da calor y vida a los hogares.");
+		}
+		if(nombre=="demeter"){
+			$('#cuadro').html("<img src='imagenes/demeter.jpg' height='95px'><b>Deméter</b>  es la diosa griega de la agricultura, nutricia pura de la tierra verde y joven, ciclo vivificador de la vida y la muerte, y protectora del matrimonio y la ley sagrada.");
+		}
+		if(nombre=="hera"){
+			$('#cuadro').html("<img src='imagenes/hera.jpg' height='95px'><b>Hera</b> legítima esposa de Zeus y una de las tres hermanas de Zeus en el panteón olímpico de la mitología griega clásica. Además, ocupaba el cargo de Reina de los Dioses.");
+		}
+		if(nombre=="hades"){
+			$('#cuadro').html("<img src='imagenes/hades.jpg' height='95px'><b>Hades</b> alude tanto al antiguo inframundo griego como al dios de éste. La palabra hacía referencia en Homero solo al dios.");
+		}
+		if(nombre=="poseidon"){
+			$('#cuadro').html("<img src='imagenes/poseidon.jpg' height='95px'><b>Poseidón</b> es el dios del mar, las tormentas y, como «Agitador de la Tierra», de los terremotos en la mitología griega.");
+		}
+		if(nombre=="gea"){
+			$('#cuadro').html("<img src='imagenes/gea.jpg' height='95px'><b>Gea</b> literalmente: «Tierra» es la diosa primigenia que personifica la Tierra en la mitología griega. Es una deidad primordial, considerada la Tierra Madre.");
+		}
+		if(nombre=="urano"){
+			$('#cuadro').html("<img src='imagenes/urano.jpg' height='95px'><b>Urano</b> es un dios primordial personificador del cielo. Urano era hijo y esposo de Gea, la Madre Tierra, que, según cuenta Hesíodo en la Teogonía.");
+		}
+		$('#cuadro').css({'display':'block','opacity':0}).animate({opacity:1},200);
+	});
+	$('.foto').mouseout(function(e) {
+		$('#cuadro').animate({opacity:0},200);
+		$('#cuadro').css({'display':'none'});
+	});
+	$('.foto').mousemove(function(e) {
+		var x = e.pageX - 100;
+		var y = e.pageY + 20;
+		$('#cuadro').css('left', x + 'px');
+		$('#cuadro').css('top', y + 'px');
+	})
+});
+</script>
+</head>
+
+<body>
+<header><h1>Mitología griega</h1>
+  <h2>ZEUS</h2></header>
+<section>
+<article>
+<p><img src="imagenes/zeus.jpg"><a href="#" class="foto" data-nombre="crono">Crono</a> fue padre de varios hijos con <a href="#" class="foto" data-nombre="rea">Rea</a>: <a href="#" class="foto" data-nombre="hestia">Hestia</a>, <a href="#" class="foto" data-nombre="demeter">Deméter</a>, <a href="#" class="foto" data-nombre="hera">Hera</a>, <a href="#" class="foto" data-nombre="hades">Hades</a> y <a href="#" class="foto" data-nombre="poseidon">Poseidón</a>, pero se los tragó tan pronto como nacieron, ya que Gea y Urano le habían revelado que estaba destinado a ser derrocado por su propio hijo, tal como él había destronado a su padre.</p><p>Pero cuando <a href="#" class="foto" data-nombre="zeus">Zeus</a> estaba a punto de nacer, <a href="#" class="foto" data-nombre="rea">Rea</a> pidió consejo a <a href="#" class="foto" data-nombre="gea">Gea</a> para urdir un plan que lo salvara, y así <a href="#" class="foto" data-nombre="crono">Crono</a> tuviera el justo castigo a sus actos contra <a href="#" class="foto" data-nombre="urano">Urano</a> y contra sus propios hijos. <a href="#" class="foto" data-nombre="rea">Rea</a> se escondió en la isla de Creta, donde dio a luz a <a href="#" class="foto" data-nombre="zeus">Zeus</a>.</p>
+<p>Luego engañó a <a href="#" class="foto" data-nombre="crono">Crono</a>, dándole una piedra envuelta en pañales que éste tragó en seguida sin desconfiar.</p>
+<p>&nbsp;</p>
+<p>Fuente:wikipedia</p>
+<p>&nbsp;</p>
+</article>
+<div id="cuadro">
+	<img src="imagenes/rea.png">
+	En la mitología griega, la titánide Rea era hija de Urano y Gea, hermana y esposa de Crono, y madre con éste de Deméter, Hades, Hera, Hestia, Poseidón y Zeus.
+	<div class="clear-all"></div>
+</div>
+</section>
+<footer>
+<h3>Todos los derechos reservados Dioses Griegos A.C.<h3>
+<nav>
+<ul>
+<li><a href="afrodita.html">Afrodita</a>&nbsp;|</li>
+<li><a href="zeus.html">Zeus</a>&nbsp;|</li>
+<li><a href="perseo.html">Perseo</a>&nbsp;|</li>
+<li><a href="ares.html">Ares</a>&nbsp;|</li>
+<li><a href="poseidon.html">Poseidón</a>&nbsp;|</li>
+<li><a href="hercules.html">Hércules</a></li>
+</ul>
+</nav>
+</footer>
+</body>
+</html>

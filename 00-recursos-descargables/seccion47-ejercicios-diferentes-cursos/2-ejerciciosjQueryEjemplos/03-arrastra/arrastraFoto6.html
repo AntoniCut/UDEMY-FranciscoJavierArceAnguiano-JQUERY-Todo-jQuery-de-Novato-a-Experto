@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Arrastra foto</title>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
+<script type="text/javascript" src="js/prefixfree.min.js" ></script>
+<script type="text/javascript" src="js/jquery-ui.js" ></script>
+<script>
+$(document).ready(inicio);
+/********* Variables *****/
+var cuadros_array = new Array();
+var fotos_array = new Array();
+var $item;
+//
+cuadros_array.push({img:"Caballo de Troya", num:1});
+cuadros_array.push({img:"Sátiro", num:2});
+cuadros_array.push({img:"Basilisco", num:3});
+cuadros_array.push({img:"Centauro", num:4});
+cuadros_array.push({img:"Ave Fénix", num:5});
+cuadros_array.push({img:"Pegaso", num:6});
+//
+fotos_array.push({img:"caballo.jpg", num:1});
+fotos_array.push({img:"satiro.jpg", num:2});
+fotos_array.push({img:"basilisco.jpg", num:3});
+fotos_array.push({img:"centauro.jpg", num:4});
+fotos_array.push({img:"fenix.jpg", num:5});
+fotos_array.push({img:"pegaso.jpg", num:6});
+//
+function inicio(){
+	//Oculta y muestra botones
+	$("#jugar").hide();
+	$("#verifica").show();
+	//
+	$(".foto").draggable({cursor:"move"});
+	//
+	//LLenamos las fotos
+	//
+	$(".foto").each(function(i) {
+        l = fotos_array.length;
+		r = Math.floor(Math.random()*l);
+		$(this).html("<img src='animales/"+fotos_array[r].img+"' width='120px' height='120px'/>");
+		$(this).attr("data-num",fotos_array[r].num);
+		fotos_array.splice(r,1);
+    });
+	//
+	//marcos
+	//
+	$(".marco").droppable({
+		hoverClass: "ui-state-active",
+		drop: function(event, ui){
+			$(this).addClass("ui-state-highlight");	
+		}
+	});
+	//
+	$(".marco").each(function(i){
+		l = cuadros_array.length;
+		r = Math.floor(Math.random()*l);
+		$(this).html("<p>"+cuadros_array[r].img+"</p>");
+		$(this).attr("data-num",cuadros_array[r].num);
+		cuadros_array.splice(r,1);	
+	});
+	//
+	$("#verifica").on("click",onVerifica);
+	$("#jugar").on("click",onJugar);
+	$(".foto").on("mousedown",onMouseDown);
+	$(".foto").on("mouseup",onMouseUp);
+	$(".marco").on("drop",onDrop);
+	
+}
+function onVerifica(){
+	//Oculta y muestra botones
+	$("#jugar").show();
+	$("#verifica").hide();
+	//
+	$(".marco").each(function(i){
+		var r = $(this).attr("data-num");
+		var f = $(this).attr("data-cuadro");
+		if(r==f){
+			$("#res"+i).html("<p class='verde'>Correcto</p>");
+		} else {
+			$("#res"+i).html("<p class='rojo'>Incorrecto</p>");
+		}
+	});
+	
+}
+function onJugar(){
+	location.reload(true);
+}
+function onMouseDown(){
+	$item = $(this);
+	$item.css("z-index","1");
+}
+function onMouseUp(){
+	
+	
+}
+function onDrop(){
+	$(this).attr("data-cuadro", $item.attr("data-num"));
+	//alert($(this).attr("data-num")+", "+$(this).attr("data-cuadro"));
+	
+}
+</script>
+<style>
+#juego{
+	width:800px;
+	margin:0 auto;
+	text-align:center;
+}
+.foto{
+	width:120px;
+	height:120px;
+	float:left;
+	margin:5px;
+}
+.marco{
+	width:120px;
+	height:105px;
+	background-color: #ccc;
+	float:left;
+	margin:5px;
+	text-align:center;
+	padding-top:15px;
+}
+.res{
+	width:120px;
+	float:left;
+	margin:5px;
+}
+.rojo{
+	color:red;
+}
+.verde{
+	color:green;
+}
+</style>
+</head>
+
+<body>
+<div id="juego">
+<table width="800px">
+	<tr>
+    	<td>
+        	<div class="foto" data-num=""></div>
+            <div class="foto" data-num=""></div>
+            <div class="foto" data-num=""></div>
+            <div class="foto" data-num=""></div>
+            <div class="foto" data-num=""></div>
+            <div class="foto" data-num=""></div>
+        </td>
+    </tr>
+	<tr>
+    <td>
+        <div class="marco" data-num="" data-cuadro=""></div>
+        <div class="marco" data-num="" data-cuadro=""></div>
+        <div class="marco" data-num="" data-cuadro=""></div>
+        <div class="marco" data-num="" data-cuadro=""></div>
+        <div class="marco" data-num="" data-cuadro=""></div>
+        <div class="marco" data-num="" data-cuadro=""></div>
+    </td>
+    </tr>
+	<tr>
+    <td>
+        <div class="res" id="res0"></div>
+        <div class="res" id="res1"></div>
+        <div class="res" id="res2"></div>
+        <div class="res" id="res3"></div>
+        <div class="res" id="res4"></div>
+        <div class="res" id="res5"></div>
+    </td>
+    </tr>
+</table>
+<input value="Verifica" type="button" id="verifica" name="verifica">
+<input value="Volver a jugar" type="button" id="jugar" name="jugar">
+</div>
+</body>
+</html>

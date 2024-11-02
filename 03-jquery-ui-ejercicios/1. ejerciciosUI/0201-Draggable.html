@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>JQ051-Arrastrar</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<style>
+#arrastrable{
+	width:200px;
+	height:250px;
+	padding:5px;
+	position:absolute;
+}
+</style>
+<script>
+$(function(){
+	$("#arrastrable").draggable();
+});
+</script>
+</head>
+<body>
+<div id="arrastrable" class="ui-widget-content">
+	<img src="imagenes/atenea.jpg" width="190px">
+    <p>Atenea, diosa de la sabiduria</p>
+</div>
+
+</body>
+</html>

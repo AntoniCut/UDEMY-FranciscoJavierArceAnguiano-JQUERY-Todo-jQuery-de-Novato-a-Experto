@@ -1,0 +1,140 @@
+<!--  **********************************************************************************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/01-jquery-core-ejemplos/seccion06-dom-añadir-eliminar-elementos/36-dom-remove-empty/index.html  **********  -->
+<!--  **********************************************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Seccion 6 - DOM, Añadir y Remover Elementos</title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/jquery-icon.png">
+
+    <!--  **********  Librería de jQuery - CDN de Google  **********  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
+
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+            margin-top: 20px;
+            gap: 20px;
+            font-size: 16px;
+        }
+
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+
+        .input {
+            width: 200px;
+            height: 20px;
+        }
+
+        input {
+            width: 180px;
+            margin: 0 auto;
+            background-color: blueviolet;
+            color: white;
+            padding: 7px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .autor {
+            text-align: right;
+            font-style: italic;
+        }
+
+        .caja {
+            width: 400px;
+            background-color: #ff9;
+            border-color: black;
+            padding: 20px;
+            height: 200px;
+        }
+    </style>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+        $(document).ready(function () {
+
+            console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+           
+            $("#borraPoema").click(function () {
+                $(".caja").remove();
+                $(this).hide();
+            });
+
+
+            $("#borraAutor").click(function () {
+                $("p").remove('.autor');
+                $(this).hide();
+            });
+
+
+            $("#vaciaPoema").click(function () {
+                $(".caja").empty();
+                $(this).hide();
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <!--  Header o Cabecera  -->
+    <header class="header">
+        <h1>Seccion 6 - Eliminar Elementos con remove() y empty()</h1>
+        <hr>
+    </header>
+
+    <!--  Contenido  -->
+    <main class="main">
+
+        <div class="caja">
+            <p>En el agua clara</p>
+            <p>Que brota en la fuente</p>
+            <p>Un lindo pescado</p>
+            <p>Sale de repente</p>
+            <p class="autor">Autor: anónimo</p>
+        </div>
+        <input type="button" value="Borra poema" id="borraPoema">
+        <input type="button" value="Borra autor" id="borraAutor">
+        <input type="button" value="Vacía poema" id="vaciaPoema">
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    body{
+        width:450px;
+        margin:100px auto;
+        position:relative;
+    }
+    article{
+        
+    }
+    footer{
+		position:absolute;
+		left:0px;
+		top:262px;
+        background-color:rgba(0,0,0,0.5);
+        width:450px;
+        height:60px;
+        color:white;
+    }
+    #foto1, #foto2, #foto3, #foto4, #foto5, #foto6{
+        cursor:pointer;
+        float:left;
+        margin:5px;
+    }
+    #izq{
+		position:absolute;
+		left:0px;
+		top:150px;
+        cursor:pointer;
+        float:left;
+    }
+    #der{
+		position:absolute;
+		left:432px;
+		top:150px;
+        cursor:pointer;
+        float:left;
+    }
+</style>
+<meta charset="utf-8" />
+<title>JQ078-Galeria CSS</title>
+<!--  **********  Librería de jQuery - CDN de Google  **********  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
+<script>
+var t;
+var f=1;
+var numFotos = 6;
+var textos = new Array();
+textos.push("");
+textos.push("1. Partenón");
+textos.push("2. Partenón de día");
+textos.push("3. Villa Atenience");
+textos.push("4. Partenón de noche");
+textos.push("5. Atardecer en el mediterráneo");
+textos.push("6. Constelación de Andrómeda");
+$(document).ready(inicio);
+function inicio(){
+	$("#texto").text(textos[f]);
+	$("#der, #izq").fadeTo(1000,0.2);
+	$("#foto1").html('<img src="fondos/bolaNaranja.fw.png">')
+	t = setTimeout(cargaFoto,5000);
+	$("#foto1, #foto2, #foto3, #foto4, #foto5, #foto6").click(function(){
+		//detenemos el contador de tiempo
+		clearTimeout(t);
+		f = $(this).attr("alt");
+		f--;
+		cargaFoto();
+	});
+	$("#der").click(function(){
+		clearTimeout(t);
+		cargaFoto();
+	});
+	$("#izq").click(function(){
+		clearTimeout(t);
+		f-=2;
+		if(f<0) f = numFotos -1;
+		cargaFoto();
+	});
+	$("#der, #izq").mouseenter(function(){
+		$(this).fadeTo(500,1);	
+	});
+	$("#der, #izq").mouseleave(function(){
+		$(this).fadeTo(500,0.2);	
+	});
+}
+function cargaFoto(){
+	f++;
+	if(f>numFotos) f = 1;
+	$("#foto").fadeOut(1000,cambiaFoto);
+}
+function cambiaFoto(){
+	for(i=1; i<=numFotos; i++) {
+		$("#foto"+i).html('<img src="fondos/bolaGris.fw.png">');
+	}
+	$("#foto").attr("src", "fondos/fondo"+f+".jpg");
+	$("#texto").text(textos[f]);
+	$("#foto").fadeIn(1000);
+	$("#foto"+f).html('<img src="fondos/bolaNaranja.fw.png">');
+	t = setTimeout(cargaFoto,5000);
+}
+</script>
+</head>
+<body>
+    <section>
+        <article>
+            <img id="foto" src="fondos/fondo1.jpg" width="450px" height="320px">
+        </article>
+         <div id="izq"><img src="fondos/izq.fw.png" width="16px"></div>
+         <div id="der"><img src="fondos/der.fw.png" width="16px"></div>
+      <footer>
+            <div id="texto">Texto de la imagen</div>
+            <div id="foto1" alt="1"><img src="fondos/bolaGris.fw.png"></div>
+            <div id="foto2" alt="2"><img src="fondos/bolaGris.fw.png"></div>
+            <div id="foto3" alt="3"><img src="fondos/bolaGris.fw.png"></div>
+            <div id="foto4" alt="4"><img src="fondos/bolaGris.fw.png"></div>
+            <div id="foto5" alt="5"><img src="fondos/bolaGris.fw.png"></div>
+            <div id="foto6" alt="6"><img src="fondos/bolaGris.fw.png"></div>
+            
+        </footer>
+    </section>
+</body>
+</html>

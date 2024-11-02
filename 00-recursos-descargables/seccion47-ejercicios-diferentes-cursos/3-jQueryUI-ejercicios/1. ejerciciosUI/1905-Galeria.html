@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    body{
+        width:450px;
+        margin:100px auto;
+        position:relative;
+    }
+    article{
+        
+    }
+    footer{
+        background-color:rgba(0,0,0,0.5);
+        width:450px;
+        height:60px;
+        color:white;
+    }
+    #foto1, #foto2, #foto3, #foto4, #foto5, #foto6{
+        cursor:pointer;
+        float:left;
+        margin:5px;
+    }
+    #izq{
+        cursor:pointer;
+        float:left;
+    }
+    #der{
+        cursor:pointer;
+        float:left;
+    }
+</style>
+<meta charset="utf-8" />
+<title>JQ077-Galeria CSS</title>
+<script src="js/jquery.js"></script>
+<script>
+var t;
+var f=1;
+var numFotos = 6;
+$(document).ready(inicio);
+function inicio(){
+	$("#foto1").html('<img src="fondos/bolaNaranja.fw.png">')
+	t = setTimeout(cargaFoto,5000);
+	$("#foto1, #foto2, #foto3, #foto4, #foto5, #foto6").click(function(){
+		//detenemos el contador de tiempo
+		clearTimeout(t);
+		f = $(this).attr("alt");
+		f--;
+		cargaFoto();
+	});
+	$("#der").click(function(){
+		clearTimeout(t);
+		cargaFoto();
+	});
+	$("#izq").click(function(){
+		clearTimeout(t);
+		f-=2;
+		if(f<0) f = numFotos -1;
+		cargaFoto();
+	});
+}
+function cargaFoto(){
+	f++;
+	if(f>numFotos) f = 1;
+	$("#foto").fadeOut(1000,cambiaFoto);
+}
+function cambiaFoto(){
+	for(i=1; i<=numFotos; i++) {
+		$("#foto"+i).html('<img src="fondos/bolaGris.fw.png">');
+	}
+	$("#foto").attr("src", "fondos/fondo"+f+".jpg");
+	$("#foto").fadeIn(1000);
+	$("#foto"+f).html('<img src="fondos/bolaNaranja.fw.png">');
+	t = setTimeout(cargaFoto,5000);
+}
+</script>
+</head>
+<body>
+    <section>
+        <article>
+            <img id="foto" src="fondos/fondo1.jpg" width="450px" height="320px">
+        </article>
+      <footer>
+            <div id="texto">Texto de la imagen</div>
+            <div id="foto1" alt="1"><img src="fondos/bolaGris.fw.png"></div>
+            <div id="foto2" alt="2"><img src="fondos/bolaGris.fw.png"></div>
+            <div id="foto3" alt="3"><img src="fondos/bolaGris.fw.png"></div>
+            <div id="foto4" alt="4"><img src="fondos/bolaGris.fw.png"></div>
+            <div id="foto5" alt="5"><img src="fondos/bolaGris.fw.png"></div>
+            <div id="foto6" alt="6"><img src="fondos/bolaGris.fw.png"></div>
+            
+        </footer>
+         <div id="izq"><img src="fondos/izq.fw.png" width="16px"></div>
+         <div id="der"><img src="fondos/der.fw.png" width="16px"></div>
+    </section>
+</body>
+</html>

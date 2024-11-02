@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery | AfterBefore</title>
+<script src="js/jquery.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#respuesta").click(function(){
+			$("#pregunta").after("<p id='res'>Sandro Botticelli</p>");
+			$("#respuesta").before("<input type='button' value='Mostrar Pintura' id='pintura'/>");
+			$("#respuesta").attr("disabled","disabled");
+			$("#pintura").click(function(){
+				$("#res").after("<img src='imagenes/afrodita.jpg'>");
+				$("#pintura").attr("disabled","disabled");
+			});
+		});
+	});
+
+</script>
+</head>
+
+<body>
+<input type="button" value="Respuesta" id="respuesta"/>
+<p id="pregunta">¿Quién pintó el Nacimiento de Venus en 1484?</p>
+</body>
+</html>

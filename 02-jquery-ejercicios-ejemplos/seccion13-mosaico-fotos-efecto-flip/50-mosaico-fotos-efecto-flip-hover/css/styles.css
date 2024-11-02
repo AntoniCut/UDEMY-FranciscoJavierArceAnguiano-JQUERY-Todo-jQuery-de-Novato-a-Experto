@@ -1,0 +1,63 @@
+/*  ********************************************************************************************************  */
+/*  **********  /01-todo-jquery-de-novato-a-experto/02-jquery-ejercicios-ejemplos/  ************************  */
+/*  **********  /seccion13-mosaico-fotos-efecto-flip/50-mosaico-fotos-efecto-flip/css/styles.css  **********  */
+/*  ********************************************************************************************************  */
+
+
+body {
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid green;
+}
+
+h1 {
+    font-size: 56px;
+    color: #FCF7CD;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #FFA500;
+    text-align: center;
+}
+
+.main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+
+/*  **********  */
+
+#banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding: 50px;
+    gap: 50px;
+    background-color: #AEAEAE;
+}
+
+.fotos-fila {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.foto {
+    border: 1px solid #AEAEAE;
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+}
+

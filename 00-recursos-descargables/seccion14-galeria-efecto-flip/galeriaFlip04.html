@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<style>
+body{
+	margin:0;
+	padding:0;	
+}
+#foto{
+	width:600px;
+	margin:0 auto;	
+	cursor:pointer;
+}
+#botonera{
+	width:325px;
+	margin:0 auto;	
+}
+.boton{
+	float:left;
+	margin:0 4px;
+	cursor:pointer;
+}
+</style>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="js/jquery.flip.min.js"></script> 
+<script>
+var fondo = 1;
+var numFondos = 6;
+var efecto_array = new Array("lr", "rl", "tb", "bt");
+$(document).ready(inicio);
+function inicio(){
+	$("#foto").click(avanza);
+	$("#adelante").click(avanza);
+	$("#atras").click(atras);
+	$("#inicio").click(inicia);
+	$("#fin").click(ultimo);
+	$("#play").click(ciclo);
+	$("#stop").click(verificaCiclo);
+	$("#stop").hide();	
+}
+function avanza(){
+	fondo++;
+	if(fondo>numFondos) fondo = 1;
+	voltea();
+}
+function atras(){
+	fondo--;
+	if(fondo==0) fondo = numFondos;
+	voltea();
+}
+function inicia(){
+	fondo = 1;
+	voltea();
+}
+function ultimo(){
+	fondo = numFondos;
+	voltea();
+}
+function ciclo(){
+}
+function verificaCiclo(){}
+//
+function voltea(){
+	var archivo = "fondo"+fondo+".jpg";
+	var efecto = Math.floor(Math.random()*efecto_array.length);
+	$("#foto").flip({
+		direction:efecto_array[efecto],
+		color:"#ffffff",
+		onEnd:function(){
+			$("#foto").html("<img src='fondos/"+archivo+"' width='600px' height='400px'/>");	
+		}
+	});	
+}
+</script>
+<meta charset="UTF-8">
+<title>Galeria Flip</title>
+</head>
+
+<body>
+<div id="foto"><img src="fondos/fondo1.jpg" width="600px" height='400px'/></div>
+<div id="botonera">
+<div class="boton" id="inicio"><img src="fondos/botones/inicio.png" width="45px"></div>
+<div class="boton" id="atras"><img src="fondos/botones/atras.png" width="45px"></div>
+<div class="boton" id="play"><img src="fondos/botones/play.png" width="45px"></div>
+<div class="boton" id="stop"><img src="fondos/botones/stop.png" width="45px"></div>
+<div class="boton" id="adelante"><img src="fondos/botones/adelante.png" width="45px"></div>
+<div class="boton" id="fin"><img src="fondos/botones/fin.png" width="45px"></div>
+
+</div>
+</body>
+</html>

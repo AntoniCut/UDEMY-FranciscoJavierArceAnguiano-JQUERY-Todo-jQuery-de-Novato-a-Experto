@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Introduccion</title>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="js/menu.js"></script>
+<script>
+$(document).ready(inicio);
+function inicio(){
+	$("#menu, #lamparaLarga, #cojinColores, #jarron, #perro, #mesa, #cojinBlanco, #lamparaCorta, #responsive, #diseno, #desarrollo, #marqueting, #decoracion, #impresion, #frase").hide();
+	$("#linea, #home, #somos, #fotografia, #complementos, #menuAbajo").hide();	
+	$("#arriba").delay(1500).slideUp(3000, apareceObjetosArriba);
+	$("#abajo").delay(1500).animate({top:"1200px"},5000);
+	$("#frase").fadeIn(1000);
+}
+function apareceObjetosArriba(){
+	$("#menu, #lamparaLarga, #cojinColores, #jarron, #perro, #mesa, #cojinBlanco, #lamparaCorta, #responsive, #diseno, #desarrollo, #marqueting, #decoracion, #impresion").show(1500, apareceMenu);
+	$("#arriba, #abajo, #frase").hide(500);
+	
+}
+function apareceMenu(){
+	$("#linea, #home, #somos, #fotografia, #complementos, #menuAbajo").show(1500);
+	termina();
+}
+</script>
+<style>
+/*** Intro ***/
+#arriba{
+	position:absolute;
+	background-image:url(imagenes/fondo.jpg);
+	top:0;
+	left:0;
+	height:400px;
+	width:1200px;
+	z-index:1;
+}
+#abajo{
+	position:absolute;
+	background-image:url(imagenes/fondo.jpg);
+	top:400px;
+	left:0;
+	height:400px;
+	width:1200px;
+	z-index:1;
+}
+/*** Objetos ***/
+#menu {
+	position: absolute;
+	left: 157px;
+	top: 73px;
+	width: 709px;
+	height: 457px;
+	z-index: 2;
+	background-image: url(imagenes/home/menuHome.png);
+	background-repeat:no-repeat;
+}
+#lamparaLarga {
+	position: absolute;
+	left: 190px;
+	top: 399px;
+	width: 48px;
+	height: 299px;
+	z-index: 2;
+	background-image: url(imagenes/home/lamparaNegra.png);
+	background-repeat:no-repeat;
+}
+#cojinColores {
+	position: absolute;
+	left: 367px;
+	top: 578px;
+	width: 62px;
+	height: 62px;
+	z-index: 3;
+	background-image: url(imagenes/home/cojinColores.png);
+	background-repeat:no-repeat;
+}
+#jarron {
+	position: absolute;
+	left: 557px;
+	top: 668px;
+	width: 49px;
+	height: 86px;
+	z-index: 7;
+	background-image: url(imagenes/home/floreroAzul.png);
+	background-repeat:no-repeat;
+}
+#cojinBlanco {
+	position: absolute;
+	left: 569px;
+	top: 594px;
+	width: 101px;
+	height: 46px;
+	z-index: 8;
+	background-image: url(imagenes/home/cojinRectangular.png);
+	background-repeat:no-repeat;
+}
+#lamparaCorta {
+	position: absolute;
+	left: 889px;
+	top: 558px;
+	width: 62px;
+	height: 140px;
+	z-index: 9;
+	background-image: url(imagenes/home/lamparaBlanca.png);
+	background-repeat:no-repeat;
+}
+#responsive {
+	position: absolute;
+	left: 875px;
+	top: 13px;
+	width: 134px;
+	height: 87px;
+	z-index: 10;
+	background-image: url(imagenes/home/responsive.png);
+	background-repeat:no-repeat;
+}
+/***** MENU ****/
+#diseno {
+	position: absolute;
+	left: 499px;
+	top: 113px;
+	width: 364px;
+	height: 40px;
+	z-index: 20;
+}
+#desarrollo {
+	position: absolute;
+	left: 500px;
+	top: 164px;
+	width: 367px;
+	height: 42px;
+	z-index: 21;
+}
+#marqueting {
+	position: absolute;
+	left: 499px;
+	top: 215px;
+	width: 366px;
+	height: 44px;
+	z-index: 22;
+}
+#decoracion {
+	position: absolute;
+	left: 499px;
+	top: 266px;
+	width: 367px;
+	height: 46px;
+	z-index: 23;
+}
+#impresion {
+	position: absolute;
+	left: 499px;
+	top: 318px;
+	width: 366px;
+	height: 45px;
+	z-index: 24;
+}
+#logo {
+	position: absolute;
+	left: 297px;
+	top: 336px;
+	width: 476px;
+	height: 48px;
+	z-index: 29;
+	background-image: url(imagenes/intro/logo.png);
+	background-repeat: no-repeat;
+}
+</style>
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<link href="css/figuras.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#frase {
+	position: absolute;
+	left: 279px;
+	top: 297px;
+	width: 466px;
+	height: 42px;
+	z-index: 25;
+	background-image: url(imagenes/intro/logo.png);
+	background-repeat:no-repeat;
+}
+</style>
+<meta name="keywords" content="">
+</head>
+
+<body>
+<div id="arriba"></div>
+<div id="abajo"></div>
+<div id="frase"></div>
+<div id="linea"></div>
+<div id="home"><a href="home.html">Home</a></div>
+<div id="somos"><a href="#">SOMOS</a></div>
+<div id="fotografia"><a href="#">FOTOGRAFÍA</a></div>
+<div id="complementos"><a href="#">COMPLEMENTOS</a></div>
+<div id="menuAbajo">
+<ul>
+<li><a href="#"><span class="blanco">Home</span></a></li>
+<li><a href="#"><span class="gris">Somos</span></a></li>
+<li><a href="#"><span class="blanco">Diseño</span></a></li>
+<li><a href="#"><span class="gris">Desarrollo Web</span></a></li>
+<li><a href="#"><span class="blanco">Marketing Digital</span></a></li>
+<li><a href="#"><span class="gris">Decoración de Interiores</span></a></li>
+<li><a href="#"><span class="blanco">Impresión</span></a></li>
+<li><a href="#"><span class="gris">Fotografía</span></a></li>
+<li><a href="#"><span class="blanco">Complementos</span></a></li>
+</ul>
+</div>
+<div id="menu"></div>
+<div id="lamparaLarga"></div>
+<div id="cojinColores"></div>
+<div id="jarron"></div>
+<div id="perro"></div>
+<div id="mesa"></div>
+<div id="cojinBlanco"></div>
+<div id="lamparaCorta"></div>
+<div id="diseno"></div>
+<div id="desarrollo"></div>
+<div id="marqueting"></div>
+<div id="decoracion"></div>
+<div id="impresion"></div>
+<img src="imagenes/home/fondo.jpg" width="1024" height="912"/>
+</body>
+</html>

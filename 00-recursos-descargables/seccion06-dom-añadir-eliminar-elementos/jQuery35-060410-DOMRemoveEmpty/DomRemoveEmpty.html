@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery | RemoveEmpty</title>
+<style>
+.autor{
+	text-align:right;
+	font-style:italic;
+}
+.caja{
+	width:400px;
+	background-color:#ff9;
+	border-color:black;
+	padding:20px;
+	height:200px;
+}
+</style>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	$("#borraPoema").click(function(){
+		//Elimina el contenedor (div)
+		$("div").remove();
+	});
+	$("#borraAutor").click(function(){
+		//Elimina el contenedor (div)
+		$("p").remove(".autor");
+	});
+	$("#vaciaPoema").click(function(){
+		//Elimina el contenedor (div)
+		$("div").empty();
+	});
+});
+
+</script>
+</head>
+
+<body> 
+<div class="caja">
+<p>En el agua clara</p>
+<p>Que brota en la fuente</p>
+<p>Un lindo pescado</p>
+<p>Sale de repente</p>
+<p class="autor">Autor: anónimo</p>
+</div>
+<input type="button" value="Borra poema" id="borraPoema">
+<input type="button" value="Borra autor" id="borraAutor">
+<input type="button" value="Vacía poema" id="vaciaPoema">
+</body>
+</html>

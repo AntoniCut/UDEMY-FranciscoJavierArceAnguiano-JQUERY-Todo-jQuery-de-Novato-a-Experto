@@ -1,0 +1,129 @@
+<!--  *********************************************************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/01-jquery-core-ejemplos/seccion02-selectores/02-selectores/index.html  **********  -->
+<!--  *********************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> jQuery Selectores - Todo jQuery de Novato a Experto - Udemy - Francisco Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/icon-jquery.png">
+
+    <!-- **********  Librería de jQuery - CDN de Google  **********   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* align-items: center; */
+            text-align: center;
+            margin-top: 20px;
+            gap: 100px;
+            font-size: 24px;
+        }
+
+        .galeria {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        input {
+            background-color: bisque;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+    </style>
+
+
+    <!-- **********  Código jQuery  --  Script Interno  **********   -->
+    <script>
+
+        //  -----  Forma Corta  -----
+        $(document).ready(function () {
+
+            console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+            console.log("\n");
+
+            //  -----  Formas de Utilizar los Selectores  -----
+            
+            $("#poseidon").click(function () {
+                $(".poseidon").css("border", "10px");
+                $(".poseidon").css("border-style", "solid");
+                $(".poseidon").css("border-color", "blue");
+            });
+
+            $("#zeus").click(function () {
+                $(".zeus")
+                    .css("border", "10px")
+                    .css("border-style", "solid")
+                    .css("border-color", "red");
+            });
+
+            $("#afrodita").click(function () {
+                $(".afrodita").css({
+                    border: "10px",
+                    borderStyle: "solid",
+                    borderColor: "pink"
+                });
+            });
+
+        });
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 02 - Selectores. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <div class="galeria">
+            <input type="button" id="poseidon" value="Dios de los Mares">
+            <img src="img/poseidon.jpg" class="poseidon">
+        </div>
+
+        <div class="galeria">
+            <input type="button" id="zeus" value="Dios de los Dioses">
+            <img src="img/zeus.jpg" class="zeus">
+        </div>
+
+        <div class="galeria">
+            <input type="button" id="afrodita" value="Dios del Amor">
+            <img src="img/afrodita.jpg" class="afrodita">
+        </div>
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery | Load con Ajax</title>
+<style>
+</style>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	$("#poema1").click(function(){
+		$("#div1").load("poema1.txt",onCarga);
+	});
+	$("#poema2").click(function(){
+		$("#div1").load("poema2.txt",onCarga);
+	});
+});
+function onCarga(respuesta, estatus, xhr){
+	if (estatus=="success") {
+		alert("Carga exitosa");
+	} else {
+		alert("Error en la carga");
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="div1"><h2>Leer del AJAX</h2></div>
+<button id="poema1">Poema 1</button>
+<button id="poema2">Poema 2</button>
+
+</body>
+</html>

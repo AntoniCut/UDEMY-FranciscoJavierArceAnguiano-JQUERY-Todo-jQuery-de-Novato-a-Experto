@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<style>
+body{
+	margin:0;
+	padding:0;
+}
+#banner{
+	width:960px;
+	margin:0 auto;
+}
+.foto{
+	float:left;
+	margin:4px;
+}
+
+
+</style>
+<meta charset="UTF-8">
+<title>Mosaico</title>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="js/jquery.flip.min.js"></script> 
+<script>
+	/*** Variables ***/
+	//Tiempo de los timeout
+	var t;
+	//Controlar la foto
+	var ff;
+	//Arreglos
+	var fotos_array = new Array();
+	var atras_array = new Array();
+	//Poblamos lo arreglos
+	fotos_array.push('caballo.jpg');
+	fotos_array.push('satiro.jpg');
+	fotos_array.push('basilisco.jpg');
+	fotos_array.push('centauro.jpg');
+	fotos_array.push('fenix.jpg');
+	fotos_array.push('unicornio.jpg');
+	fotos_array.push('pegaso.jpg');
+	fotos_array.push('hidra.gif');
+	fotos_array.push('arpia.jpg');
+	fotos_array.push('grifo.png');
+	fotos_array.push('quimera.jpg');
+	fotos_array.push('kraken.jpg');
+	fotos_array.push('minotauro.jpg');
+	fotos_array.push('medusa.jpg');
+	fotos_array.push('sirenas.jpg');
+	//Poblar el arreglo de las fotos de atras
+	var atras_array = new Array();
+	atras_array.push('caballo.png');
+	atras_array.push('satiro.png');
+	atras_array.push('basilisco.png');
+	atras_array.push('centauro.png');
+	atras_array.push('fenix.png');
+	atras_array.push('unicornio.png');
+	atras_array.push('pegaso.png');
+	atras_array.push('hidra.png');
+	atras_array.push('arpia.png');
+	atras_array.push('grifo.png');
+	atras_array.push('quimera.png');
+	atras_array.push('kraken.png');
+	atras_array.push('minotauro.png');
+	atras_array.push('medusa.png');
+	atras_array.push('sirenas.png');
+	//Numero de fotos
+	var numFotos = fotos_array.length;
+	
+</script>
+</head>
+
+<body>
+<div id="banner">
+	<div class="foto" id="banner1"></div>
+    <div class="foto" id="banner2"></div>
+    <div class="foto" id="banner3"></div>
+    <div class="foto" id="banner4"></div>
+    <div class="foto" id="banner5"></div>
+    <div class="foto" id="banner6"></div>
+    <div class="foto" id="banner7"></div>
+    <div class="foto" id="banner8"></div>
+    <div class="foto" id="banner9"></div>
+    <div class="foto" id="banner10"></div>
+    <div class="foto" id="banner11"></div>
+    <div class="foto" id="banner12"></div>
+    <div class="foto" id="banner13"></div>
+    <div class="foto" id="banner14"></div>
+    <div class="foto" id="banner15"></div>
+</div>
+</body>
+</html>

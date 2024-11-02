@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Rollover</title>
+<script src="js/jquery-1.9.1.js"></script>
+<script>
+$(document).ready(inicio);
+function inicio(){
+	var h = $(".caja").height();
+	$(".caja").hover(
+	function(){
+		$(this).children(".tooltip").animate({top:(h-50)+"px"},500);
+	},
+	function(){
+		$(this).children(".tooltip").animate({top:(h+1)+"px"},500);
+	});	
+	
+}
+
+</script>
+<style>
+#dioses{
+	width:1100px;
+	margin:0 auto;
+}
+.caja{
+	display:block;
+	margin:0px 15px 15px 0px;
+	padding:0;
+	width:200px;
+	height:215px;
+	float:left;
+	position:relative;
+	cursor:pointer;
+	background:no-repeat 0px 0px;
+	border: 1px solid black;
+	overflow:hidden;
+}
+.tooltip{
+	position:absolute;
+	width:200px;
+	height:215px;
+	background:rgba(0,0,0,0.5);
+	left:0;
+	top:216px;
+	color:white;
+	text-align:center;
+	padding-top:5px;
+}
+#foto{
+	clear:both;
+	cursor:pointer;
+	width:400px;
+	height:300px;
+	margin:0 auto;
+}
+p{
+	margin:0;
+	padding:0;	
+}
+</style>
+</head>
+
+<body>
+<div id="dioses">
+<div class="caja">
+<img src="imagenes/poseidon160x196.jpg" width="200px">
+<div class="tooltip"><p>Poseidón</p><p>Dios de los mares</p></div>
+</div>
+<div class="caja">
+<img src="imagenes/zeus174x290.jpg" width="200px">
+<div class="tooltip"><p>Zeus</p><p>Dios de los dioses</p></div>
+</div>
+<div class="caja">
+<img src="imagenes/gea220x332.jpg" width="200px">
+<div class="tooltip"><p>Gea</p><p>La madre tierra</p></div>
+</div>
+<div class="caja">
+<img src="imagenes/hades220x286.jpg" width="200px">
+<div class="tooltip"><p>Hades</p><p>Dios del inframundo</p></div>
+</div>
+<div class="caja">
+<img src="imagenes/demeter220x294.jpg" width="200px">
+<div class="tooltip"><p>Demeter</p><p>Diosa de la fertilidad</p></div>
+</div>
+<div id="foto">
+<img src="imagenes/fondos/fondo1.jpg" width="400px" height="300px">
+</div>
+
+</div>
+</body>
+</html>

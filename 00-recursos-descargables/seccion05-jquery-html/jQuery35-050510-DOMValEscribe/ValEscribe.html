@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQury DOM | ValEscribe</title>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	$("#normal").click(function(){
+		$("#nombre").val("Paco");
+		$("#apellidos").val("Arce");
+	});
+	$("#secreto").click(function(){
+		$("#nombre").val("James");
+		$("#apellidos").val("Bond");
+	});
+	$("#artistico").click(function(){
+		$("#nombre").val("Pato");
+		$("#apellidos").val("Lucas");
+	});
+});
+</script>
+</head>
+
+<body>
+<input type="text" id="nombre">
+<input type="text" id="apellidos">
+<br>
+<input type="button" id="normal" value="Nombre normal">
+<input type="button" id="secreto" value="Nombre secreto">
+<input type="button" id="artistico" value="Nombre artístico">
+<p></p>
+</body>
+</html>

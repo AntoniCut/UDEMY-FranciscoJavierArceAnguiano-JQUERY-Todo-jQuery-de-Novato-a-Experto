@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<style>
+body{
+	margin:0;
+	padding:0;	
+	width:600px;
+	margin:0 auto;
+}
+#foto{
+		
+	cursor:pointer;
+}
+</style>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="js/jquery.flip.min.js"></script> 
+<script>
+var fondo = 1;
+var numFondos = 6;
+var efecto_array = new Array("lr", "rl", "tb", "bt");
+$(document).ready(inicio);
+function inicio(){
+	$("#foto").click(voltea);	
+}
+function voltea(){
+	fondo++;
+	if(fondo>numFondos) fondo = 1;
+	var archivo = "fondo"+fondo+".jpg";
+	var efecto = Math.floor(Math.random()*efecto_array.length);
+	$("#foto").flip({
+		direction:efecto_array[efecto],
+		color:"#ffffff",
+		onEnd:function(){
+			$("#foto").html("<img src='fondos/"+archivo+"' width='600px' height='400px'/>");	
+		}
+	});	
+	
+}
+</script>
+<meta charset="UTF-8">
+<title>Galeria Flip</title>
+</head>
+
+<body>
+<div id="foto"><img src="fondos/fondo1.jpg" width="600px"/></div>
+<div><a>primero</a> anterior siguiente último play</div>
+</body>
+</html>

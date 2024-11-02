@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title></title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<style>
+#idiomas{margin-top: 2em; }
+</style>
+<script>
+$(function(){
+	$("#check").button();
+	$("#idiomas").buttonset();
+});
+</script>
+</head>
+<body>
+<input type="checkbox" id="check"/><label for="check">Toggle</label>
+
+<div id="idiomas">
+	<input type="checkbox" id="check1"/><label for="check1">Español</label>
+	<input type="checkbox" id="check2"/><label for="check2">Inglés</label>
+    <input type="checkbox" id="check3"/><label for="check3">Francés</label>
+    <input type="checkbox" id="check4"/><label for="check4">Alemán</label>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery 3 | Get</title>
+<script src="js/jquery.js"></script>
+<script>
+/*****************************************
+Este ejemplo sólo sirve en un servidor web
+******************************************/
+$(document).ready(function(){	
+	$("button").click(function(){
+		$.get("poema.php",function(data,estatus){
+			$("div").html(data);
+		});
+	});
+});
+</script>
+</head>
+
+<body>
+<button>Lee archivo</button>
+<div></div>
+</body>
+</html>

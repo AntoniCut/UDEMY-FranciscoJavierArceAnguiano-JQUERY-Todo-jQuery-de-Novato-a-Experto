@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Base UI</title>
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<style>
+#resizable{
+	width:200px;
+	height:250px;
+	padding:5px;
+	background-image:url("imagenes/atenea.jpg");
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+</style>
+<script>
+$(function(){
+	$("#resizable").resizable({
+		maxHeight: 350,
+		maxWidth: 450,
+		minHeight: 150,
+		minWidth: 200
+	});
+});
+</script>
+</head>
+<body>
+<div id="resizable" class="ui-widget-content">
+	
+</div>
+
+</body>
+</html>

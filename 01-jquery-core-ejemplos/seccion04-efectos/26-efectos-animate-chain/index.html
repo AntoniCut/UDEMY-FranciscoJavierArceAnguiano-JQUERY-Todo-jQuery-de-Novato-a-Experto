@@ -1,0 +1,141 @@
+<!--  *****************************************************************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/01-jquery-core-ejemplos/seccion04-efectos/26-efectos-animate-chain/index.html  **********  -->
+<!--  *****************************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> jQuery Efectos Animate Chain - Todo jQuery de Novato a Experto - Udemy - Francisco
+        Javier Arce Anguiano
+    </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/icon-jquery.png">
+
+    <!-- **********  Librería de jQuery - CDN de Google  **********   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
+
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+            margin-top: 20px;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        #afrodita {
+            width: 800px;
+            height: 502px;
+            background-image: url(imagenes/afrodita.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        p {
+            background-color: #CCC;
+            text-align: center;
+        }
+
+        .botones {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        input {
+            width: 180px;
+            margin: 0 auto;
+            background-color: blueviolet;
+            color: white;
+            padding: 7px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <!-- **********  Código jQuery  --  Script Interno  **********   -->
+    <script>
+
+        //  -----  Método READY  -----
+        $(document).ready(function () {
+
+            console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+            console.log("\n");
+
+            //  -----  Referencia al HTML  -----
+            const $cuadrado = $("#cuadrado");
+
+
+            $("#anima").click(function () {
+
+                $("p")
+                    .css("color", "red")
+                    .slideUp("slow")
+                    .slideDown("fast", function() {
+                        $(this).css("color", "black");
+                    })
+            });
+
+
+            $("#cuadro").click(function () {
+
+                $("#afrodita")
+                    .slideUp("slow")
+                    .slideDown("fast")
+            });
+
+        });
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 04 - Efectos Animate Chain. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <p> Nacimiento de Afrodita, por Sandro Botticelli (1445-1510) </p>
+        <p> Autor italiano del renacimiento </p>
+
+        <div id="afrodita"> </div>
+
+        <div class="botones">
+            <input type="button" id="anima" value="Anima titulo" />
+            <input type="button" id="cuadro" value="Anima cuadro" />
+        </div>
+
+    </main>
+
+</body>
+
+</html>

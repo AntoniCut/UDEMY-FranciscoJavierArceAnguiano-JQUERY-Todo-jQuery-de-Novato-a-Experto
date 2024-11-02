@@ -1,0 +1,157 @@
+<!--  *****************************************************************************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/01-jquery-core-ejemplos/seccion06-dom-añadir-eliminar-elementos/34-dom-prepend/index.html  **********  -->
+<!--  *****************************************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Seccion 6 - DOM, Añadir y Remover Elementos - Todo jQuery de Novato a Experto - Udemy - Francisco
+        Javier Arce Anguiano
+    </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/jquery-icon.png">
+
+    <!-- **********  Librería de jQuery - CDN de Google  **********   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
+
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+            margin-top: 20px;
+            gap: 40px;
+            font-size: 16px;
+        }
+
+        #afrodita {
+            width: 800px;
+            height: 502px;
+            background-image: url(imagenes/afrodita.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        /* p {
+            font-size: 24px;
+            text-align: center;
+        } */
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .texto-lista {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .input {
+            width: 200px;
+            height: 20px;
+        }
+
+        input {
+            width: 180px;
+            margin: 0 auto;
+            background-color: blueviolet;
+            color: white;
+            padding: 7px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <!-- **********  Código jQuery  --  Script Interno  **********   -->
+    <script>
+
+        //  -----  Método READY  -----
+        $(document).ready(function () {
+
+            console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+            console.log("\n");
+
+            const poema = [];
+            poema.push("En el agua clara");
+            poema.push("que brota en la fuente");
+            poema.push("un lindo pescado");
+            poema.push("sale de repente");
+            poema.push("Lindo pescadito");
+            poema.push("no quieres salir");
+            poema.push("a jugar con mi aro");
+            poema.push("vamos al jardín.");
+
+            let index1 = poema.length - 1;
+            let index2 = poema.length - 1;
+
+            $("#boton1").click(function () {
+                if (index1 >=0) {
+                    $("p").prepend(poema[index1] + "<br>");
+                    index1--;
+                }
+            });
+
+            $("#boton2").click(function () {
+                if (index2 >= 0) {
+                    $("ul").prepend("<li>" + poema[index2] + "</li>");
+                    index2--;
+                }
+            });
+
+        });
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 6 - Añadir Texto por medio del Método prepend(). </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <div class="botones">
+            <input type="button" value="Añadir texto" id="boton1" /> <br>
+            <input type="button" value="Añadir lista" id="boton2" /> <br>
+        </div>
+        
+        <div class="texto-lista">
+            <p> </p>    
+            <ul> </ul>
+        </div>
+                
+    </main>
+
+</body>
+
+</html>
