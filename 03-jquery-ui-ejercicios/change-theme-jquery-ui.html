@@ -27,20 +27,140 @@
     button:hover {
         background-color: rgb(69, 8, 126);
     }
+
+    .active{
+        width: 200px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    #to-lightness {
+        background-color: #EB8F00;
+    }
+
+    #to-darkness {
+        background-color: #262626;
+    }
+
+    #to-base {
+        color: #000000;
+        background-color: #EDEDED;
+    }
+
+    #to-black-tie {
+        background-color: #4E4E4E;
+    }
+
+    #to-blitzer {
+        color: #000000;
+        background-color: #FCFCFC;
+    }
+
+    #to-cupertino {
+        color: #000000;
+        background-color: #62BBE9;
+    }
+    
+    #to-dark-hive {
+        background-color: #1F7FAD;
+    }
+
+    #to-dot-luv {
+        background-color: #0B5194 ;
+    }
+
+    #to-eggplant {
+        background-color: #5B5661;
+    }
+
+    #to-excite-bike {
+        background-color: #E9A219;
+    }
+
+    #to-flick {
+        background-color: #FF00A4;
+    }
+
+    #to-hot-sneack {
+        color: #000000;
+        background-color: #CCD232;
+    }
+
+    #to-humanity {
+        color: #000000;
+        background-color: #F6F1E6;
+    }
+
+    #to-le-frog {
+        background-color: #4F792E;
+    }
+
+    #to-mint-choc {
+        color: #000000;
+        background-color: #BAEC7E;
+    }
+
+    #to-overcast {
+        color: #000000;
+        background-color: #C9C9C9;
+    }
+
+    #to-pepper-grinder {
+        background-color: #674F2B;
+    }
+
+    #to-redmond {
+        color: #000000;
+        background-color: #DEEDF8;
+    }
+
+    #to-smoothness {
+        color: #000000;
+        background-color: #E3E3E3;
+    }
+
+    #to-south-street {
+        color: #000000;
+        background-color: #7CBB40;
+    }
+
+    #to-start {
+        color: #000000;
+        background-color: #81CCED;
+    }
+
+    #to-sunny {
+        color: #000000;
+        background-color: #FEEEBD;
+    }
+
+    #to-swanky-purse {
+        background-color: #D4A515;
+    }
+
+    #to-trontastic {
+        background-color: #474747;
+    }
+
+    #to-vader {
+        background-color: #262626;
+    }
+
+
 </style>
 
 
 <div class="btn-container">
 
-    <button id="to-lightness"> lightness </button>
+    <button id="to-lightness" class="active"> lightness </button> 
     <button id="to-darkness"> darkness </button>
     <button id="to-base"> base </button>
-    <button id="to-blitzer"> black-tie </button>
-    <button id="to-cupertino"> cupertion </button>
+    <button id="to-black-tie"> black-tie </button>
+    <button id="to-blitzer"> blitzer </button>
+    <button id="to-cupertino"> cupertino </button>
     <button id="to-dark-hive"> dark-hive </button>
     <button id="to-dot-luv"> dot-luv </button>
     <button id="to-eggplant"> eggplant </button>
-
     <button id="to-excite-bike"> excite-bike </button>
     <button id="to-flick"> flick </button>
     <button id="to-hot-sneack"> hot-sneack </button>
@@ -76,98 +196,153 @@
 
         $("#to-lightness").click(function () {
             theme.attr("href", `${path}/ui-lightness/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-darkness").click(function () {
             theme.attr("href", `${path}/ui-darkness/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-base").click(function () {
             theme.attr("href", `${path}/base/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
+
+        $("#to-black-tie").click(function () {
+            theme.attr("href", `${path}/black-tie/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
+        });
+        
 
         $("#to-blitzer").click(function () {
             theme.attr("href", `${path}/blitzer/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-cupertino").click(function () {
             theme.attr("href", `${path}/cupertino/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-dark-hive").click(function () {
             theme.attr("href", `${path}/dark-hive/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-dot-luv").click(function () {
             theme.attr("href", `${path}/dot-luv/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-eggplant").click(function () {
             theme.attr("href", `${path}/eggplant/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-excite-bike").click(function () {
             theme.attr("href", `${path}/excite-bike/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-flick").click(function () {
             theme.attr("href", `${path}/flick/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-hot-sneack").click(function () {
             theme.attr("href", `${path}/hot-sneaks/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-humanity").click(function () {
             theme.attr("href", `${path}/humanity/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-le-frog").click(function () {
             theme.attr("href", `${path}/le-frog/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-mint-choc").click(function () {
             theme.attr("href", `${path}/mint-choc/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-overcast").click(function () {
             theme.attr("href", `${path}/overcast/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-pepper-grinder").click(function () {
             theme.attr("href", `${path}/pepper-grinder/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-redmond").click(function () {
             theme.attr("href", `${path}/redmond/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-smoothness").click(function () {
             theme.attr("href", `${path}/smoothness/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-south-street").click(function () {
             theme.attr("href", `${path}/south-street/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-start").click(function () {
             theme.attr("href", `${path}/start/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-sunny").click(function () {
             theme.attr("href", `${path}/sunny/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-swanky-purse").click(function () {
             theme.attr("href", `${path}/swanky-purse/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-trontastic").click(function () {
             theme.attr("href", `${path}/trontastic/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
         $("#to-vader").click(function () {
             theme.attr("href", `${path}/vader/jquery-ui.min.css`);
+            $(".btn-container > button").removeClass('active');
+            $(this).addClass('active');
         });
 
     });
