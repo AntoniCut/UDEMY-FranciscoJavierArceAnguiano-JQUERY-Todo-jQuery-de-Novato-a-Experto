@@ -28,36 +28,67 @@
 
 
     <style>
-        body {
-            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
         }
 
-        .header {
+        body {
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+            display: grid;
+            height: 850px;
+            grid-template-areas:
+                'cabecera  cabecera '
+                'lateral   contenido '
+            ;
+            grid-template-columns: 250px auto;
+            grid-template-rows: 10vh auto;
+        }
+
+        .cabecera {
+            grid-area: cabecera;
             width: 100%;
-            height: 10vh;
+            /* height: 10vh; */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border: 1px solid green;
+            border: 5px solid green;
         }
 
-        .main {
+        h1 {
+            font-size: 56px;
+            color: #FCF7CD;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: #FFA500;
+            text-align: center;
+        }
+
+
+        .lateral {
+            grid-area: lateral;
+            padding: 20px;
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+        }
+
+        .contenido {
+            grid-area: contenido;
             width: 100%;
-            height: 85vh;
-            position: relative;
-            overflow: hidden;
+            height: 1000px;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
             /* align-items: center; */
             gap: 50px;
-            padding-top: 50px;
+            padding-top: 100px;
+            padding-bottom: 100px;
+            flex-grow: 1;
             font-size: 16px;
             font-weight: bold;
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
         }
-
 
         .botones {
             display: flex;
@@ -65,7 +96,6 @@
             justify-content: center;
             gap: 20px;
         }
-
 
         .input {
             width: 200px;
@@ -76,7 +106,7 @@
         /*  *****  Estilos mas especificos  *****  */
 
         .ejercicio {
-            width: 30%;
+            width: 40%;
             padding: 20px;
             display: flex;
             flex-direction: column;
@@ -126,20 +156,20 @@
 <body>
 
     <!--  **********  Header o Cabecera  **********  -->
-    <header class="header">
+    <header class="cabecera">
 
         <h1> Seccion 28 - Widget Acordeón Resizable e Icons - jQuery UI. </h1>
         <hr>
 
     </header>
 
+
+    <!-- -----  SELECTOR DE TEMA  ----- -->
+    <aside class="lateral" id="change-theme"> </aside>
+
+
     <!--  **********  Contenido  **********  -->
-    <main class="main">
-
-
-        <!-- -----  SELECTOR DE TEMA  ----- -->
-        <section id="change-theme"> </section>
-
+    <main class="contenido">
 
         <!-- -----  acordeón 1 - Resizable  ----- -->
         <section class="ejercicio">
@@ -275,7 +305,7 @@
 
 
             //  -----  SELECTOR DE TEMA  -----
-            $("#change-theme").load("../../change-theme-jquery-ui.html");
+            $("#change-theme").load("../../change-theme-jquery-ui-v2.html");
 
 
             //  -----  WIDGET ACORDEÓN  --  RESIZABLE  -----
