@@ -1,0 +1,225 @@
+<!--  ************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/03-jquery-ui-ejercicios/  **********  -->
+<!--  **********  /seccion31-jquery-ui-widget-botones/  **********************************  -->
+<!--  **********  /76-jquery-ui-widget-datepicker-formatos/index.html  *******************  -->
+<!--  ************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> jQuery UI - Seccion 31 - Widget DatePicker - Formatos - jQuery UI </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="../../assets/favicon/jquery-icon.png">
+
+    <!--  **********  Librerías de jQuery y jQuery UI  **********  -->
+    <link rel="stylesheet" id="theme" href="../../assets/css/themes/ui-lightness/jquery-ui.min.css">
+    <script src="../../assets/js/jquery-1.9.1.js"> </script>
+    <script src="../../assets/js/jquery-ui-1.12.0.min.js"> </script>
+
+
+    <!-- -----  jQuery UI 1.14.1 para que funcione resizable con id resizable  ----- -->
+    <!-- <script src="../../assets/jquery-ui-1.14.1.custom/external/jquery/jquery.js"> </script>
+    <link rel="stylesheet" href="../../assets/jquery-ui-1.14.1.custom/jquery-ui.min.css">
+    <script src="../../assets/jquery-ui-1.14.1.custom/jquery-ui.min.js"> </script> -->
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+            display: grid;
+            height: 850px;
+            grid-template-areas:
+                'cabecera  cabecera '
+                'lateral   contenido '
+            ;
+            grid-template-columns: 250px auto;
+            grid-template-rows: 10vh auto;
+        }
+
+        .cabecera {
+            grid-area: cabecera;
+            width: 100%;
+            /* height: 10vh; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid green;
+        }
+
+        h1 {
+            font-size: 56px;
+            color: #FCF7CD;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: #FFA500;
+            text-align: center;
+        }
+
+
+        .lateral {
+            grid-area: lateral;
+            padding: 20px;
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+        }
+
+        .contenido {
+            grid-area: contenido;
+            width: 100%;
+            height: 830px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* align-items: center; */
+            gap: 20px;
+            padding-bottom: 100px;
+            flex-grow: 1;
+            font-size: 16px;
+            font-weight: bold;
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+        }
+
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+
+        input {
+            width: 300px;
+            height: 30px;
+            margin-bottom: 20px;
+        }
+
+
+        /*  *****  Estilos mas especificos  *****  */
+
+        .ejercicio {
+            margin-top: 50px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            background-color: #B0A99C;
+        }
+
+        img {
+            width: 30px;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="cabecera">
+
+        <h1> Seccion 31 - Widget DatePicker - Formatos - jQuery UI. </h1>
+        <hr>
+
+    </header>
+
+
+    <!-- -----  SELECTOR DE TEMA  ----- -->
+    <aside class="lateral" id="change-theme"> </aside>
+
+
+    <!--  **********  Contenido  **********  -->
+    <main class="contenido">
+
+
+        <!--  -----  Contenedor de los Ejercicios de DatePicker  -----  -->
+        <section class="ejercicio">
+            <h2> Date Picket altField y altFormat </h2> <br>
+            <p> <input type="text" id="fecha1" placeholder="calendario"> </p>
+            <p> <input type="text" id="alterno" placeholder="fecha"> </p>
+        </section>
+
+        <section class="ejercicio">
+            <h2> Date Picket dateFormat </h2> <br>
+            <p> <input type="text" id="fecha2" placeholder="calendario"> </p>
+            <select id="formato">
+                <option value="mm/dd/yy"> Formato por Omision (mm/dd/yy) </option>
+                <option value="yy-mm-dd"> Formato ISO 8601 (yy-mm-dd) </option>
+                <option value="d m, y"> Formato corto (mmd m, y) </option>
+                <option value="d MM, y"> Formato medio (d MM, y) </option>
+                <option value="DD, d MM, yy"> Formato completo (DD, d MM, yy) </option>
+                <option value="'dia' d ' de' MM 'del año' yy"> Formato Texto ('dia' d ' de' MM 'del año' yy) </option>
+            </select>
+        </section>
+
+    </main>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+
+        $(function () {
+
+            //console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+            console.warn('----------  Documento Cargado!!!  ----- ', 'jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+
+            //  -----  SELECTOR DE TEMA  -----
+            $("#change-theme").load("../../change-theme-jquery-ui-v2.html");
+
+
+            //  -----  DATEPICKER ALTFIELD Y ALTFORMAT  -----
+
+            $("#fecha1").datepicker({
+                altField: '#alterno',
+                altFormat: 'd, m, yy - MM - DD'
+            });
+
+            //  -----  DATEPICKER DATEFORMAT  -----
+
+            /*
+                'yy-mm-dd'
+                'D, dd M yy'
+                'yy-mm-dd'
+                'D, d M y'
+                'DD, dd-M-y'
+                'D, d M y'
+                'D, d M y'
+                '!'
+                '@'
+                'yy-mm-dd'
+            */
+
+            $("#fecha2").datepicker();
+            
+            $("#formato").on('change', function () {
+
+                $("#fecha2").datepicker(
+                    'option',
+                    'dateFormat',
+                    $(this).val()
+                );
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
