@@ -1,0 +1,180 @@
+<!--  ************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/03-jquery-ui-ejercicios/  **********  -->
+<!--  **********  /seccion30-jquery-ui-widget-botones/  **********************************  -->
+<!--  **********  /73-jquery-ui-widget-controlgroup/index.html  **************************  -->
+<!--  ************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> jQuery UI - Seccion 30 - Widget Control Group - jQuery UI </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="../../assets/favicon/jquery-icon.png">
+
+    <!--  **********  Librerías de jQuery y jQuery UI  **********  -->
+    <link rel="stylesheet" id="theme" href="../../assets/css/themes/ui-lightness/jquery-ui.min.css">
+    <script src="../../assets/js/jquery-1.9.1.js"> </script>
+    <script src="../../assets/js/jquery-ui-1.12.0.min.js"> </script>
+
+
+    <!-- -----  jQuery UI 1.14.1 para que funcione resizable con id resizable  ----- -->
+    <!-- <script src="../../assets/jquery-ui-1.14.1.custom/external/jquery/jquery.js"> </script>
+    <link rel="stylesheet" href="../../assets/jquery-ui-1.14.1.custom/jquery-ui.min.css">
+    <script src="../../assets/jquery-ui-1.14.1.custom/jquery-ui.min.js"> </script> -->
+
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+        }
+
+        .header {
+            width: 100%;
+            height: 10vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            border: 1px solid green;
+        }
+
+        .main {
+            width: 100%;
+            height: 800px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            /* justify-content: center; */
+            align-items: center;
+            gap: 50px;
+            flex-grow: 1;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+
+        .input {
+            width: 200px;
+            height: 20px;
+        }
+
+
+        /*  *****  Estilos mas especificos  *****  */
+
+        .ejercicio {
+            /* width: 50%; */
+            height: 100px;
+            padding: 50px;
+            padding-bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            background-color: #B0A99C;
+        }
+
+
+        /*  **********  */
+        input {
+            margin-right: 10px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 30 - Widget Widget Control Group - jQuery UI. </h1>
+        <hr>
+
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+
+        <!-- -----  SELECTOR DE TEMA  ----- -->
+        <section id="change-theme"> </section>
+
+        <!--  -----  Contenedor de los Ejercicios  -----  -->
+        <section class="ejercicio">
+
+            <!-- -----  Select Menú  ----- -->
+            <h2> Select Menú </h2>
+
+            <form>
+
+                <fielset>
+
+                    <legend> Estado Civil </legend> <br>
+
+                    <div id="radio">
+                        <input type="radio" name="estado" id="soltero" checked>
+                        <label for="soltero"> Soltero </label>
+
+                        <input type="radio" name="estado" id="casado">
+                        <label for="casado"> Casado </label>
+
+                        <input type="radio" name="estado" id="divorciado">
+                        <label for="divorciado"> Divorciado </label>
+
+                        <input type="radio" name="estado" id="liberal">
+                        <label for="liberal"> Liberal </label>
+
+                        <input type="radio" name="estado" id="viudo">
+                        <label for="viudo"> Viudo </label>
+                    </div>
+
+                </fielset>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+
+        $(function () {
+
+            //console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+            console.warn('----------  Documento Cargado!!!  ----- ', 'jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+
+            //  -----  SELECTOR DE TEMA  -----
+            $("#change-theme").load("../../change-theme-jquery-ui.html");
+
+
+            //  -----  WIDGET SELECT MENÚ  -----
+            //  Solo funciona con la versión 1.12 en adelante
+            $("#radio").controlgroup();
+
+        });
+
+    </script>
+
+</body>
+
+</html>

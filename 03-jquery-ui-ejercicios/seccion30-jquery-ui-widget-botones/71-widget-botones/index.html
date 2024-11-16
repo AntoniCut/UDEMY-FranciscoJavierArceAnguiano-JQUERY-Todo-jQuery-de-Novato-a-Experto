@@ -1,0 +1,232 @@
+<!--  ************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/03-jquery-ui-ejercicios/  **********  -->
+<!--  **********  /seccion30-jquery-ui-widget-botones/  **********************************  -->
+<!--  **********  /71-jquery-ui-widget-botones/index.html  *******************************  -->
+<!--  ************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> jQuery UI - Seccion 30 - Widget Botones - jQuery UI </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="../../assets/favicon/jquery-icon.png">
+
+    <!--  **********  Librerías de jQuery y jQuery UI  **********  -->
+    <link rel="stylesheet" id="theme" href="../../assets/css/themes/ui-lightness/jquery-ui.min.css">
+    <script src="../../assets/js/jquery-1.9.1.js"> </script>
+    <script src="../../assets/js/jquery-ui-1.10.1.custom.min.js"> </script>
+
+    <!-- -----  jQuery UI 1.14.1 para que funcione resizable con id resizable  ----- -->
+    <!-- <script src="../../assets/jquery-ui-1.14.1.custom/external/jquery/jquery.js"> </script>
+    <link rel="stylesheet" href="../../assets/jquery-ui-1.14.1.custom/jquery-ui.min.css">
+    <script src="../../assets/jquery-ui-1.14.1.custom/jquery-ui.min.js"> </script> -->
+
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+        }
+
+        .header {
+            width: 100%;
+            height: 10vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            border: 1px solid green;
+        }
+
+        .main {
+            width: 100%;
+            height: 800px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            /* justify-content: center; */
+            align-items: center;
+            gap: 50px;
+            flex-grow: 1;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+
+        .input {
+            width: 200px;
+            height: 20px;
+        }
+
+
+        /*  *****  Estilos mas especificos  *****  */
+
+        .ejercicio {
+            /* width: 50%; */
+            height: 100px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            background-color: #B0A99C;
+        }
+
+
+        /*  **********  */
+        input,
+        a {
+            padding: 10px 20px;
+        }
+
+        #idiomas {
+            margin-top: 2em;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 30 - Widget Botones - jQuery UI. </h1>
+        <hr>
+
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+
+        <!-- -----  SELECTOR DE TEMA  ----- -->
+        <section id="change-theme"> </section>
+
+        <!--  -----  Contenedor de los Ejercicios  -----  -->
+        <section class="ejercicio">
+
+            <!-- -----  botones  ----- -->
+            <h2> Buttons </h2>
+            <div id="botones1" class="botones">
+                <button> Esto es un botón </button>
+                <input type="button" value="Esto es otro boton de tipo input" />
+                <a href="#"> Esto es un link </a>
+            </div>
+
+
+            <!-- -----  botones  Icons  ----- -->
+            <br>
+            <h2> Buttons Icons </h2>
+            <div id="botones2" class="botones">
+                <button> Esto es un botón </button>
+                <input type="button" value="Esto es otro boton de tipo input" />
+                <a href="#"> Esto es un link </a>
+            </div>
+
+            <!-- -----  botones  Checkbox  ----- -->
+            <br>
+            <h2> Buttons CheckBox </h2>
+            <div id="botones3" class="botones">
+
+                <input type="checkbox" id="encendido"><label for="encendido"> Encendido/abagado </label>
+
+                <div id="idiomas">
+                    <input type="checkbox" id="option1" /><label for="option1"> Español </label>
+                    <input type="checkbox" id="option2" /><label for="option2"> Inglés </label>
+                    <input type="checkbox" id="option3" /><label for="option3"> Francés </label>
+                    <input type="checkbox" id="option4" /><label for="option4"> Alemán </label>
+                </div>
+            </div>
+
+
+            <!-- -----  botones  Radio  ----- -->
+            <br>
+            <h2> Buttons Radio </h2>
+            <div id="botones4" class="botones">
+
+                <form>
+                    <div id="estado">
+                        <input type="radio" id="opcion1" name="radio" /><label for="opcion1"> Soltero </label>
+                        <input type="radio" id="opcion2" name="radio" /><label for="opcion2"> Casado </label>
+                        <input type="radio" id="opcion3" name="radio" /><label for="opcion3"> Divorciado </label>
+                        <input type="radio" id="opcion4" name="radio" /><label for="opcion4"> Liberal </label>
+                        <input type="radio" id="opcion5" name="radio" checked="checked" /><label for="opcion5"> Viudo </label>
+                    </div>
+                </form>
+             
+        </section>
+
+    </main>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+
+        $(function () {
+
+            //console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+            console.warn('----------  Documento Cargado!!!  ----- ', 'jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+
+            //  -----  SELECTOR DE TEMA  -----
+            $("#change-theme").load("../../change-theme-jquery-ui.html");
+
+
+            //  -----  WIDGET BOTONES  -----
+            //$("button, input[type=button], a").button();
+            $("#botones1 button").button();
+            $("#botones1 input[type=button]").button();
+            $("#botones1 a").button();
+
+
+            //  -----  WIDGET BOTONES ICONS  -----
+
+            $("#botones2 button").button({
+                icons: {
+                    primary: "ui-icon-locked"
+                }
+            });
+
+            //  -----  los de tipo input no se le puede poner botones  -----
+            $("#botones2 input[type=button]").button();
+
+            $("#botones2 :nth-child(3)").button({
+                icons: {
+                    primary: "ui-icon-locked",
+                    secondary: "ui-icon-gear",
+                }
+            });
+
+
+            //  -----  WIDGET BOTONES CHECKBOX  -----
+            $("#encendido").button();
+            $("#idiomas").buttonset();
+
+
+            //  -----  WIDGET BOTONES RADIO  -----
+            $("#estado").buttonset();	
+
+        });
+
+    </script>
+
+</body>
+
+</html>
