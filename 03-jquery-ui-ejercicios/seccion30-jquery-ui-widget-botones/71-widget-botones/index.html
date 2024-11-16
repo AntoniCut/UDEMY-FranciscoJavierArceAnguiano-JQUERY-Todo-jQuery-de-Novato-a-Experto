@@ -27,57 +27,72 @@
 
 
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
         body {
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+            display: grid;
+            height: 850px;
+            grid-template-areas:
+                'cabecera  cabecera '
+                'lateral   contenido '
+            ;
+            grid-template-columns: 250px auto;
+            grid-template-rows: 10vh auto;
+        }
+
+        .cabecera {
+            grid-area: cabecera;
+            width: 100%;
+            /* height: 10vh; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid green;
+        }
+
+        h1 {
+            font-size: 56px;
+            color: #FCF7CD;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: #FFA500;
+            text-align: center;
+        }
+
+        .lateral {
+            grid-area: lateral;
+            padding: 20px;
             background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
         }
 
-        .header {
+        .contenido {
+            grid-area: contenido;
             width: 100%;
-            height: 10vh;
+            height: 830px;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            flex-grow: 1;
-            border: 1px solid green;
-        }
-
-        .main {
-            width: 100%;
-            height: 800px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            /* justify-content: center; */
-            align-items: center;
-            gap: 50px;
+            gap: 20px;
+            /* padding-bottom: 100px; */
             flex-grow: 1;
             font-size: 16px;
             font-weight: bold;
-        }
-
-
-        .botones {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            gap: 20px;
-        }
-
-
-        .input {
-            width: 200px;
-            height: 20px;
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
         }
 
 
         /*  *****  Estilos mas especificos  *****  */
 
         .ejercicio {
-            /* width: 50%; */
-            height: 100px;
+            width: 47%;
+            /* height: 200px; */
             padding: 20px;
             display: flex;
             flex-direction: column;
@@ -104,44 +119,52 @@
 <body>
 
     <!--  **********  Header o Cabecera  **********  -->
-    <header class="header">
+    <header class="cabecera">
 
         <h1> Seccion 30 - Widget Botones - jQuery UI. </h1>
         <hr>
 
     </header>
 
+
+    <!-- -----  SELECTOR DE TEMA  ----- -->
+    <aside class="lateral" id="change-theme"> </aside>
+
+
     <!--  **********  Contenido  **********  -->
-    <main class="main">
-
-
-        <!-- -----  SELECTOR DE TEMA  ----- -->
-        <section id="change-theme"> </section>
+    <main class="contenido">
 
         <!--  -----  Contenedor de los Ejercicios  -----  -->
         <section class="ejercicio">
 
             <!-- -----  botones  ----- -->
-            <h2> Buttons </h2>
+            <h2> Buttons </h2> <br>
             <div id="botones1" class="botones">
                 <button> Esto es un botón </button>
                 <input type="button" value="Esto es otro boton de tipo input" />
                 <a href="#"> Esto es un link </a>
             </div>
 
+        </section>
+
+        <section class="ejercicio">
 
             <!-- -----  botones  Icons  ----- -->
             <br>
-            <h2> Buttons Icons </h2>
+            <h2> Buttons Icons </h2> <br>
             <div id="botones2" class="botones">
                 <button> Esto es un botón </button>
                 <input type="button" value="Esto es otro boton de tipo input" />
                 <a href="#"> Esto es un link </a>
             </div>
 
+        </section>
+
+        <section class="ejercicio">
+
             <!-- -----  botones  Checkbox  ----- -->
             <br>
-            <h2> Buttons CheckBox </h2>
+            <h2> Buttons CheckBox </h2> <br>
             <div id="botones3" class="botones">
 
                 <input type="checkbox" id="encendido"><label for="encendido"> Encendido/abagado </label>
@@ -154,10 +177,13 @@
                 </div>
             </div>
 
+        </section>
+
+        <section class="ejercicio">
 
             <!-- -----  botones  Radio  ----- -->
             <br>
-            <h2> Buttons Radio </h2>
+            <h2> Buttons Radio </h2> <br>
             <div id="botones4" class="botones">
 
                 <form>
@@ -166,10 +192,11 @@
                         <input type="radio" id="opcion2" name="radio" /><label for="opcion2"> Casado </label>
                         <input type="radio" id="opcion3" name="radio" /><label for="opcion3"> Divorciado </label>
                         <input type="radio" id="opcion4" name="radio" /><label for="opcion4"> Liberal </label>
-                        <input type="radio" id="opcion5" name="radio" checked="checked" /><label for="opcion5"> Viudo </label>
+                        <input type="radio" id="opcion5" name="radio" checked="checked" /><label for="opcion5"> Viudo
+                        </label>
                     </div>
                 </form>
-             
+
         </section>
 
     </main>
@@ -221,7 +248,7 @@
 
 
             //  -----  WIDGET BOTONES RADIO  -----
-            $("#estado").buttonset();	
+            $("#estado").buttonset();
 
         });
 
