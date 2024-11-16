@@ -1,7 +1,7 @@
 <!--  ************************************************************************************  -->
 <!--  **********  /01-todo-jquery-de-novato-a-experto/03-jquery-ui-ejercicios/  **********  -->
-<!--  **********  /seccion31-jquery-ui-widget-datepicker/  *******************************  -->
-<!--  **********  /77-jquery-ui-widget-datepicker-showanim/index.html  *******************  -->
+<!--  **********  /seccion31-jquery-ui-widget-dialog/  ***********************************  -->
+<!--  **********  /80-jquery-ui-widget-dialog/index.html  ********************************  -->
 <!--  ************************************************************************************  -->
 
 
@@ -10,7 +10,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> jQuery UI - Seccion 31 - Widget DatePicker - showAnim - jQuery UI </title>
+    <title> jQuery UI - Seccion 32 - Widget Dialog - jQuery UI </title>
 
     <!--  **********  Favicon  **********  -->
     <link rel="icon" href="../../assets/favicon/jquery-icon.png">
@@ -80,7 +80,7 @@
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
-            /* align-items: center; */
+            align-items: center;
             gap: 20px;
             padding-bottom: 100px;
             flex-grow: 1;
@@ -108,18 +108,22 @@
         /*  *****  Estilos mas especificos  *****  */
 
         .ejercicio {
-            margin-top: 50px;
+            width: 80%;
+            height: 80%;
+            background-color: #B0A99C;
+            text-align: center;
+            /* margin-top: 50px;
             padding: 50px;
             display: flex;
             flex-direction: column;
-            /* justify-content: center; */
             align-items: center;
-            background-color: #B0A99C;
+            background-color: #B0A99C; */
         }
 
-        img {
-            width: 30px;
-            margin-top: 10px;
+        select {
+            height: 30px;
+            font-size: 16px;
+            font-weight: bold;
         }
     </style>
 
@@ -131,7 +135,7 @@
     <!--  **********  Header o Cabecera  **********  -->
     <header class="cabecera">
 
-        <h1> Seccion 31 - Widget DatePicker - showAnim - jQuery UI. </h1>
+        <h1> Seccion 32 - Widget Dialog - jQuery UI. </h1>
         <hr>
 
     </header>
@@ -147,8 +151,9 @@
 
         <!--  -----  Contenedor de los Ejercicios de DatePicker  -----  -->
         <section class="ejercicio">
-            <h2> Date Picket showAnim </h2> <br>
-            <p> <input type="text" id="fecha1" placeholder="calendario"> </p>
+
+            <h2> Dialog </h2> <br>
+
             <select id="animacion">
                 <option value="show"> show - default </option>
                 <option value="slideDown"> slideDown: desliza hacia abajo </option>
@@ -161,21 +166,14 @@
                 <option value="slide"> slide: desplaza de izquierda a derecha </option>
                 <option value="shake"> shake: sacudida </option>
             </select>
+
+            <div id="ventana" title="Advertencia">
+                <p> <span class="ui-icon ui-icon-alert" style="float: left; margin-top: 5px; margin-right: 5px;"> </span> </p>
+                <p> La siguiente página contiene material real y explícito, la que podría afectar la sencibilidad del espectador. </p>
+                <br> <p style="text-align: center; font-weight: bold;"> Se recomienda discreción. </p>
+            </div>
+
         </section>
-
-        <!--  
-                show: default
-                slideDown: desliza hacia abajo
-                fadeIn: aparecer
-                blind: persiana
-                bounce: rebote
-                clip: abre del centro hacia fuera
-                drop: abre de izquierda a derecha
-                fold: abre de arriba a abajo
-                slide: desplaza de izquierda a derecha
-                shake: sacudida
-        -->
-
 
     </main>
 
@@ -194,45 +192,49 @@
             $("#change-theme").load("../../change-theme-jquery-ui-v2.html");
 
 
-            //  -----  DATEPICKER SHOWANIM  -----
+            //  -----  DIALOG  -----
 
-            /*
-                show: default
-                slideDown: desliza hacia abajo
-                fadeIn: aparecer
-                blind: persiana
-                bounce: rebote
-                clip: abre del centro hacia fuera
-                drop: abre de izquierda a derecha
-                fold: abre de arriba a abajo
-                slide: desplaza de izquierda a derecha
-                shake: sacudida
-            */
-
-
-            $("#fecha1").datepicker({
-                showButtonPanel: true,
-                changeMonth: true,
-                changeYear: true,
-                numberOfMonths: 3
+            //  -----  Inicializar la ventana de diálogo con autoOpen en false  -----
+            $("#ventana").dialog({
+                autoOpen: true, // La ventana no se abre automáticamente,
+                modal: true,     // Hacer que el diálogo sea modal,
+                width:"500px",
+                hide: {
+                    effect: 'explode',
+                    duration: 2000
+                },
+                buttons: {
+                    "Continuar": function () { 
+                        $(this).dialog("close") 
+                    },
+                    "Cancelar": function () { 
+                        $(this).dialog("close") 
+                    },
+                    Ok: function () { 
+                        $(this).dialog("close") 
+                    }
+                }
             });
 
+
+            //  -----  Cambiar el efecto al seleccionar una opción  -----
             $("#animacion").on('change', function () {
 
-                $("#fecha1").datepicker(
+                const efecto = $(this).val(); // Obtener el efecto seleccionado
+
+                //  -----  Configurar la ventana con el nuevo efecto y abrirla  -----
+                $("#ventana").dialog(
                     'option',
+                    'show',
                     {
-                        showAnim: $(this).val(),       // Cambiar el tipo de animación
-                        duration: 1000                 // Duración en milisegundos
+                        effect: efecto,
+                        duration: 1000
                     }
                 );
-                
-                // $("#fecha1").datepicker(
-                //     'option',
-                //     'showAnim',
 
-                //     $(this).val()
-                // );
+                // Abrir la ventana con el efecto seleccionado
+                $("#ventana").dialog('open');
+
             });
 
         });

@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>JQUI065-DialogParametros</title>
+<link rel="stylesheet" href="../assets/css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="../assets/js/jquery-1.9.1.js"></script>
+<script src="../assets/js/jquery-ui-1.10.1.custom.min.js"></script>
+<style>
+
+</style>
+<script>
+$(function(){
+	$("#mensaje").dialog({
+		show:{effect:"blind", duration:1000},
+		hide:{effect:"explode", duration:1000},
+		buttons:{
+			"Continuar":function(){$(this).dialog("close")},
+			"Cancelar":function(){$(this).dialog("close")},
+			Ok:function(){$(this).dialog("close")}
+		},
+		width:"500px",
+		modal:true
+	});
+});
+</script>
+<style>
+.centra{
+	text-align:center;
+	font-weight:bold;
+}
+
+</style>
+</head>
+<body>
+<div id="mensaje" title="Advertencia">
+	<p>La siguiente página contiene material real y explícito, 
+    la que podría afectar la sencibilidad del espectador.</p>
+    <p class="centra">Se recomienda discreción</p>
+</div>
+</body>
+</html>
