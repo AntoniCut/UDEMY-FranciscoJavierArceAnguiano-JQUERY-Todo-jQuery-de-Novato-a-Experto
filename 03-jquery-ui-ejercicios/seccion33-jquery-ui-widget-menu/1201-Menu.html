@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>JQUI066-Menu</title>
+<link rel="stylesheet" href="../assets/css/ui-lightness/jquery-ui-1.10.1.custom.css" />
+<script src="../assets/js/jquery-1.9.1.js"></script>
+<script src="../assets/js/jquery-ui-1.10.1.custom.min.js"></script>
+<style>
+#menu{
+	width:350px;
+}
+</style>
+<script>
+$(function(){
+	$("#menu").menu();
+});
+</script>
+</head>
+<body>
+	<ul id="menu">
+		<li>
+			<a href="#">Cursos de programación</a>
+			<ul>
+				<li class="ui-state-disabled"><a href="#"><span class="ui-icon ui-icon-disk"></span>Pascal</a></li>
+				<li><a href="#"><span class="ui-icon ui-icon-zoomin"></span>Java</a></li>
+				<li><a href="#"><span class="ui-icon ui-icon-zoomout"></span>Turbo C</a></li>
+				<li><a href="#"><span class="ui-icon ui-icon-stop"></span>C++</a>
+					<ul>
+						<li><a href="#">Báscio</a></li>
+						<li><a href="#">Intermedio</a></li>
+						<li><a href="#">Avanzado</a></li>
+						<li><a href="#">SUper Master</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li><a href="#">Cursos de diseño</a>
+			<ul>
+				<li><a href="#">PhotoShop</a></li>
+				<li><a href="#">Illustrador</a></li>
+				<li><a href="#">FireWorks C</a></li>
+				<li><a href="#">Flash</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Cursos de web</a>
+			<ul>
+				<li><a href="#">HTML5</a></li>
+				<li><a href="#">CSS3</a></li>
+				<li><a href="#">jQuery</a></li>
+				<li><a href="#">JavaScript</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Cursos de video</a>
+			<ul>
+				<li><a href="#">After Efects</a></li>
+				<li><a href="#">Premier</a></li>
+				<li><a href="#">Sony</a></li>
+				<li><a href="#">Producción de video</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Cursos de 3D</a></li>
+	</ul>
+</body>
+</html>
