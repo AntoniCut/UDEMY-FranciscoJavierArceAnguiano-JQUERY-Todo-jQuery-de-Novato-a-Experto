@@ -5,11 +5,7 @@
 <style>
     .btn-container {
         width: 200px;
-        margin-left: -180px;
-        /* position: absolute;
-        top: 20px;
-        top: 115px;
-        left: 20px; */
+        /* margin-left: -180px; */
     }
 
     .boton-ui {
@@ -193,13 +189,13 @@
         const theme = $("#theme");
         const path = "../../assets/css/themes";
 
-        $(".btn-container").on('click', function () {
+        // $(".btn-container").on('click', function () {
            
-            const $btn = $(this); 
-            $btn.css('margin-left', '0'); 
+        //     const $btn = $(this); 
+        //     $btn.css('margin-left', '0'); 
 
-            setTimeout(() => $btn.css('margin-left', '-180px'), 5000);
-        });
+        //     setTimeout(() => $btn.css('margin-left', '-180px'), 5000);
+        // });
 
         $("#to-lightness").click(function () {
             theme.attr("href", `${path}/ui-lightness/jquery-ui.min.css`);

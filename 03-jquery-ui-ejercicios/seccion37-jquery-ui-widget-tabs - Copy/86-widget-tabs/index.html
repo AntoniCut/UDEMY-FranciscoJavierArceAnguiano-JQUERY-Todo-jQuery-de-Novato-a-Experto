@@ -1,0 +1,249 @@
+<!--  ************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/03-jquery-ui-ejercicios/  **********  -->
+<!--  **********  /seccion37-jquery-ui-widget-tabs/  *************************************  -->
+<!--  **********  /86-widget-tabs/index.html  ********************************************  -->
+<!--  ************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> jQuery UI - Seccion 37 - Widget Tabs - jQuery UI </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="../../assets/favicon/jquery-icon.png">
+
+    <!--  **********  Librerías de jQuery y jQuery UI  **********  -->
+    <link rel="stylesheet" id="theme" href="../../assets/css/themes/ui-lightness/jquery-ui.min.css">
+    <script src="../../assets/js/jquery-1.9.1.js"> </script>
+    <script src="../../assets/js/jquery-ui-1.12.0.min.js"> </script>
+
+
+    <!-- -----  jQuery UI 1.14.1 para que funcione resizable con id resizable  ----- -->
+    <!-- <script src="../../assets/jquery-ui-1.14.1.custom/external/jquery/jquery.js"> </script>
+    <link rel="stylesheet" href="../../assets/jquery-ui-1.14.1.custom/jquery-ui.min.css">
+    <script src="../../assets/jquery-ui-1.14.1.custom/jquery-ui.min.js"> </script> -->
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+            display: grid;
+            height: 850px;
+            grid-template-areas:
+                'cabecera  cabecera '
+                'lateral   contenido '
+            ;
+            grid-template-columns: 250px auto;
+            grid-template-rows: 10vh auto;
+        }
+
+        .cabecera {
+            grid-area: cabecera;
+            width: 100%;
+            /* height: 10vh; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid green;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #FCF7CD;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: #FFA500;
+            text-align: center;
+        }
+
+
+        .lateral {
+            grid-area: lateral;
+            padding: 20px;
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+        }
+
+        .contenido {
+            grid-area: contenido;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            /* justify-content: center; */
+            align-items: center;
+            gap: 30px;
+            padding-top: 50px;
+            padding-bottom: 100px;
+            flex-grow: 1;
+            font-size: 16px;
+            font-weight: bold;
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+        }
+
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* button {
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #28253575;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            transition: all 300ms ease;
+        }
+
+        button:hover {
+            background-color: #675f8a75;
+        } */
+
+
+        input {
+            width: 300px;
+            height: 30px;
+            margin-bottom: 20px;
+        }
+
+
+        /*  *****  Estilos mas especificos  *****  */
+
+        .ejercicio {
+            /* width: 60%; */
+            /* height: 50px; */
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            background-color: #B0A99C;
+            text-align: center;
+        }
+
+        #tabs {
+            width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="cabecera">
+
+        <h1> Seccion 37 - Widget Tabs - jQuery UI. </h1>
+        <hr>
+
+    </header>
+
+
+    <!-- -----  SELECTOR DE TEMA  ----- -->
+    <aside class="lateral" id="change-theme"> </aside>
+
+
+    <!--  **********  Contenido  **********  -->
+    <main class="contenido">
+
+        <!--  -----  Contenedor de los Ejercicios del Widget Spinner  -----  -->
+        <section class="ejercicio">
+
+            <div id="tabs">
+                <ul>
+                    <li><a href="#primera">Primera</a></li>
+                    <li><a href="#segunda">Segunda</a></li>
+                    <li><a href="#tercera">Tercera</a></li>
+                </ul>
+                <div id="primera">
+                    <p>En la mitología clásica, Urano es el dios primordial del cielo. En la mitología griega era
+                        personificado como hijo y esposo de Gea, la Madre Tierra. Ambos fueron ancestros de la mayoría
+                        de los dioses griegos, pero ningún culto dirigido directamente a Urano sobrevivió hasta la época
+                        clásica,1 y el dios no aparece entre los temas comunes de la cerámica griega antigua. Sin
+                        embargo, la Tierra, el Cielo y Estigia podían unirse en una solemne invocación en la épica
+                        homérica.</p>
+                    <p>La mayoría de los griegos consideraban que Urano era un dios primordial (protogenos), y no le
+                        asignaban padres. Bajo la influencia de los filósofos, Cicerón afirma en De natura deorum que
+                        era descendiente de los antiguos dioses Éter y Hemera, el Aire y el Día. Según los himnos
+                        órficos, Urano era el hijo de la diosa de la noche, Nix.</p>
+                </div>
+                <div id="segunda">
+                    <p>En la mitología griega, los Titanes —masculino— y Titánides —femenino— eran una raza de poderosos
+                        dioses que gobernaron durante la legendaria edad de oro.</p>
+                    <p>Los Titanes fueron doce desde su primera aparición literaria, en la Teogonía de Hesíodo; aunque
+                        en su Biblioteca mitológica, Apolodoro añade un decimotercero, Dione, desdoblamiento de la
+                        titánide Tea. Estaban relacionados con diversos conceptos primordiales, algunos de los cuales
+                        simplemente se extrapolaban de sus nombres: el océano y la fructífera tierra, el Sol y la Luna,
+                        la memoria y la ley natural. Los doce Titanes de la primera generación fueron liderados por el
+                        más joven, Crono, quien derrocó a su padre Urano (‘Cielo’) a instancias de su madre, Gea
+                        (‘Tierra’).</p>
+                    <p>Posteriormente los Titanes engendraron una segunda generación, destacando los hijos de Hiperión
+                        (Helios, Eos y Selene), las hijas de Ceo (Leto y Asteria) y los hijos de Jápeto (Prometeo,
+                        Epimeteo, Atlas y Menecio).</p>
+                    <p>Los Titanes precedieron a los doce dioses olímpicos, quienes, guiados por Zeus, terminaron
+                        derrocándolos en la Titanomaquia (‘Guerra de los Titanes’). La mayoría de ellos fueron entonces
+                        encarcelados en el Tártaro, la región más profunda del inframundo.</p>
+                </div>
+                <div id="tercera">
+                    <p>En la mitología griega, los dioses olímpicos son los principales dioses del panteón griego, que
+                        moraban en la cima del monte Olimpo, el más alto de Grecia. Hubo, en diferentes épocas, catorce
+                        dioses diferentes reconocidos como olímpicos, aunque nunca más de doce a la vez. De ahí que a
+                        veces se haga referencia a ellos como los doce olímpicos, también conocidos como Dodekatheon.
+                    </p>
+                    <p>Los doce olímpicos ganaron su supremacía en el mundo de los dioses después de que Zeus llevara a
+                        sus hermanos a la victoria en la guerra contra los Titanes.</p>
+                    <p>Zeus, Hera, Poseidón, Deméter, Hestia, Hades, y Quirón (que no era un dios, sino un entrenador de
+                        los semidioses de los niños humanos de los dioses), eran hermanos.</p>
+                    <p>Ares, Hermes, Hefesto, Atenea, Apolo, Artemisa, las Cárites, Heracles, Dioniso, Hebe, Perseo y
+                        Perséfone eran hijos de Zeus. Algunas versiones de los mitos declaran que Hefesto nació solo de
+                        Hera.</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+
+        $(function () {
+
+            //console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+            console.warn('----------  Documento Cargado!!!  ----- ', 'jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+
+            //  -----  SELECTOR DE TEMA  -----
+            $("#change-theme").load("../../change-theme-jquery-ui-v2.html");
+
+
+            //  -----  TABS  -----
+
+            $("#tabs").tabs();
+
+        });
+
+    </script>
+
+</body>
+
+</html>
