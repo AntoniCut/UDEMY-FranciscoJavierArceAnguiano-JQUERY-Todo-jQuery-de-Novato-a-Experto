@@ -3,15 +3,15 @@
 <!--  **********************************************************************************************************  -->
 
 <style>
-    
     .btn-container {
         width: 200px;
+        margin-left: -180px;
         /* position: absolute;
         top: 20px;
         top: 115px;
         left: 20px; */
     }
-    
+
     .boton-ui {
         width: 150px;
         font-size: 12px;
@@ -29,7 +29,7 @@
         background-color: rgb(69, 8, 126);
     }
 
-    .active{
+    .active {
         width: 200px;
         height: 50px;
         font-size: 20px;
@@ -61,13 +61,13 @@
         color: #000000;
         background-color: #62BBE9;
     }
-    
+
     #to-dark-hive {
         background-color: #1F7FAD;
     }
 
     #to-dot-luv {
-        background-color: #0B5194 ;
+        background-color: #0B5194;
     }
 
     #to-eggplant {
@@ -146,14 +146,12 @@
     #to-vader {
         background-color: #262626;
     }
-
-
 </style>
 
 
 <div class="btn-container">
 
-    <button id="to-lightness" class="boton-ui active"> lightness </button> 
+    <button id="to-lightness" class="boton-ui active"> lightness </button>
     <button id="to-darkness" class="boton-ui"> darkness </button>
     <button id="to-base" class="boton-ui"> base </button>
     <button id="to-black-tie" class="boton-ui"> black-tie </button>
@@ -195,6 +193,14 @@
         const theme = $("#theme");
         const path = "../../assets/css/themes";
 
+        $(".btn-container").on('click', function () {
+           
+            const $btn = $(this); 
+            $btn.css('margin-left', '0'); 
+
+            setTimeout(() => $btn.css('margin-left', '-180px'), 5000);
+        });
+
         $("#to-lightness").click(function () {
             theme.attr("href", `${path}/ui-lightness/jquery-ui.min.css`);
             $(".btn-container > button").removeClass('active');
@@ -218,7 +224,7 @@
             $(".btn-container > button").removeClass('active');
             $(this).addClass('active');
         });
-        
+
 
         $("#to-blitzer").click(function () {
             theme.attr("href", `${path}/blitzer/jquery-ui.min.css`);

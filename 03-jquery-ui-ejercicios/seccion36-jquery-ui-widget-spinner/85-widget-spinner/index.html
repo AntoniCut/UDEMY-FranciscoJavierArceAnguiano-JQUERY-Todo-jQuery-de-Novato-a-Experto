@@ -1,0 +1,277 @@
+<!--  ************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/03-jquery-ui-ejercicios/  **********  -->
+<!--  **********  /seccion34-jquery-ui-widget-spinner/  **********************************  -->
+<!--  **********  /85-widget-spinner/index.html  *****************************************  -->
+<!--  ************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> jQuery UI - Seccion 36 - Widget Spinner - jQuery UI </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="../../assets/favicon/jquery-icon.png">
+
+    <!--  **********  Librerías de jQuery y jQuery UI  **********  -->
+    <link rel="stylesheet" id="theme" href="../../assets/css/themes/ui-lightness/jquery-ui.min.css">
+    <script src="../../assets/js/jquery-1.9.1.js"> </script>
+    <script src="../../assets/js/jquery-ui-1.12.0.min.js"> </script>
+
+
+    <!-- -----  jQuery UI 1.14.1 para que funcione resizable con id resizable  ----- -->
+    <!-- <script src="../../assets/jquery-ui-1.14.1.custom/external/jquery/jquery.js"> </script>
+    <link rel="stylesheet" href="../../assets/jquery-ui-1.14.1.custom/jquery-ui.min.css">
+    <script src="../../assets/jquery-ui-1.14.1.custom/jquery-ui.min.js"> </script> -->
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+            display: grid;
+            height: 850px;
+            grid-template-areas:
+                'cabecera  cabecera '
+                'lateral   contenido '
+            ;
+            grid-template-columns: 250px auto;
+            grid-template-rows: 10vh auto;
+        }
+
+        .cabecera {
+            grid-area: cabecera;
+            width: 100%;
+            /* height: 10vh; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid green;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #FCF7CD;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: #FFA500;
+            text-align: center;
+        }
+
+
+        .lateral {
+            grid-area: lateral;
+            padding: 20px;
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+        }
+
+        .contenido {
+            grid-area: contenido;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            /* justify-content: center; */
+            align-items: center;
+            gap: 30px;
+            padding-top: 50px;
+            padding-bottom: 100px;
+            flex-grow: 1;
+            font-size: 16px;
+            font-weight: bold;
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+        }
+
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* button {
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #28253575;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            transition: all 300ms ease;
+        }
+
+        button:hover {
+            background-color: #675f8a75;
+        } */
+
+
+        input {
+            width: 300px;
+            height: 30px;
+            margin-bottom: 20px;
+        }
+
+
+        /*  *****  Estilos mas especificos  *****  */
+
+        .ejercicio {
+            width: 40%;
+            /* height: 50px; */
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            background-color: #B0A99C;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="cabecera">
+
+        <h1> Seccion 34 - Widget Slider - Slide y Change - jQuery UI. </h1>
+        <hr>
+
+    </header>
+
+
+    <!-- -----  SELECTOR DE TEMA  ----- -->
+    <aside class="lateral" id="change-theme"> </aside>
+
+
+    <!--  **********  Contenido  **********  -->
+    <main class="contenido">
+
+        <!--  -----  Contenedor de los Ejercicios del Widget Spinner  -----  -->
+        <section class="ejercicio">
+
+            <p>
+                <label for="spinner1"> Seleccione un valor... </label> 
+                <br> <br>
+                <input id="spinner1">
+            </p>
+
+        </section>
+
+        <section class="ejercicio">
+
+            <p>
+                <label for="spinner2"> Seleccione un valor... </label>
+                <br> <br>
+                <input id="spinner2">
+            </p>
+
+        </section>
+
+        <section class="ejercicio">
+
+            <p>
+                <label for="spinner3"> Seleccione un valor... </label>
+                <br> <br>
+                <input id="spinner3">
+            </p>
+
+            <p>
+                <button id="activa"> Activar / Desactivar </button>
+                <button id="destruir"> Destruye / Construye </button>
+            </p>
+
+            <p>
+                <button id="getValue"> Tomar Valor </button>
+                <button id="setValue"> Actualiza Valor </button>
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+
+        $(function () {
+
+            //console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+            console.warn('----------  Documento Cargado!!!  ----- ', 'jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+
+            //  -----  SELECTOR DE TEMA  -----
+            $("#change-theme").load("../../change-theme-jquery-ui-v2.html");
+
+
+            //  -----  SPINNER  -----
+            $("#spinner1").spinner();
+
+            $("#spinner2").spinner({
+                min: 1,
+                max: 10,
+                step: 1
+            });
+
+            //  -----  SPINNER  --  disabled, destroy, value  -----
+
+            const spinner3 = $("#spinner3").spinner({
+                min: 1,
+                max: 10,
+                step: 1
+            });
+
+            $("#activa").on('click', function () {
+
+                if (!spinner3.data("ui-spinner")) spinner3.spinner();
+
+                if (spinner3.spinner("option", "disabled")) spinner3.spinner("enable");
+                else spinner3.spinner("disable");
+            });
+
+            $("#destruir").on('click', function () {
+
+                if (spinner3.data("ui-spinner")) spinner3.spinner("destroy");
+                else spinner3.spinner();
+            });
+
+            $("#getValue").on('click', function () {
+
+                if (!spinner3.data("ui-spinner")) {
+                    alert('Tienes que Construir el spinner!!!');
+                    return;
+                }
+
+                alert("El valor del spinner es " + spinner3.spinner("value"))
+            });
+
+            $("#setValue").on('click', function () {
+
+                if (!spinner3.data("ui-spinner")) {
+                    alert('Tienes que Construir el spinner!!!');
+                    return;
+                }
+                spinner3.spinner("value", 10);
+            });
+
+            $('button').button();
+
+        });
+
+    </script>
+
+</body>
+
+</html>
