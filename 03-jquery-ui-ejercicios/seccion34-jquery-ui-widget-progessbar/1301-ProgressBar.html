@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>JQUI067-ProgressBar</title>
+<link rel="stylesheet" href="../assets/css/ui-lightness/jquery-ui-1.10.1.custom.min.css" />
+<script src="../assets/js/jquery-1.9.1.js"></script>
+<script src="../assets/js/jquery-ui-1.10.1.custom.min.js"></script>
+<style>
+#etiqueta{
+	float:left;
+	margin-left:50%;
+	margin-top:5px;
+	
+}
+</style>
+<script>
+$(function(){
+	//$("#barra").progressbar({value:45});
+	var b = $("#barra");
+	var e = $("#etiqueta");
+	
+	b.progressbar({
+		value:false,
+		change: function(){
+			e.text(b.progressbar("value")+"%");
+		},
+		complete: function(){
+			e.text("¡Completo!");
+		}
+	});
+	
+	function progreso(){
+		var v = b.progressbar("value")||0;
+		b.progressbar("value",v+1);
+		if(v<99){
+			setTimeout(progreso,100);
+		}
+	}
+	
+	setTimeout(progreso,3000);
+	
+});
+</script>
+<style>
+
+</style>
+</head>
+<body>
+<div id="barra"><div id="etiqueta">Cargando...</div></div>
+</body>
+</html>
