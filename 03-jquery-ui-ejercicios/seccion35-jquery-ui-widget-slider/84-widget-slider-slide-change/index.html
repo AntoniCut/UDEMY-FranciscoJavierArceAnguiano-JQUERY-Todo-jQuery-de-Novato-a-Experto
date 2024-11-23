@@ -1,0 +1,275 @@
+<!--  ************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/03-jquery-ui-ejercicios/  **********  -->
+<!--  **********  /seccion34-jquery-ui-widget-slider/  ***********************************  -->
+<!--  **********  /84-jquery-ui-widget-slider-slide-change/index.html  *******************  -->
+<!--  ************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> jQuery UI - Seccion 35 - Widget Slider - Slide y Change - jQuery UI </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="../../assets/favicon/jquery-icon.png">
+
+    <!--  **********  Librerías de jQuery y jQuery UI  **********  -->
+    <link rel="stylesheet" id="theme" href="../../assets/css/themes/ui-lightness/jquery-ui.min.css">
+    <script src="../../assets/js/jquery-1.9.1.js"> </script>
+    <script src="../../assets/js/jquery-ui-1.12.0.min.js"> </script>
+
+
+    <!-- -----  jQuery UI 1.14.1 para que funcione resizable con id resizable  ----- -->
+    <!-- <script src="../../assets/jquery-ui-1.14.1.custom/external/jquery/jquery.js"> </script>
+    <link rel="stylesheet" href="../../assets/jquery-ui-1.14.1.custom/jquery-ui.min.css">
+    <script src="../../assets/jquery-ui-1.14.1.custom/jquery-ui.min.js"> </script> -->
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+            display: grid;
+            height: 850px;
+            grid-template-areas:
+                'cabecera  cabecera '
+                'lateral   contenido '
+            ;
+            grid-template-columns: 250px auto;
+            grid-template-rows: 10vh auto;
+        }
+
+        .cabecera {
+            grid-area: cabecera;
+            width: 100%;
+            /* height: 10vh; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid green;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #FCF7CD;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: #FFA500;
+            text-align: center;
+        }
+
+
+        .lateral {
+            grid-area: lateral;
+            padding: 20px;
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+        }
+
+        .contenido {
+            grid-area: contenido;
+            width: 100%;
+            height: 830px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            /* justify-content: center; */
+            align-items: center;
+            gap: 50px;
+            padding-top: 100px;
+            padding-bottom: 100px;
+            flex-grow: 1;
+            font-size: 16px;
+            font-weight: bold;
+            background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
+        }
+
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+
+        input {
+            width: 300px;
+            height: 30px;
+            margin-bottom: 20px;
+        }
+
+
+        /*  *****  Estilos mas especificos  *****  */
+
+        .ejercicio {
+            width: 80%;
+            height: 400px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            background-color: #B0A99C;
+            text-align: center;
+        }
+
+        #rojo,
+        #verde,
+        #azul {
+            float: left;
+            clear: left;
+            width: 300px;
+            margin: 15px;
+        }
+
+        #rojo .ui-slider-range {
+            background: red;
+        }
+
+        #rojo .ui-slider-handler {
+            border: red;
+        }
+
+        #verde .ui-slider-range {
+            background: green;
+        }
+
+        #verde .ui-slider-handler {
+            border: green;
+        }
+
+        #azul .ui-slider-range {
+            background: blue;
+        }
+
+        #azul .ui-slider-handler {
+            border: blue;
+        }
+
+        #cuadro {
+            width: 120px;
+            height: 100px;
+            background-image: none;
+        }
+
+        p {
+            padding: 4px;
+        }
+
+        span {
+            float: left;
+            margin: -2px 5px 0 0;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="cabecera">
+
+        <h1> Seccion 34 - Widget Slider - Slide y Change - jQuery UI. </h1>
+        <hr>
+
+    </header>
+
+
+    <!-- -----  SELECTOR DE TEMA  ----- -->
+    <aside class="lateral" id="change-theme"> </aside>
+
+
+    <!--  **********  Contenido  **********  -->
+    <main class="contenido">
+
+        <!--  -----  Contenedor de los Ejercicios del Widget Slider con slide y change  -----  -->
+        <section class="ejercicio ui-widget-content">
+
+            <p class="ui-state-default ui-corner-all ui-helper-clearfix">
+                <span class="ui-icon ui-icon-pencil"> </span>
+                Seleccione su color...
+            </p>
+
+            <div id="rojo"> </div>
+            <div id="verde"> </div>
+            <div id="azul"> </div>
+
+            <div id="cuadro" class="ui-widget-content ui-corner-all"> </div>
+
+        </section>
+
+    </main>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+
+        $(function () {
+
+            //console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
+            console.warn('----------  Documento Cargado!!!  ----- ', 'jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+
+            //  -----  SELECTOR DE TEMA  -----
+            $("#change-theme").load("../../change-theme-jquery-ui-v2.html");
+
+
+            //  -----  SLIDER - slide y change  -----
+
+            //  -----  Inicializar los sliders  -----
+            $("#rojo, #verde, #azul").slider({
+                orientation: "horizontal",
+                range: "min",
+                max: 255,
+                value: 127,
+                slide: refrescaColor,       // Llama a la función de refresco durante el movimiento
+                change: refrescaColor       // Llama a la función de refresco al soltar el control
+            });
+
+            //  -----  Valores iniciales  -----
+            $("#rojo").slider("value", 255);    // Rojo inicial
+            $("#verde").slider("value", 140);   // Verde inicial
+            $("#azul").slider("value", 60);     // Azul inicial
+
+
+            //  -----  Función para refrescar el color del cuadro  -----
+            function refrescaColor() {
+
+                const rojo = $("#rojo").slider("value");
+                const verde = $("#verde").slider("value");
+                const azul = $("#azul").slider("value");
+
+                const hexadecimal = convierteHexadecimal(rojo, verde, azul);
+
+                //  -----  Aplicar el color al cuadro  -----
+                $("#cuadro").css("background-color", "#" + hexadecimal);
+            }
+
+            //  -----  Función para convertir valores RGB a hexadecimal  -----
+            function convierteHexadecimal(rojo, verde, azul) {
+                const hexRojo = rojo.toString(16).padStart(2, "0");
+                const hexVerde = verde.toString(16).padStart(2, "0");
+                const hexAzul = azul.toString(16).padStart(2, "0");
+
+                return hexRojo + hexVerde + hexAzul;
+            }
+
+            //  -----  Refrescar el color inicial al cargar la página  -----
+            refrescaColor();
+        });
+
+    </script>
+
+</body>
+
+</html>
