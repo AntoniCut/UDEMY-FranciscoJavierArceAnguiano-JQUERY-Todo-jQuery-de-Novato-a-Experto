@@ -1,7 +1,7 @@
 <!--  ************************************************************************************  -->
 <!--  **********  /01-todo-jquery-de-novato-a-experto/03-jquery-ui-ejercicios/  **********  -->
-<!--  **********  /seccion39-jquery-ui-efectoss/  ****************************************  -->
-<!--  **********  /88-efectos/index.html  ************************************************  -->
+<!--  **********  /seccion39-jquery-ui-efectos/  *****************************************  -->
+<!--  **********  /90-efecto-animate/index.html  *****************************************  -->
 <!--  ************************************************************************************  -->
 
 
@@ -10,7 +10,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> jQuery UI - Seccion 39 - Efectos - jQuery UI </title>
+    <title> jQuery UI - Seccion 39 - Efecto de Color con Animate - jQuery UI </title>
 
     <!--  **********  Favicon  **********  -->
     <link rel="icon" href="../../assets/favicon/jquery-icon.png">
@@ -68,6 +68,7 @@
 
         .lateral {
             grid-area: lateral;
+
             padding: 20px;
             background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
         }
@@ -75,7 +76,7 @@
         .contenido {
             grid-area: contenido;
             width: 100%;
-            height: auto;
+            height: 100%;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -98,21 +99,6 @@
             gap: 20px;
         }
 
-        /* button {
-            padding: 10px 20px;
-            color: #fff;
-            background-color: #28253575;
-            cursor: pointer;
-            border-radius: 5px;
-            border: none;
-            transition: all 300ms ease;
-        }
-
-        button:hover {
-            background-color: #675f8a75;
-        } */
-
-
         input {
             width: 300px;
             height: 30px;
@@ -123,15 +109,35 @@
         /*  *****  Estilos mas especificos  *****  */
 
         .ejercicio {
+            width: 80%;
+            height: 300px;
             padding: 20px;
-            height: 400px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* justify-content: center; */
+            justify-content: center;
             gap: 20px;
-            margin-bottom: 20px;
             background-color: #B0A99C;
+            text-align: center;
+        }
+
+        .caja {
+            width: 500px;
+            height: 200px;
+            position: relative;
+        }
+
+        #efecto {
+            width: 240px;
+            height: 130px;
+            padding: 0.4em;
+            position: relative;
+            background: white;
+        }
+
+        #efecto h3 {
+            margin: 0;
+            padding: .4em;
             text-align: center;
         }
 
@@ -140,36 +146,16 @@
             height: 40px;
             margin: 20px;
             font-size: 16px;
+            border-radius: 10px;
         }
 
-        .effect-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 400px;
-            height: 400px;
-            margin: 20px;
-            background-color: #4caf50;
-            color: #fff;
-            line-height: 50px;
-            text-align: center;
-            border-radius: 5px;
-            position: relative;
-            font-size: 48px;
-        }
-
-        button {
-            margin: 10px;
+        #button {
+            margin-top: 50px;
             padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
+            text-decoration: none;
             cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
+            border-radius: 10px;
+            border: none;
         }
     </style>
 
@@ -181,7 +167,7 @@
     <!--  **********  Header o Cabecera  **********  -->
     <header class="cabecera">
 
-        <h1> Seccion 39 - Efectos - jQuery UI. </h1>
+        <h1> Seccion 39 - Efecto de Color con Animate - jQuery UI. </h1>
         <hr>
 
     </header>
@@ -194,65 +180,21 @@
     <!--  **********  Contenido  **********  -->
     <main class="contenido">
 
-        <!--  -----  Contenedor de los Ejercicios del Manejo de Tooltips  -----  -->
+        <!--  -----  Contenedor de los Ejercicios de los Efectos  -----  -->
         <section class="ejercicio">
 
-            <h1>Efectos de Easing y Animación</h1>
+            <div class="caja">
 
-            <select id="effect-select">
-                <option value="highlight">Highlight</option>
-                <option value="bounce">Bounce</option>
-                <option value="shake">Shake</option>
-                <option value="scale">Scale</option>
-                <option value="explode">Explode</option>
-                <option value="puff">Puff</option>
-                <option value="pulsate">Pulsate</option>
-                <option value="slide">Slide</option>
-                <option value="blind">Blind</option>
-                <option value="clip">Clip</option>
-                <option value="fold">Fold</option>
-            </select>
-            
-            <select id="easing-select">
-                <option value="linear">Linear</option>
-                <option value="swing">Swing</option>
-                <option value="easeInQuad">Ease In Quad</option>
-                <option value="easeOutQuad">Ease Out Quad</option>
-                <option value="easeInOutQuad">Ease In Out Quad</option>
-                <option value="easeInCubic">Ease In Cubic</option>
-                <option value="easeOutCubic">Ease Out Cubic</option>
-                <option value="easeInOutCubic">Ease In Out Cubic</option>
-                <option value="easeInQuart">Ease In Quart</option>
-                <option value="easeOutQuart">Ease Out Quart</option>
-                <option value="easeInOutQuart">Ease In Out Quart</option>
-                <option value="easeInSine">Ease In Sine</option>
-                <option value="easeOutSine">Ease Out Sine</option>
-                <option value="easeInOutSine">Ease In Out Sine</option>
-                <option value="easeInExpo">Ease In Expo</option>
-                <option value="easeOutExpo">Ease Out Expo</option>
-                <option value="easeInOutExpo">Ease In Out Expo</option>
-                <option value="easeInQuint">Ease In Quint</option>
-                <option value="easeOutQuint">Ease Out Quint</option>
-                <option value="easeInOutQuint">Ease In Out Quint</option>
-                <option value="easeInCirc">Ease In Circ</option>
-                <option value="easeOutCirc">Ease Out Circ</option>
-                <option value="easeInOutCirc">Ease In Out Circ</option>
-                <option value="easeInElastic">Ease In Elastic</option>
-                <option value="easeOutElastic">Ease Out Elastic</option>
-                <option value="easeInOutElastic">Ease In Out Elastic</option>
-                <option value="easeInBack">Ease In Back</option>
-                <option value="easeOutBack">Ease Out Back</option>
-                <option value="easeInOutBack">Ease In Out Back</option>
-                <option value="easeInBounce">Ease In Bounce</option>
-                <option value="easeOutBounce">Ease Out Bounce</option>
-                <option value="easeInOutBounce">Ease In Out Bounce</option>
-            </select>
-            
-            <button id="apply-effect-easing">Aplicar Effect and Easing </button>
-           
+                <div id="efecto" class="ui-widget-content ui-corner-all">
+                    <h3 class="ui-widget-header ui-corner-all"> Blanco </h3>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. At maiores autem esse ipsam harum! </p>
+                </div>
+
+            </div>
+
+            <button id="button"> Animación </button>
+
         </section>
-
-        <div class="effect-box" id="box">Animar</div>
 
 
     </main>
@@ -290,22 +232,31 @@
             //  -----  easeInBounce     easeInOutBounce  easeOutBounce                                                          -----                                                                                  -----
             //-----------------------------------------------------------------------------------------------------------------------
 
+            let estado = true;
 
-            $('#apply-effect-easing').click(function () {
-                
-                const effect = $('#effect-select').val();
-                const easing = $('#easing-select').val();
-                const $box = $('#box');
+            $('#button').click(function () {
 
-                // Aplicar efecto
-                $box.effect(effect, easing, 3000);
+                if (estado) {
 
-                setTimeout(() => { 
-                    location.reload();   
-                    //alert('dddd')  
-                }, 3000);
+                    $('h3').text('Rojo');
+                    $('#efecto').animate({
+                        backgroundColor: "#ff0000",
+                        color: "white",
+                        width: 500
+                    }, 5000);
+
+                } else {
+
+                    $('h3').text('Blanco');
+                    $('#efecto').animate({
+                        backgroundColor: "#ffffff",
+                        color: "black",
+                        width: 240
+                    }, 1000);
+                }
+
+                estado = !estado;
             });
-
         });
 
     </script>
