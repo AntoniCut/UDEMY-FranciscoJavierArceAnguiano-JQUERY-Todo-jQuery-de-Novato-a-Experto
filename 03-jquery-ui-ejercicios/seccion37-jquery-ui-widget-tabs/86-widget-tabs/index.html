@@ -10,7 +10,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> jQuery UI - Seccion 37 - Widget Tabs - jQuery UI </title>
+    <title> jQuery UI - Seccion 37 - Widget Tabs o Tabuladores - jQuery UI </title>
 
     <!--  **********  Favicon  **********  -->
     <link rel="icon" href="../../assets/favicon/jquery-icon.png">
@@ -37,7 +37,7 @@
         body {
             background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa);
             display: grid;
-            height: 850px;
+            /* height: 850px; */
             grid-template-areas:
                 'cabecera  cabecera '
                 'lateral   contenido '
@@ -136,9 +136,43 @@
             text-align: center;
         }
 
-        #tabs {
-            width: 800px;
+        .title {
+            margin: 10px;
+        }
+
+        #generaciones,
+        #tabs,
+        #tabsSorteable {
+            width: 850px;
             margin: 0 auto;
+        }
+
+        #tabs .tabs-spacer {
+            float: left;
+            height: 200px;
+        }
+
+        .tabs-bottom .ui-tabs-nav {
+            clear: left;
+            padding: 0 .2em .2em .2em;
+        }
+
+        .tabs-bottom .ui-tabs-nav li {
+            top: auto;
+            bottom: 0;
+            margin: 0 .2em 1px 0;
+            border-bottom: auto;
+            border-top: 0;
+        }
+
+        .tabs-bottom .ui-tabs-nav li.ui-tabs-active {
+            margin-top: -1px;
+            padding-top: 1px;
+        }
+
+        p {
+            text-align: left;
+            margin-bottom: 10px;
         }
     </style>
 
@@ -150,7 +184,7 @@
     <!--  **********  Header o Cabecera  **********  -->
     <header class="cabecera">
 
-        <h1> Seccion 37 - Widget Tabs - jQuery UI. </h1>
+        <h1> Seccion 37 - Widget Tabs o Tabuladores - jQuery UI. </h1>
         <hr>
 
     </header>
@@ -163,15 +197,20 @@
     <!--  **********  Contenido  **********  -->
     <main class="contenido">
 
-        <!--  -----  Contenedor de los Ejercicios del Widget Spinner  -----  -->
+
+        <!--  -----  Contenedor del Ejercicio del Widget Tab  -----  -->
         <section class="ejercicio">
 
-            <div id="tabs">
+            <div id="generaciones">
+
+                <h2 class="title"> Tabuladores </h2>
+
                 <ul>
-                    <li><a href="#primera">Primera</a></li>
-                    <li><a href="#segunda">Segunda</a></li>
-                    <li><a href="#tercera">Tercera</a></li>
+                    <li> <a href="#primera"> Primera </a> </li>
+                    <li><a href="#segunda"> Segunda</a> </li>
+                    <li><a href="#tercera"> Tercera</a> </li>
                 </ul>
+
                 <div id="primera">
                     <p>En la mitología clásica, Urano es el dios primordial del cielo. En la mitología griega era
                         personificado como hijo y esposo de Gea, la Madre Tierra. Ambos fueron ancestros de la mayoría
@@ -184,6 +223,7 @@
                         era descendiente de los antiguos dioses Éter y Hemera, el Aire y el Día. Según los himnos
                         órficos, Urano era el hijo de la diosa de la noche, Nix.</p>
                 </div>
+
                 <div id="segunda">
                     <p>En la mitología griega, los Titanes —masculino— y Titánides —femenino— eran una raza de poderosos
                         dioses que gobernaron durante la legendaria edad de oro.</p>
@@ -201,6 +241,7 @@
                         derrocándolos en la Titanomaquia (‘Guerra de los Titanes’). La mayoría de ellos fueron entonces
                         encarcelados en el Tártaro, la región más profunda del inframundo.</p>
                 </div>
+
                 <div id="tercera">
                     <p>En la mitología griega, los dioses olímpicos son los principales dioses del panteón griego, que
                         moraban en la cima del monte Olimpo, el más alto de Grecia. Hubo, en diferentes épocas, catorce
@@ -215,7 +256,56 @@
                         Perséfone eran hijos de Zeus. Algunas versiones de los mitos declaran que Hefesto nació solo de
                         Hera.</p>
                 </div>
+
             </div>
+
+        </section>
+
+
+        <!--  -----  Contenedor del Ejercicio del Widget Tab con Botones  -----  -->
+        <section class="ejercicio">
+
+            <div id="tabs" class="tabs-bottom">
+
+                <h2 class="title"> Tabuladores con Botones </h2>
+
+                <ul>
+                    <li> <a href="#tab1"> Uno </a> </li>
+                    <li> <a href="#tab2"> Dos </a> </li>
+                    <li> <a href="#tab3"> Tres </a> </li>
+                </ul>
+
+                <div class="tabs-spacer"> </div>
+
+                <div id="tab1"> <img src="../../assets/imagenes/afrodita.jpg" height="500px"> </div>
+                <div id="tab2"> <img src="../../assets/imagenes/afrodita2.jpg" height="500px"> </div>
+                <div id="tab3"> <img src="../../assets/imagenes/fondos/el_partenon.jpg" height="500px"> </div>
+
+            </div>
+
+        </section>
+
+
+        <!--  -----  Contenedor del Ejercicio del Widget Tab con Sorteable  -----  -->
+        <section class="ejercicio">
+
+            <div id="tabsSorteable">
+
+                <h2 class="title"> Tabuladores con Sorteable </h2>
+
+                <ul>
+                    <li> <a href="#tab1Sorteable"> Botticheli </a> </li>
+                    <li> <a href="#tab2Sorteable"> Velazquez </a> </li>
+                    <li> <a href="#tab3Sorteable"> Bouguereau </a> </li>
+                </ul>
+
+                <div id="tab1Sorteable"> <img src="../../assets/imagenes/afrodita.jpg" height="500px"> </div>
+                <div id="tab2Sorteable"> <img src="../../assets/imagenes/afrodita2.jpg" height="500px"> </div>
+                <div id="tab3Sorteable"> <img src="../../assets/imagenes/afrodita160x196.jpg" height="500px"> </div>
+
+            </div>
+
+        </section>
 
         </section>
 
@@ -236,9 +326,37 @@
             $("#change-theme").load("../../change-theme-jquery-ui-v2.html");
 
 
-            //  -----  TABS  -----
+            //  ----------------------------
+            //  ----------  TABS  ----------
+            //  ----------------------------
 
+            //  ----- Tabs  -----
+            $("#generaciones").tabs();
+
+
+            //  -----  Tabs con Botones  -----
             $("#tabs").tabs();
+
+            $(".tabs-bottom .ui-tabs-nav, .tabs-bottom .ui-tabs-nav > *")
+                .removeClass('ui-corner-all ui-corner-top')
+                .addClass('ui-corner-bottom');
+
+            $(".tabs-bottom .ui-tabs-nav").appendTo(".tabs-bottom");
+
+
+            //  -----  Tabs Sorteable  -----
+            const tabSorteable = $("#tabsSorteable").tabs();
+            
+            tabSorteable.find('.ui-tabs-nav').sortable({
+                axis: 'x',
+                stop: function() {
+                    tabSorteable.tabs('refresh');
+                }
+            })
+
+
+           
+
 
         });
 

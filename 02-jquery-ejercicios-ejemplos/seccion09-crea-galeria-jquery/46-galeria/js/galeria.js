@@ -3,6 +3,7 @@
 //  ************************************************************************************************************************************************  
 
 
+
 $(document).ready(function () {
 
     console.warn('----------  Documento Cargado!!!  ----- ', 'CDN Google - jQuery version:', $.fn.jquery, ' ----------', '\n');
@@ -10,7 +11,7 @@ $(document).ready(function () {
     //  -----  Declaración de Variables  -----
     let fotoActual = 1;
     const numFotos = 6;
-    let timer;
+    let timer; // Almacenará el intervalo
 
     //  -----  Referencias al HTML  -----
     const $foto = $("#foto");
@@ -28,101 +29,76 @@ $(document).ready(function () {
         "6. Constelación de Andrómeda"
     ];
 
-    //  -----  Cargar Foto, Bola Naranja y Texto de la Imagen la Primera Vez  -----
-    timer = setTimeout(cargaFoto, 3000);
+    //  -----  Inicializar la galería  -----
+    iniciarIntervalo(); // Configurar el intervalo
     $("#foto1").html("<img src='fondos/bolaNaranja.fw.png'>");
-    $texto.text(textos[fotoActual-1]);
+    $texto.text(textos[fotoActual - 1]);
 
     //  -----  Atenuar las Flechas la Primera Vez  -----
     $izq.fadeTo(1000, 0.2);
     $der.fadeTo(1000, 0.2);
 
-    //  -----  hacer click en una de las bolas  -----
+    //  -----  Click en una de las bolitas  -----
     $("#foto1, #foto2, #foto3, #foto4, #foto5, #foto6").click(function () {
-
-        //  -----  Detener el Timeout  -----
-        clearTimeout(timer);
-
-        //  -----  Saber que botón fue pulsado  -----
+        detenerIntervalo(); // Detener el intervalo
         fotoActual = $(this).attr("alt");
         fotoActual--;
-
-        cargaFoto(10);
+        cargaFoto();
     });
 
-
-    //  -----  hacer click en la flecha Izquierda  -----
+    //  -----  Click en la flecha Izquierda  -----
     $izq.click(function () {
-
-        //  -----  Detener el Timeout  -----
-        clearTimeout(timer);
-
+        detenerIntervalo();
         fotoActual -= 2;
         if (fotoActual < 0) fotoActual = numFotos - 1;
-
-        cargaFoto(10);
-
+        cargaFoto();
     });
 
-
-    //  -----  hacer click en la flecha Derecha  -----
+    //  -----  Click en la flecha Derecha  -----
     $der.click(function () {
-
-        //  -----  Detener el Timeout  -----
-        clearTimeout(timer);
-
-        cargaFoto(10);
-
+        detenerIntervalo();
+        cargaFoto();
     });
 
     //  -----  Hover de las Flechas  -----
-    $("#izq, #der").mouseenter(function () { 
+    $("#izq, #der").mouseenter(function () {
         $(this).fadeTo(500, 1);
     });
-
-    $("#izq, #der").mouseleave(function () { 
+    $("#izq, #der").mouseleave(function () {
         $(this).fadeTo(500, 0.2);
     });
 
+    //  ----------  Declaración de Funciones  ----------
 
-    //  ----------  Declaracion de Funciones  ----------
+    function iniciarIntervalo() {
+        timer = setInterval(cargaFoto, 3000); // Configurar el intervalo
+    }
 
-    function cargaFoto(retardo) {
+    function detenerIntervalo() {
+        clearInterval(timer); // Detener el intervalo
+    }
 
+    function cargaFoto() {
         fotoActual++;
         if (fotoActual > numFotos) fotoActual = 1;
 
-        $foto.fadeOut(retardo, cambiaFoto);
-
+        $foto.fadeOut(500, cambiaFoto);
     }
 
     function cambiaFoto() {
-
         //  -----  Pintamos todas las bolitas a Gris  -----
         for (let i = 1; i <= numFotos; i++) {
             $("#foto" + i).html("<img src='fondos/bolaGris.fw.png'>");
         }
 
-        //  -----  cambia la bola gris que toca a Naranja  -----
+        //  -----  Cambiamos la bolita gris que toca a Naranja  -----
         $("#foto" + fotoActual).html("<img src='fondos/bolaNaranja.fw.png'>");
 
-        //  -----  Cambiamos la Foto de la Galeria  -----
+        //  -----  Cambiamos la Foto de la Galería  -----
         $foto.attr("src", `fondos/fondo${fotoActual}.jpg`);
         $foto.fadeIn(1000);
 
-        //  -----  Cambia el Texto de la Foto  -----
-        $texto.text(textos[fotoActual-1]);
-
-
-        timer = setTimeout(cargaFoto, 3000);
+        //  -----  Cambiamos el Texto de la Foto  -----
+        $texto.text(textos[fotoActual - 1]);
     }
-
 });
-
-
-
-
-
-
-
-
