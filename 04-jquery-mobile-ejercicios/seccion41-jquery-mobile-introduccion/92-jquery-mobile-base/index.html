@@ -1,0 +1,142 @@
+<!--  ****************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/04-jquery-mobile-ejercicios/  **********  -->
+<!--  **********  /seccion41-jquery-mobile-introduccion/  ************************************  -->
+<!--  **********  /92-jquery-mobile-base/index.html  *****************************************  -->
+<!--  ****************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> jQuery Mobile - Seccion 41 - Base - jQuery Mobile </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="../../assets/favicon/jquery-icon.png">
+
+
+    <!--  **********  Librerías de jQuery y jQuery Mobile  --  css y js  **********  -->
+    <link rel="stylesheet" href="../../assets/css/jquery.mobile-1.4.5.min.css">
+    <!-- <link rel="stylesheet" href="../../assets/css/jquery.mobile-1.4.5.css"> -->
+
+    <!-- ----- utilizar la versión jquery-1.11.1.min.js para que jQuery Mobile Funcione  ----- -->
+    <script src="../../assets/jquery/jquery-1.11.1.min.js"> </script>
+
+    <script src="../../assets/jquery-mobile/jquery.mobile-1.4.5.min.js"> </script>
+
+</head>
+
+
+<body>
+
+
+    <!--  ----------  Primera Página  ----------  -->
+    <main data-role="page" id="primera" style="margin: 0; padding: 0; height: 100vh;">
+
+        <header data-role="header" style="height: 130px;">
+
+            <h1 style=" 
+                    font-size: 24px;
+                        color: #FCF7CD;
+                        -webkit-text-stroke-width: 1px;
+                        -webkit-text-stroke-color: #4b64b9ea;
+                        text-align: center;">
+                jQuery Mobile - Seccion 41 <br>
+                Base, Data-Role, Arquitectura, Página Externa <br>
+                Transiciones entre Páginas
+            </h1>
+
+        </header>
+
+        <section data-role="content" style="height: 690px;">
+
+            <h2> this is sparta!!! </h2>
+            
+            <!--  -----  Ventana de Diálogo  -----  -->
+            <p> En la versión 1.4. las ventanas de diálogo están desactualizada (deprecated) y en la versión 1.5. serán eliminadas </p>
+            <p> <a href="#segunda" data-role="button" data-rel="dialog"> Segunda Página - Ver foto de Afrodita </a> </p>
+
+            <p> <a href="paginaExterna.html"> Página Externa Html Con Tecnologia AJAX </a> </p>
+            <p> <a href="paginaExterna.html" rel="external"> Página Externa Html Sin Tecnologia AJAX </a> </p>
+
+            <!--  -----  Transiciones  -----  -->
+            <h3> Transiciones </h3>
+            <p> <a href="#segunda" data-transition="fade"> fade </a> </p>
+            <p> <a href="#segunda" data-transition="flip"> flip </a> </p>
+            <p> <a href="#segunda" data-transition="pop"> pop </a> </p>
+            <p> <a href="#segunda" data-transition="slide"> slide </a> </p>
+            <p> <a href="#segunda" data-transition="slidedown"> slide down </a> </p>
+            <p> <a href="#segunda" data-transition="slideup"> slide up </a> </p>
+
+        </section>
+
+        <footer data-role="footer" style="height: 60px; text-align: center;">
+            <p> Esto es un pie de página </p>
+        </footer>
+
+    </main>
+
+
+    <!--  ----------  Segunda Página  ----------  -->
+    <main data-role="page" id="segunda">
+
+        <header data-role="header" style="height: 130px;">
+            
+            <h1 
+                style=" 
+                    font-size: 24px;
+                    color: #FCF7CD;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: #4b64b9ea;
+                    text-align: center;"
+                > 
+                    Segunda Página 
+            </h1>
+
+        </header>
+
+        <section data-role="content" style="height: 690px;">
+            
+            <h2> this tambien es sparta!!! </h2>
+            <p> <a href="#primera"> Primera Página </a> </p>
+
+            <img src="../../assets/imagenes/afrodita.jpg" width="300px"/>
+
+            <!--  -----  Transiciones  -----  -->
+            <h3> Transiciones </h3>
+            <p> <a href="#primera" data-transition="fade"> fade </a> </p>
+            <p> <a href="#primera" data-transition="flip"> flip </a> </p>
+            <p> <a href="#primera" data-transition="pop"> pop </a> </p>
+            <p> <a href="#primera" data-transition="slide"> slide </a> </p>
+            <p> <a href="#primera" data-transition="slidedown"> slide down </a> </p>
+            <p> <a href="#primera" data-transition="slideup"> slide up </a> </p>
+
+        </section>
+
+        <footer data-role="footer" style="height: 60px; text-align: center; margin-bottom: 0;">
+            <p> Aqui estuvieron los 300... </p>
+        </footer>
+
+    </main>
+
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+
+        $(function () {
+
+            console.warn('----------  Documento Cargado!!!  ----- ', 'jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>

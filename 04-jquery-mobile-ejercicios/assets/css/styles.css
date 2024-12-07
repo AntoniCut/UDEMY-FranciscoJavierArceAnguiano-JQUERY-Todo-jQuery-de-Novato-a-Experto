@@ -1,0 +1,79 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    /* height: 850px; */
+    grid-template-areas:
+        'cabecera  cabecera '
+        'contenido   contenido '
+    ;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    /* font-family: Arial, Helvetica, sans-serif;  */
+}
+
+.cabecera {
+    grid-area: cabecera;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid green;
+}
+
+h1 {
+    font-size: 54px;
+    color: #FCF7CD;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #4b64b9ea;
+    text-align: center;
+}
+
+.contenido {
+    grid-area: contenido;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 30px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    flex-grow: 1;
+    font-size: 16px;
+    font-weight: bold;
+    /* background: linear-gradient(to bottom, #e7e7c1, #948a8a, #fafafa); */
+}
+
+
+  
+
+
+/*  *****  Estilos mas especificos  *****  */
+
+.ejercicio {
+    /* width: 60%; */
+    /* height: 50px; */
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    background-color: #eeeeee;
+    text-align: center;
+}
+
+.title {
+    margin: 10px;
+}
