@@ -1,0 +1,366 @@
+<!--  ****************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/04-jquery-mobile-ejercicios/  **********  -->
+<!--  **********  /seccion42-jquery-mobile-listas/  ******************************************  -->
+<!--  **********  /94-jquery-mobile-listas/index.html  ***************************************  -->
+<!--  ****************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> jQuery Mobile - Seccion 42 - Botones y Toolbars - jQuery Mobile </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="../../assets/favicon/jquery-icon.png">
+
+
+    <!--  **********  Librerías de jQuery y jQuery Mobile  --  css y js  **********  -->
+    <link rel="stylesheet" href="../../assets/css/jquery.mobile-1.4.5.min.css">
+    <!-- <link rel="stylesheet" href="../../assets/css/jquery.mobile-1.4.5.css"> -->
+
+    <!-- ----- utilizar la versión jquery-1.11.1.min.js para que jQuery Mobile Funcione  ----- -->
+    <script src="../../assets/jquery/jquery-1.11.1.min.js"> </script>
+
+    <script src="../../assets/jquery-mobile/jquery.mobile-1.4.5.min.js"> </script>
+
+    <style>
+        
+        h2 { color: rgb(73, 73, 211); }
+
+        p { color: "#eee"}
+
+        .ui-icon-custom {
+            background-image: url(../../assets/imagenes/mujer.png);
+            background-size: 70%;
+            background-position: 3px 3px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  --------------------------------------  -->
+    <!--  ----------  Primera Página  ----------  -->
+    <!--  --------------------------------------  -->
+    <main 
+        data-role="page" 
+        id="primera" 
+        style="margin: 0; padding: 0; height: 100vh;"
+    >
+
+        <!--  -----  Header  -----  -->
+        <header 
+            data-role="header" 
+            data-position="fixed" 
+            style="height: 130px;"
+        >
+
+            <h1 
+                style=" 
+                    font-size: 24px;
+                    color: #FCF7CD;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: #4b64b9ea;
+                    text-align: center;
+                "
+                >
+                jQuery Mobile - Seccion 43 - Manejo de Listas.
+            </h1>
+
+            <nav data-role="navbar">
+
+                <ul>
+                    <li> <a href="#" class="ui-btn-active ui-state-persist" data-icon="arrow-l"> Izquierda </a> </li>
+                    <li> <a href="#" data-icon="arrow-u"> Arriba </a> </li>
+                    <li> <a href="#" data-icon="arrow-d"> Abajo </a> </li>
+                    <li> <a href="#" data-icon="arrow-r"> Derecha </a> </li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <!--  -----  Content  -----  -->
+        <section data-role="content">
+
+            <!--  -----  Listas en jQuery Mobile  -----  -->
+            <br> <br>
+            <h2> Listas..... </h2>
+            <br>
+
+            <ul 
+                data-role="listview" 
+                data-inset="true"
+            >
+                <li> <a href="#"> Afrodita </a> </li>
+                <li> <a href="#"> Ares </a> </li>
+                <li> <a href="#"> Atenea </a> </li>
+                <li> <a href="#"> Poseidoón </a> </li>
+                <li> <a href="#"> Zeus </a> </li>
+            </ul>
+
+
+            <!--  -----  Filtrar Listas en jQuery Mobile  -----  -->
+            <br> <br>
+            <h2> Filtrar Listas..... </h2>
+            <br>
+
+            <ul 
+                data-role="listview" 
+                data-inset="true" 
+                data-filter="true"
+                data-filter-placeholder="Selecciona tu dios favorito" 
+                data-filter-reveal="true"
+            >
+                <li> <a href="#"> Afrodita </a> </li>
+                <li> <a href="#"> Ares </a> </li>
+                <li> <a href="#"> Atenea </a> </li>
+                <li> <a href="#"> Poseidón </a> </li>
+                <li> <a href="#"> Zeus </a> </li>
+                <li> <a href="#"> Hermes </a> </li>
+                <li> <a href="#"> Hércules </a> </li>
+                <li> <a href="#"> Apolo </a> </li>
+            </ul>
+
+
+            <!--  -----  Listas Divisores en jQuery Mobile  -----  -->
+            <br> <br>
+            <h2> Listas Divisores..... </h2>
+            <br>
+
+            <ul 
+                data-role="listview" 
+                data-insert="true" 
+                data-divider-theme="a" 
+                data-theme="a"
+            >
+                <!--  data-autodivider="true"  -->
+
+                <li data-role="list-divider"> Diosas </li>
+                <li> <a href="#"> Afrodita </a> </li>
+                <li> <a href="#"> Andromeda </a> </li>
+                <li> <a href="#"> Atenea </a> </li>
+                <br>
+                <li data-role="list-divider"> Dioses </li>
+                <li> <a href="#"> Poseidón </a> </li>
+                <li> <a href="#"> Hares </a> </li>
+                <li> <a href="#"> Zeus </a> </li>
+                <li> <a href="#"> Hermes </a> </li>
+                <li> <a href="#"> Hércules </a> </li>
+                <li> <a href="#"> Apolo </a> </li>
+            </ul>
+
+
+            <!--  -----  Listas Bubbles en jQuery Mobile  -----  -->
+            <br> <br>
+            <h2> Listas Bubbles..... </h2>
+            <br>
+
+            <ul 
+                data-role="listview" 
+                data-insert="true" 
+                data-divider-theme="a" 
+                data-theme="a" 
+                data-autodividers="true"
+            >
+                <li data-icon="back"> <a href="#"> Afrodita </a> <span class="ui-li-count"> 12 </span> </li>
+                <li data-icon="custom"> <a href="#"> Andromeda </a> <span class="ui-li-count"> 22 </span> </li>
+                <li data-icon="delete"> <a href="#"> Atenea </a> <span class="ui-li-count"> 45 </span> </li>
+                <li data-icon="forward"> <a href="#"> Apolo </a> <span class="ui-li-count"> 45 </span> </li>
+                <li data-icon="gera"> <a href="#"> Hares </a> <span class="ui-li-count"> 34 </span> </li>
+                <li data-icon="grid"> <a href="#"> Hermes </a> <span class="ui-li-count"> 12 </span> </li>
+                <li data-icon="info"> <a href="#"> Hércules </a> <span class="ui-li-count"> 12 </span> </li>
+                <li data-icon="star"> <a href="#"> Poseidón </a> <span class="ui-li-count"> 12 </span> </li>
+                <li data-icon="custom"> <a href="#"> Zeus </a> <span class="ui-li-count"> 99 </span> </li>
+            </ul>
+
+
+            <!--  -----  Listas con Iconos en jQuery Mobile  -----  -->
+            <br> <br>
+            <h2> Listas con Iconos..... </h2>
+            <br>
+
+            <ul 
+                data-role="listview" 
+                data-insert="true" 
+                data-divider-theme="e" 
+                data-theme="a"
+            >
+                <li data-icon="back"> <a href="#"> <img src="../../assets/imagenes/iconos/European-Union.png" alt="UE" class="ui-li-icon ui-corner-none"> Afrodita </a> </li>
+                <li data-icon="custom"> <a href="#"> <img src="../../assets/imagenes/iconos/Olympic.png" alt="UE" class="ui-li-icon ui-corner-none"> Andromeda </a> </li>
+                <li data-icon="delete"> <a href="#"> <img src="../../assets/imagenes/iconos/Olympic.png" alt="UE" class="ui-li-icon ui-corner-none"> Atenea </a> </li>
+                <li data-icon="forward"> <a href="#"> <img src="../../assets/imagenes/iconos/Olympic.png" alt="UE" class="ui-li-icon ui-corner-none"> Hercules </a> </li>
+                <li data-icon="gera"> <a href="#"> <img src="../../assets/imagenes/iconos/Olympic.png" alt="UE" class="ui-li-icon ui-corner-none"> Hares </a> </li>
+                <li data-icon="grid"> <a href="#"> <img src="../../assets/imagenes/iconos/Olympic.png" alt="UE" class="ui-li-icon ui-corner-none"> Poseidón </a> </li>
+                <li data-icon="info"> <a href="#"> <img src="../../assets/imagenes/iconos/Olympic.png" alt="UE" class="ui-li-icon ui-corner-none"> Zeus </a> </li>
+                <li data-icon="star"><a href="#"> <img src="../../assets/imagenes/iconos/Olympic.png" alt="UE" class="ui-li-icon ui-corner-none"> Artemisa </a> </li>
+            </ul>
+
+
+            <!--  -----  Listas con Thumbnails en jQuery Mobile  -----  -->
+            <br> <br>
+            <h2> Listas con Thumbnails..... </h2>
+            <br>
+
+            <ul data-role="listview" data-insert="true" data-divider-theme="e" data-theme="a">
+                
+                <li>
+                    <a href="#">
+                        <img src="../../assets/imagenes/afrodita.fw.png" alt="afrodita">
+                        <h2>Afrodita</h2>
+                        <p>Diosa del amor y la lujuria</p>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#">
+                        <img src="../../assets/imagenes/artemisa.fw.png" alt="Artemisa">
+                        <h2>Artemisa</h2>
+                        <p>Diosa de la cacería</p>
+                    </a>
+                </li>
+
+                <li><a href="#">
+                        <img src="../../assets/imagenes/hades.fw.png" alt="Hades">
+                        <h2>Hades</h2>
+                        <p>Dios del inframundo</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="../../assets/imagenes/hercules.fw.png" alt="Hércules">
+                        <h2>Hércules</h2>
+                        <p>Semidios, hijo de Zeus</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="../../assets/imagenes/poseidon.fw.png" alt="Poseidón">
+                        <h2>Poseidón</h2>
+                        <p>Dios de los mares</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="../../assets/imagenes/zeus.fw.png" alt="Zeus">
+                        <h2>Zeus</h2>
+                        <p>Dios de los dioses</p>
+                    </a>
+                </li>
+            </ul>
+
+
+
+            <!--  -----  Listas con Botones en jQuery Mobile  -----  -->
+            <br> <br>
+            <h2> Listas con Botones..... </h2>
+            <br>
+
+            <ul 
+                data-role="listview" 
+                data-insert="true" 
+                data-divider-theme="e" 
+                data-theme="a"
+            >
+                <li data-icon="info">
+                    <a href="#">
+                        <img src="../../assets/imagenes/afrodita.fw.png" alt="afrodita">
+                        <h2> Afrodita </h2>
+                        <p> Diosa del amor y la lujuria </p>
+                        <p class="ui-li-aside"> 6:30 </p>
+                    </a>
+                    <a href="http://es.wikipedia.org/wiki/afrodita" data-rel="popup" data-position-to="window" data-transition="pop"> wiki </a>
+                </li>
+
+                <li data-icon="info">
+                    <a href="#">
+                        <img src="../../assets/imagenes/artemisa.fw.png"  alt="Artemisa">
+                        <h2> Artemisa </h2>
+                        <p> Diosa de la cacería </p>
+                    </a>
+                    <a href="http://es.wikipedia.org/wiki/artemisa" data-rel="popup" data-position-to="window" data-transition="pop"> wiki </a>
+                </li data-icon="info">
+
+                <li data-icon="info">
+                    <a href="#">
+                        <img src="../../assets/imagenes/hades.fw.png"  alt="Hades">
+                        <h2> Hades </h2>
+                        <p> Dios del inframundo </p>
+                    </a>
+                    <a href="http://es.wikipedia.org/wiki/hades" data-rel="popup" data-position-to="window" data-transition="pop"> wiki </a>
+                </li>
+
+                <li data-icon="info">
+                    <a href="#">
+                        <img src="../../assets/imagenes/hercules.fw.png"  alt="Hércules">
+                        <h2> Hércules </h2>
+                        <p> Semidios, hijo de Zeus </p>
+                    </a>
+                    <a href="http://es.wikipedia.org/wiki/hercules" data-rel="popup" data-position-to="window" data-transition="pop"> wiki </a>
+                </li>
+
+                <li data-icon="info">
+                    <a href="#">
+                        <img src="../../assets/imagenes/poseidon.fw.png"  alt="Poseidón">
+                        <h2> Poseidón </h2>
+                        <p> Dios de los mares </p>
+                    </a>
+                    <a href="http://es.wikipedia.org/wiki/poseidon" data-rel="popup" data-position-to="window" data-transition="pop"> wiki </a>
+                </li>
+
+                <li data-icon="info">   
+                    <a href="#">
+                        <img src="../../assets/imagenes/zeus.fw.png"  alt="Zeus">
+                        <h2> Zeus </h2>
+                        <p> Dios de los dioses </p>
+                    </a>
+                    <a href="http://es.wikipedia.org/wiki/zeus" data-rel="popup" data-position-to="window" data-transition="pop"> wiki </a>
+                </li>
+
+            </ul>
+
+
+        </section>
+
+
+        <br> <br> <br>
+        <!--  -----  Footer  -----  -->
+        <footer data-role="footer" data-position="fixed" style="height: 60px; text-align: center;">
+
+            <nav data-role="navbar">
+                <ul>
+                    <li> <a href="#" data-icon="plus"> Añadir </a> </li>
+                    <li> <a href="#" data-icon="minus"> Borrar </a> </li>
+                    <li> <a href="#" data-icon="check"> Verificar </a> </li>
+                    <li> <a href="#" data-icon="grid" class="ui-btn-active ui-state-persist"> Consultar </a> </li>
+                </ul>
+
+        </footer>
+
+    </main>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+
+        $(function () {
+
+            console.warn('----------  Documento Cargado!!!  ----- ', 'jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>

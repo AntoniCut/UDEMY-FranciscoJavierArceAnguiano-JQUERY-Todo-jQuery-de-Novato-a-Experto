@@ -1,0 +1,85 @@
+<!--  ****************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/04-jquery-mobile-ejercicios/  **********  -->
+<!--  **********  /seccion41-jquery-mobile-introduccion/  ************************************  -->
+<!--  **********  /92-jquery-mobile-base/paginaExterna.html  *********************************  -->
+<!--  ****************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> jQuery Mobile - Seccion 41 - Página Externa - jQuery Mobile </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="../../assets/favicon/jquery-icon.png">
+
+
+    <!--  **********  Librerías de jQuery y jQuery Mobile  --  css y js  **********  -->
+    <link rel="stylesheet" href="../../assets/css/jquery.mobile-1.4.5.min.css">
+    <!-- <link rel="stylesheet" href="../../assets/css/jquery.mobile-1.4.5.css"> -->
+
+    <!-- ----- utilizar la versión jquery-1.11.1.min.js para que jQuery Mobile Funcione  ----- -->
+    <script src="../../assets/jquery/jquery-1.11.1.min.js"> </script>
+    <script src="../../assets/jquery-mobile/jquery.mobile-1.4.5.min.js"> </script>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="contenido">
+
+
+        <!--  ----------  Página Externa  ----------  -->
+        <div data-role="page" id="externa" style="margin: 0; padding: 0; height: 100vh;">
+
+            <header data-role="header" style="height: 130px;">
+
+                <h1 
+                    style=" font-size: 36px;
+                            color: #FCF7CD;
+                            -webkit-text-stroke-width: 1px;
+                            -webkit-text-stroke-color: #4b64b9ea;
+                            text-align: center;"
+                >
+                    jQuery Mobile - Seccion 41 <br> Página Externa
+                </h1>
+
+            </header>
+
+            <section data-role="content" style="height: 690px;">
+                <p> this is a External Page!!! </p>
+                <p> <a href="index.html"> Ir a la Página Principal </a> </p>
+            </section>
+
+            <footer data-role="footer" style="height: 60px; text-align: center;">
+                <p> Esto es un pie de página de la Página Externa </p>
+            </footer>
+
+        </div>
+       
+
+    </main>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+
+        $(function () {
+
+            console.warn('----------  Documento Cargado!!!  ----- ', 'jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>
