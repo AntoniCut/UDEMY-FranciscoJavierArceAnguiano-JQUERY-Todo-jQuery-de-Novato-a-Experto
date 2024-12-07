@@ -1,7 +1,7 @@
 <!--  ****************************************************************************************  -->
 <!--  **********  /01-todo-jquery-de-novato-a-experto/04-jquery-mobile-ejercicios/  **********  -->
-<!--  **********  /seccion41-jquery-mobile-introduccion/  ************************************  -->
-<!--  **********  /92-jquery-mobile-base/index.html  *****************************************  -->
+<!--  **********  /seccion42-jquery-mobile-botones-y-toolbars/  ******************************  -->
+<!--  **********  /93-jquery-mobile-toolbars/index.html  *************************************  -->
 <!--  ****************************************************************************************  -->
 
 
@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> jQuery Mobile - Seccion 41 - Base - jQuery Mobile </title>
+    <title> jQuery Mobile - Seccion 42 - Botones y Toolbars - jQuery Mobile </title>
 
     <!--  **********  Favicon  **********  -->
     <link rel="icon" href="../../assets/favicon/jquery-icon.png">
@@ -35,31 +35,28 @@
     <!--  ----------  Primera Página  ----------  -->
     <main data-role="page" id="primera" style="margin: 0; padding: 0; height: 100vh;">
 
-        <header data-role="header" style="height: 130px;">
+        <!--  -----  Header  -----  -->
+        <header data-role="header" data-position="fixed" style="height: 130px;">
 
+            <a href="#primera"> Home </a>
+                        
             <h1 style=" 
                     font-size: 24px;
                         color: #FCF7CD;
                         -webkit-text-stroke-width: 1px;
                         -webkit-text-stroke-color: #4b64b9ea;
                         text-align: center;">
-                jQuery Mobile - Seccion 41 <br>
-                Base, Data-Role, Arquitectura, Página Externa <br>
-                Transiciones entre Páginas
+                jQuery Mobile - Seccion 42 - Toolbars.
             </h1>
+
+            <a href="#segunda"> Segunda </a>
 
         </header>
 
-        <section data-role="content" style="height: 690px;">
+        <!--  -----  Content  -----  -->
+        <section data-role="content">
 
             <h2> this is sparta!!! </h2>
-            
-            <!--  -----  Ventana de Diálogo  -----  -->
-            <p> En la versión 1.4. las ventanas de diálogo están desactualizada (deprecated) y en la versión 1.5. serán eliminadas </p>
-            <p> <a href="#segunda" data-role="button" data-rel="dialog"> Segunda Página - Ver foto de Afrodita </a> </p>
-
-            <p> <a href="paginaExterna.html"> Página Externa Html Con Tecnologia AJAX </a> </p>
-            <p> <a href="paginaExterna.html" rel="external"> Página Externa Html Sin Tecnologia AJAX </a> </p>
 
             <!--  -----  Transiciones  -----  -->
             <h3> Transiciones </h3>
@@ -69,11 +66,17 @@
             <p> <a href="#segunda" data-transition="slide" data-role="button" data-rel="dialog"> slide </a> </p>
             <p> <a href="#segunda" data-transition="slidedown" data-role="button" data-rel="dialog"> slide down </a> </p>
             <p> <a href="#segunda" data-transition="slideup" data-role="button" data-rel="dialog"> slide up </a> </p>
-
+            
         </section>
 
-        <footer data-role="footer" style="height: 60px; text-align: center;">
-            <p> Esto es un pie de página </p>
+        <!--  -----  Footer  -----  -->
+        <footer data-role="footer" data-position="fixed" style="height: 60px; text-align: center;">
+            <a href="#">Copiar</a>
+            <a href="#">Pegar</a>
+            <a href="#">Borrar</a>
+            <a href="#">Mover</a>
+            <a href="#">Inicio</a>
+            <a href="#">Fin</a>
         </footer>
 
     </main>
@@ -82,8 +85,11 @@
     <!--  ----------  Segunda Página  ----------  -->
     <main data-role="page" id="segunda">
 
-        <header data-role="header" style="height: 130px;">
+        <!--  -----  Header  -----  -->
+        <header data-role="header" data-position="fixed" style="height: 130px;">
             
+            <a href="#primera"> Home </a>
+
             <h1 
                 style=" 
                     font-size: 24px;
@@ -95,9 +101,13 @@
                     Segunda Página 
             </h1>
 
+            <a href="#segunda"> Segunda </a>
+
         </header>
 
-        <section data-role="content" style="height: 690px;">
+
+        <!--  -----  Content  -----  -->
+        <section data-role="content">
             
             <h2> this tambien es sparta!!! </h2>
             <p> <a href="#primera"> Primera Página </a> </p>
@@ -115,7 +125,8 @@
 
         </section>
 
-        <footer data-role="footer" style="height: 60px; text-align: center; margin-bottom: 0;">
+        <!--  -----  Footer  -----  -->
+        <footer data-role="footer" data-position="fixed" style="height: 60px; text-align: center; margin-bottom: 0;">
             <p> Aqui estuvieron los 300... </p>
         </footer>
 

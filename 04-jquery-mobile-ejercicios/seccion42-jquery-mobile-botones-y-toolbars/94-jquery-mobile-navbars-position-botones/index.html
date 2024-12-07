@@ -1,0 +1,328 @@
+<!--  ****************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/04-jquery-mobile-ejercicios/  **********  -->
+<!--  **********  /seccion42-jquery-mobile-botones-y-toolbars/  ******************************  -->
+<!--  **********  /94-jquery-mobile-navbars-position-botoness/index.html  ********************  -->
+<!--  ****************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> jQuery Mobile - Seccion 42 - Botones y Toolbars - jQuery Mobile </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="../../assets/favicon/jquery-icon.png">
+
+
+    <!--  **********  Librerías de jQuery y jQuery Mobile  --  css y js  **********  -->
+    <link rel="stylesheet" href="../../assets/css/jquery.mobile-1.4.5.min.css">
+    <!-- <link rel="stylesheet" href="../../assets/css/jquery.mobile-1.4.5.css"> -->
+
+    <!-- ----- utilizar la versión jquery-1.11.1.min.js para que jQuery Mobile Funcione  ----- -->
+    <script src="../../assets/jquery/jquery-1.11.1.min.js"> </script>
+
+    <script src="../../assets/jquery-mobile/jquery.mobile-1.4.5.min.js"> </script>
+
+    <style>
+        img {
+            float: left;
+            margin: 10px;
+            margin-right: 30px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!--  --------------------------------------  -->
+    <!--  ----------  Primera Página  ----------  -->
+    <!--  --------------------------------------  -->
+    <main data-role="page" id="primera" style="margin: 0; padding: 0; height: 100vh;">
+
+        <!--  -----  Header  -----  -->
+        <header data-role="header" data-position="fixed" style="height: 130px;">
+
+            <h1 style=" 
+                    font-size: 24px;
+                        color: #FCF7CD;
+                        -webkit-text-stroke-width: 1px;
+                        -webkit-text-stroke-color: #4b64b9ea;
+                        text-align: center;">
+                jQuery Mobile - Seccion 42 - NavBars, Position y Botones.
+            </h1>
+
+            <nav data-role="navbar">
+
+                <ul>
+                    <li> <a href="#" class="ui-btn-active ui-state-persist" data-icon="arrow-l"> Izquierda </a> </li>
+                    <li> <a href="#" data-icon="arrow-u"> Arriba </a> </li>
+                    <li> <a href="#" data-icon="arrow-d"> Abajo </a> </li>
+                    <li> <a href="#segunda" data-icon="arrow-r"> Ir a Segunda </a> </li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <!--  -----  Content  -----  -->
+        <section data-role="content">
+
+            <h2> Afrodita Urania y Afrodita Pandemos </h2>
+
+            <p> Afrodita es, en la mitología griega, la diosa del amor, la lujuria, la belleza, la sexualidad y la
+                reproducción. </p>
+
+            <p>
+                <img src="../imagenes/afrodita160x196.jpg">
+                Aunque a menudo se alude a ella en la cultura moderna como «la diosa del amor», es importante señalar
+                que normalmente no era
+                el amor en el sentido cristiano o romántico, sino específicamente Eros (atracción física o sexual).
+                Su equivalente romana es la diosa Venus.
+            </p>
+
+            <p> Afrodita tiene numerosas equivalentes: Inanna en la mitología sumeria, Astarté en la fenicia, Turan en
+                la etrusca y Venus en la romana. </p>
+
+            <p>
+                La ‘surgida de la espuma’ Afrodita nació del mar, cerca de Pafos (Chipre) después de que Crono cortase
+                durante la Titanomaquia los genitales a Urano con una hoz adamantina y los arrojase tras él al mar.
+                En su Teogonía, Hesíodo cuenta que los genitales «fueron luego llevados por el piélago durante mucho
+                tiempo.
+            </p>
+
+            <p> Fuente: wikipedia </p>
+
+            <br> <br>
+            <h2> Orígenes 1 </h2>
+
+            <p> A su alrededor surgía del miembro inmortal una blanca espuma y en medio de ella nació una doncella» ya
+                adulta. </p>
+
+            <p>
+                Este mito de Venus (el nombre romano de Afrodita) nacida adulta, Venus Anadiómena (‘Venus saliendo del
+                mar’),
+                fue una de las representaciones icónicas de Afrodita, famosa por la admiradísima pintura de Apeles, hoy
+                perdida,
+                pero descrita por Plinio el Viejo en su Naturalis Historia.
+            </p>
+
+            <p>
+                Por esto, Afrodita es de una generación anterior a la de Zeus. Homero cuenta en el libro V de la Ilíada
+                otra versión sobre su origen,
+                según la cual sería hija de Dione, quien era la diosa oracular original
+                («Dione» significa simplemente ‘diosa’, ‘diosa’, el genitivo de «Zeus») en Dódona.
+            </p>
+
+
+            <br> <br>
+            <h2> Orígenes 2 </h2>
+
+            <p> A su alrededor surgía del miembro inmortal una blanca espuma y en medio de ella nació una doncella» ya
+                adulta. </p>
+
+            <p>
+                Este mito de Venus (el nombre romano de Afrodita) nacida adulta, Venus Anadiómena (‘Venus saliendo del
+                mar’),
+                fue una de las representaciones icónicas de Afrodita, famosa por la admiradísima pintura de Apeles, hoy
+                perdida,
+                pero descrita por Plinio el Viejo en su Naturalis Historia.
+            </p>
+
+            <p>
+                Por esto, Afrodita es de una generación anterior a la de Zeus. Homero cuenta en el libro V de la Ilíada
+                otra versión sobre su origen,
+                según la cual sería hija de Dione, quien era la diosa oracular original
+                («Dione» significa simplemente ‘diosa’, ‘diosa’, el genitivo de «Zeus») en Dódona.
+            </p>
+
+
+            <br> <br>
+            <h2> Orígenes 1 </h2>
+
+            <p> A su alrededor surgía del miembro inmortal una blanca espuma y en medio de ella nació una doncella» ya
+                adulta. </p>
+
+            <p>
+                Este mito de Venus (el nombre romano de Afrodita) nacida adulta, Venus Anadiómena (‘Venus saliendo del
+                mar’),
+                fue una de las representaciones icónicas de Afrodita, famosa por la admiradísima pintura de Apeles, hoy
+                perdida,
+                pero descrita por Plinio el Viejo en su Naturalis Historia.
+            </p>
+
+            <p>
+                Por esto, Afrodita es de una generación anterior a la de Zeus. Homero cuenta en el libro V de la Ilíada
+                otra versión sobre su origen,
+                según la cual sería hija de Dione, quien era la diosa oracular original
+                («Dione» significa simplemente ‘diosa’, ‘diosa’, el genitivo de «Zeus») en Dódona.
+            </p>
+
+
+            <br> <br>
+            <h2> Orígenes 2 </h2>
+
+            <p> A su alrededor surgía del miembro inmortal una blanca espuma y en medio de ella nació una doncella» ya
+                adulta. </p>
+
+            <p>
+                Este mito de Venus (el nombre romano de Afrodita) nacida adulta, Venus Anadiómena (‘Venus saliendo del
+                mar’),
+                fue una de las representaciones icónicas de Afrodita, famosa por la admiradísima pintura de Apeles, hoy
+                perdida,
+                pero descrita por Plinio el Viejo en su Naturalis Historia.
+            </p>
+
+            <p>
+                Por esto, Afrodita es de una generación anterior a la de Zeus. Homero cuenta en el libro V de la Ilíada
+                otra versión sobre su origen,
+                según la cual sería hija de Dione, quien era la diosa oracular original
+                («Dione» significa simplemente ‘diosa’, ‘diosa’, el genitivo de «Zeus») en Dódona.
+            </p>
+
+
+            <br> <br>
+            <h2> Orígenes 3 </h2>
+
+            <p> A su alrededor surgía del miembro inmortal una blanca espuma y en medio de ella nació una doncella» ya
+                adulta. </p>
+
+            <p>
+                Este mito de Venus (el nombre romano de Afrodita) nacida adulta, Venus Anadiómena (‘Venus saliendo del
+                mar’),
+                fue una de las representaciones icónicas de Afrodita, famosa por la admiradísima pintura de Apeles, hoy
+                perdida,
+                pero descrita por Plinio el Viejo en su Naturalis Historia.
+            </p>
+
+            <p>
+                Por esto, Afrodita es de una generación anterior a la de Zeus. Homero cuenta en el libro V de la Ilíada
+                otra versión sobre su origen,
+                según la cual sería hija de Dione, quien era la diosa oracular original
+                («Dione» significa simplemente ‘diosa’, ‘diosa’, el genitivo de «Zeus») en Dódona.
+            </p>
+
+
+            <br> <br>
+            <h2> Orígenes 4 </h2>
+
+            <p> A su alrededor surgía del miembro inmortal una blanca espuma y en medio de ella nació una doncella» ya
+                adulta. </p>
+
+            <p>
+                Este mito de Venus (el nombre romano de Afrodita) nacida adulta, Venus Anadiómena (‘Venus saliendo del
+                mar’),
+                fue una de las representaciones icónicas de Afrodita, famosa por la admiradísima pintura de Apeles, hoy
+                perdida,
+                pero descrita por Plinio el Viejo en su Naturalis Historia.
+            </p>
+
+            <p>
+                Por esto, Afrodita es de una generación anterior a la de Zeus. Homero cuenta en el libro V de la Ilíada
+                otra versión sobre su origen,
+                según la cual sería hija de Dione, quien era la diosa oracular original
+                («Dione» significa simplemente ‘diosa’, ‘diosa’, el genitivo de «Zeus») en Dódona.
+            </p>
+
+
+        </section>
+
+        <!--  -----  Footer  -----  -->
+        <footer data-role="footer" data-position="fixed" style="height: 60px; text-align: center;">
+
+            <nav data-role="navbar">
+                <ul>
+                    <li> <a href="#" data-icon="plus"> Añadir </a> </li>
+                    <li> <a href="#" data-icon="minus"> Borrar </a> </li>
+                    <li> <a href="#" data-icon="check"> Verificar </a> </li>
+                    <li> <a href="#" data-icon="grid" class="ui-btn-active ui-state-persist"> Consultar </a> </li>
+                </ul>
+
+        </footer>
+
+    </main>
+
+
+    <!--  --------------------------------------  -->
+    <!--  ----------  Segunda Página  ----------  -->
+    <!--  --------------------------------------  -->
+    <main data-role="page" id="segunda">
+
+        <!--  -----  Header  -----  -->
+        <header data-role="header" data-position="fixed" style="height: 130px;">
+
+            <a href="#primera"> Home </a>
+
+            <h1 style=" 
+                    font-size: 24px;
+                    color: #FCF7CD;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: #4b64b9ea;
+                    text-align: center;">
+                Segunda Página - Botones
+            </h1>
+
+            <a href="#segunda"> Segunda </a>
+
+        </header>
+
+
+        <!--  -----  Content  -----  -->
+        <section data-role="content">
+
+            <p> Esto también es Esparta </p>
+            <p> <a href="#primera" data-transition="fade"> Ir a Home </a> </p>
+
+            <h2>Botones básicos</h2>
+
+            <button data-inline="true"> Primero - button </button>
+            <input type="button" data-inline="true" value="segundo - input">
+            <a data-role="button" data-inline="true"> Tercero - a </a>
+
+            <h2> Botones con Control Group Horizontal </h2>
+            <div data-role="controlgroup" data-type="horizontal">
+                <button data-icon="home" data-iconpos="notext"> primero </button>
+                <input data-icon="star" type="button" value="segundo" data-iconpos="notext" />
+                <a href="#" data-role="button" data-icon="refresh" data-iconpos="notext"> tercero </a>
+                <a href="#" data-role="button" data-inline="true" data-icon="info" data-iconpos="notext"> cuarto </a>
+            </div>
+
+            <h2> Botones con Control Group Vertical </h2>
+            <div data-role="controlgroup" data-type="">
+                <button data-icon="home" data-iconpos="bottom"> primero </button>
+                <input data-icon="star" type="button" value="segundo" data-iconpos="notext" />
+                <a href="#" data-role="button" data-icon="refresh" data-iconpos="notext"> tercero </a>
+                <a href="#" data-role="button" data-icon="info" data-iconpos="notext"> cuarto </a>
+            </div>
+
+        </section>
+
+        <!--  -----  Footer  -----  -->
+        <footer data-role="footer" data-position="fixed" style="height: 60px; text-align: center; margin-bottom: 0;">
+            <p> Aqui estuvieron los 300... </p>
+        </footer>
+
+    </main>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+
+        $(function () {
+
+            console.warn('----------  Documento Cargado!!!  ----- ', 'jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>
