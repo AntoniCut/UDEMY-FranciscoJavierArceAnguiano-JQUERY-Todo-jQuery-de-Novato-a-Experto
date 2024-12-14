@@ -1,0 +1,252 @@
+<!--  ****************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/04-jquery-mobile-ejercicios/  **********  -->
+<!--  **********  /seccion45-jquery-mobile-formularios/  *************************************  -->
+<!--  **********  /97-jquery-mobile-formularios/index.html  **********************************  -->
+<!--  ****************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> jQuery Mobile - Seccion 45 - Formularios </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="../../assets/favicon/jquery-icon.png">
+
+
+    <!--  **********  Librerías de jQuery y jQuery Mobile  --  css y js  **********  -->
+    <link rel="stylesheet" href="../../assets/css/jquery.mobile-1.4.5.css">
+
+    <!-- ----- utilizar la versión jquery-1.11.1.min.js para que jQuery Mobile Funcione  ----- -->
+    <script src="../../assets/jquery/jquery-1.11.1.min.js"> </script>
+
+    <script src="../../assets/jquery-mobile/jquery.mobile-1.4.5.min.js"> </script>
+
+    <style>
+        
+        h2 {
+            text-align: center;
+            color: rgb(73, 73, 211);
+        }
+
+        p {
+            color: "#eee";
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  --------------------------------------  -->
+    <!--  ----------  Primera Página  ----------  -->
+    <!--  --------------------------------------  -->
+    <main 
+        data-role="page" 
+        data-theme="a"
+        style="margin: 0; padding: 0; width: 100%; height: 100vh;">
+
+
+        <header data-role="header" data-position="fixed" style="height: 130px;" data-theme="a">
+
+            <h1 style=" 
+                    font-size: 24px;
+                    color: #FCF7CD;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: #4b64b9ea;
+                    text-align: center;
+                ">
+                jQuery Mobile - Seccion 45 - Formularios.
+            </h1>
+
+            <nav data-role="navbar">
+
+                <ul>
+                    <li> <a href="#" class="ui-btn-active ui-state-persist" data-icon="arrow-l"> Izquierda </a> </li>
+                    <li> <a href="#" data-icon="arrow-u"> Arriba </a> </li>
+                    <li> <a href="#" data-icon="arrow-d"> Abajo </a> </li>
+                    <li> <a href="#" data-icon="arrow-r"> Derecha </a> </li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <!--  -------------------------  -->
+        <!--  -----  Formularios  -----  -->
+        <!--  -------------------------  -->
+        <h2> Formularios ..... </h2>
+        
+        <div data-role="content">
+
+            <form action="formulario.php" method="post" data-ajax="false">
+                
+                <!--  -----  Text  -----  -->
+                <label> Escriba su nombre: </label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre...">
+                
+                <!--  -----  Email  -----  -->
+                <label> Escriba su Email: </label>
+                <input type="email" id="email" name="email" placeholder="Email..."> <br>
+
+                <!--  -----  TextArea  -----  -->
+                <label> Escriba su comentario: </label>
+                <textarea id="comentario" name="comentario" placeholder="Comentarios..."> </textarea> <br>
+
+                <!--  -----  Range  -----  -->
+                <label> Edad: </label>
+                <input type="range" min="1" max="120" id="edad" name="edad" value="18"> <br>
+
+                <!--  -----  CheckBox  -----  -->
+                <fieldset data-role="controlgroup"> 
+                    
+                    <legend> Selecciona los idiomas que hablas: </legend>
+                    
+                    <input type="checkbox" id="espanol" name="espanol">
+                    <label for="espanol"> Español </label>
+                    
+                    <input type="checkbox" id="ingles" name="ingles">
+                    <label for="ingles">Inglés</label>
+                    
+                    <input type="checkbox" id="frances" name="frances">
+                    <label for="frances">Francés</label>
+
+                </fieldset>
+
+                <br>
+
+                
+                <!--  -----  Sliders  -----  -->
+                
+                <label for="suscribe"> ¿Quieres recibir nuestro boletin? </label>
+                <select data-role="slider" name="suscribe" id="suscribe">
+                    <option> Si </option>
+                    <option> No </option>
+                </select>
+                
+                <br> <br>
+
+                <label for="gps"> Estado de tu GPS </label>
+                <select data-role="slider" name="gps" id="gps" style="width: 300px !important;">
+                    <option > On </option>
+                    <option> Off </option>
+                </select>
+                
+                <br> <br>
+
+
+                <!--  -----  Selects  -----  -->
+
+                <label for="musica"> Selecciona tu música </label>
+                <select id="musica" name="musica" data-native-menu="false" multiple>
+                    <option data-placeholder="Selecciona tu tipo de música"> Selecciona tus gustos musicales </option>
+                    <option value="1"> Rock clásico </option>
+                    <option value="2"> Rock pesado </option>
+                    <option value="3"> Salsa </option>
+                    <option value="4"> Reguetón </option>
+                    <option value="5"> Clásica </option>
+                </select>
+
+                <br> <br>
+                
+                <label for="pais">País de origen</label>
+                
+                <select id="pais" name="pais">
+                    
+                    <optgroup label="América del norte">
+                        <option value="0">Canadá</option>
+                        <option value="1">Estados Unidos</option>
+                        <option value="2">México</option>
+                    </optgroup>
+                    
+                    <optgroup label="Centroamérica">
+                        <option value="3">Guatemala</option>
+                        <option value="4">El Salvador</option>
+                        <option value="5">Costa Rica</option>
+                    </optgroup>
+                    
+                    <optgroup label="El Caribe">
+                        <option value="6">Rep. Dominicana</option>
+                        <option value="7">Cuba</option>
+                        <option value="8">Puerto Rico</option>
+                    </optgroup>
+                    
+                    <optgroup label="Sudamérica">
+                        <option value="9">Argentina</option>
+                        <option value="10">Colombia</option>
+                        <option value="11">Chile</option>
+                    </optgroup>
+
+                </select>
+
+                <br> <br>
+
+                <!--  -----  Radio Buttons  -----  -->
+
+                <!-- <div data-role="fieldcontain"> -->
+                    
+                <fieldset data-role="controlgroup">
+                        
+                    <legend> Estado Civil </legend>
+                        
+                    <input type="radio" name="estadoCivil" id="soltero" value="soltero" />
+                    <label for="soltero">Soltero</label>
+                        
+                    <input type="radio" name="estadoCivil" id="casado" value="casado" />
+                    <label for="casado">Casado</label>
+                        
+                    <input type="radio" name="estadoCivil" id="divorciado" value="divorciado" />
+                    <label for="divorciado">Divorciado</label>
+                        
+                    <input type="radio" name="estadoCivil" id="viudo" value="viudo" />
+                    <label for="viudo">Viudo</label>
+
+                    <!-- </fieldset> -->
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+        <br> <br> <br> <br> <br> <br>
+
+
+        <!--  -----  Footer  -----  -->
+        <footer data-role="footer" data-position="fixed" data-theme="b" style="height: 60px; text-align: center;">
+
+            <nav data-role="navbar">
+                <ul>
+                    <li> <a href="#" data-icon="plus"> Añadir </a> </li>
+                    <li> <a href="#" data-icon="minus"> Borrar </a> </li>
+                    <li> <a href="#" data-icon="check"> Verificar </a> </li>
+                    <li> <a href="#" data-icon="grid" class="ui-btn-active ui-state-persist"> Consultar </a> </li>
+                </ul>
+
+        </footer>
+
+    </main>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+
+        $(function () {
+
+            console.warn('----------  Documento Cargado!!!  ----- ', 'jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>

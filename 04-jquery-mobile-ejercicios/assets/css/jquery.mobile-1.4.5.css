@@ -730,6 +730,10 @@ html {
 	font-size: 100%;
 }
 
+select{
+    padding: 0 10px;
+}
+
 body,
 input,
 select,
