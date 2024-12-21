@@ -1,0 +1,678 @@
+<!--  ****************************************************************************************  -->
+<!--  **********  /01-todo-jquery-de-novato-a-experto/04-jquery-mobile-ejercicios/  **********  -->
+<!--  **********  /seccion46-jquery-mobile-aplicacion/  **************************************  -->
+<!--  **********  /97-jquery-mobile-aplicacion-marcador-de-tenis/index.html  *****************  -->
+<!--  ****************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> jQuery Mobile - Seccion 46 - Aplicacion Marcador de Tenis </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="../../assets/favicon/jquery-icon.png">
+
+
+    <!--  **********  Librerías de jQuery y jQuery Mobile  --  css y js  **********  -->
+    <link rel="stylesheet" href="../../assets/css/jquery.mobile-1.4.5.css">
+
+    <!-- ----- utilizar la versión jquery-1.11.1.min.js para que jQuery Mobile Funcione  ----- -->
+    <script src="../../assets/jquery/jquery-1.11.1.min.js"> </script>
+
+    <script src="../../assets/jquery-mobile/jquery.mobile-1.4.5.min.js"> </script>
+
+    <style>
+        
+        .title-pagina {
+            font-size: 24px !important;
+            text-align: center;
+            color: rgb(73, 73, 211);
+        }
+
+        p {
+            color: "#eee";
+        }
+
+        #puntos11, #puntos21, #juegos11, #juegos21, #set11, #set21,
+        #puntos12, #puntos22, #juegos12, #juegos22, #set12, #set22 {
+            float:left;
+            background-color:black;
+            color:white;
+            width:40px;
+            height:40px;
+            line-height: 40px;
+            text-align:center;
+            margin:0 10px;
+            padding: 12px 6px 6px 6px;	
+        }
+
+        #jugador1, 
+        #jugador2 {
+            width:250px;
+        }
+
+        #ganador {
+            font-size:35px;
+            text-align:center;
+            color:orange;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  --------------------------------  -->
+    <!--  ----------  Página 1  ----------  -->
+    <!--  --------------------------------  -->
+    <main 
+        data-role="page"
+        id="pagina1" 
+        data-theme="a"
+        style="margin: 0; padding: 0; width: 100%; height: 100vh;">
+
+
+        <header data-role="header" data-position="fixed" style="height: 70px;" data-theme="b">
+
+            <h1 
+                style=" 
+                    font-size: 24px;
+                    color: #FCF7CD;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: #4b64b9ea;
+                    text-align: center;
+                "
+            >
+                jQuery Mobile - Aplicacion Marcador de Tenis - Página 1 - Seccion 46
+            </h1>
+
+            <a href="#pagina1"> 1 </a>
+            <a href="#pagina2"> 2 </a>
+            <a href="#pagina3"> 3 </a>
+            <a href="#pagina4"> 4 </a>
+
+        </header>
+
+        <div data-role="header">
+            <h1 class="title-pagina"> Tres sets sin ventaja </h1>
+        </div>
+
+        <div data-role="content">
+            
+            <form>
+                
+                <label for="nombre1"> Jugador 1 </label>
+                <input id="nombre1" type="text" name="nombre1">
+                
+                <p>vs.</p>
+                
+                <label for="nombre2"> Jugador 2 </label>
+                <input id="nombre2" type="text" name="nombre2">
+                
+                <p>&nbsp;</p>
+                
+                <a href="#pagina2" data-role="button"> Inicia juego </a>
+
+            </form>
+
+        </div>
+                
+
+        <!--  -----  Footer  -----  -->
+        <footer 
+            data-role="footer" 
+            data-position="fixed" 
+            data-theme="b" 
+            style="height: 70px; line-height: 50px; text-align: center;">
+            <h4> Todos los derechos reservados </h4>
+        </footer>
+
+    </main>
+
+
+
+    <!--  --------------------------------  -->
+    <!--  ----------  Página 2  ----------  -->
+    <!--  --------------------------------  -->
+    <main 
+        data-role="page"
+        id="pagina2" 
+        data-theme="a"
+        style="margin: 0; padding: 0; width: 100%; height: 100vh;">
+
+
+        <header data-role="header" data-position="fixed" style="height: 70px;" data-theme="b">
+
+            <h1 
+                style=" 
+                    font-size: 24px;
+                    color: #FCF7CD;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: #4b64b9ea;
+                    text-align: center;
+                "
+            >
+                jQuery Mobile - Aplicacion Marcador de Tenis - Página 2 - Seccion 46
+            </h1>
+
+        </header>
+
+        <div data-role="header">
+            <h1 class="title-pagina"> Saque </h1>
+        </div>
+
+        <!--  -----  Contenido  -----  -->
+        <div data-role="content">
+            
+            <table>
+                
+                <tr>
+                    <td> <img src="../../assets/imagenes/bolaNaranja.png" id="marca11"> </td>
+                    <td> <div id="jugador11"> Jugador1 </div> </td>
+                    <td> <div id="puntos11"> 0 </div> </td>
+                    <td> <div id="juegos11"> 0 </div> </td>
+                    <td> <div id="set11">0 </div> </td>
+                </tr>
+                
+                <tr>
+                    <td> <img src="" id="marca21"> </td>
+                    <td> <div id="jugador21"> Jugador2 </div> </td>
+                    <td> <div id="puntos21"> 0 </div> </td>
+                    <td> <div id="juegos21"> 0 </div> </td>
+                    <td> <div id="set21"> 0 </div> </td>
+                </tr>
+
+            </table>
+
+            <br> <br>
+
+            <form>
+                
+                <fieldset data-role="controlgroup">
+                    
+                    <button id="saque1"> Primer saque </button>
+                    
+                    <input type="radio" name="saque1" id="s1" value="1">
+                    <label for="s1"> Primer saque </label>
+                    
+                    <input type="radio" name="saque1" id="ace1" value="2">
+                    <label for="ace1"> Ace 1er saque </label>
+                    
+                    <input type="radio" name="saque1" id="falta1" value="3">
+                    <label for="falta1"> Falta 1er saque </label>
+
+                </fieldset>
+                
+                <br> <br>
+
+                <fieldset data-role="controlgroup">
+                    
+                    <button id="saque2"> Segundo saque </button>
+                    
+                    <input type="radio" name="saque2" id="s2" value="4">
+                    <label for="s2"> Segundo saque </label>
+                    
+                    <input type="radio" name="saque2" id="ace2" value="5">
+                    <label for="ace2"> Ace 2do saque </label>
+
+                    <input type="radio" name="saque2" id="falta2" value="6">
+                    <label for="falta2"> Falta Doble saque </label>
+
+                </fieldset>
+
+            </form>
+
+        </div>
+                
+
+       <!--  -----  Footer  -----  -->
+       <footer 
+            data-role="footer" 
+            data-position="fixed" 
+            data-theme="b" 
+            style="height: 70px; line-height: 50px; text-align: center;"
+        >
+            <h4> Todos los derechos reservados </h4>
+        </footer>
+
+    </main>
+
+
+
+    <!--  --------------------------------  -->
+    <!--  ----------  Página 3  ----------  -->
+    <!--  --------------------------------  -->
+    <main 
+        data-role="page"
+        id="pagina3" 
+        data-theme="a"
+        style="margin: 0; padding: 0; width: 100%; height: 100vh;">
+
+
+        <header data-role="header" data-position="fixed" style="height: 70px;" data-theme="b">
+
+            <h1 
+                style=" 
+                    font-size: 24px;
+                    color: #FCF7CD;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: #4b64b9ea;
+                    text-align: center;
+                "
+            >
+                jQuery Mobile - Aplicacion Marcador de Tenis - Página 3 - Seccion 46
+            </h1>
+
+        </header>
+
+
+        <div data-role="header">
+            <h1 class="title-pagina"> Juego </h1>
+        </div>
+
+        <!--  -----  Contenido  -----  -->
+        <div data-role="content">
+            
+            <table>
+                
+                <tr>
+                    <td> <img src="../imagenes/bolaNaranja.png" id="marca12"> </td>
+                    <td> <div id="jugador12"> Jugador1 </div> </td>
+                    <td> <div id="puntos12"> 0 </div> </td>
+                    <td> <div id="juegos12"> 0 </div> </td>
+                    <td> <div id="set12"> 0 </div> </td>
+                </tr>
+
+                <tr>
+                    <td> <img src="" id="marca22"> </td>
+                    <td> <div id="jugador22"> Jugador2 </div> </td>
+                    <td> <div id="puntos22"> 0 </div> </td>
+                    <td> <div id="juegos22"> 0 </div> </td>
+                    <td> <div id="set22"> 0 </div> </td>
+                </tr>
+
+            </table>
+
+            <br> <br>
+
+            <form>
+                
+                <fieldset data-role="controlgroup">
+                    
+                    <button id="saque3"> Primer jugador </button>
+
+                    <input type="radio" name="game1" id="win1" value="1">
+                    <label for="win1"> Tiro ganador </label>
+
+                    <input type="radio" name="game1" id="ef1" value="2">
+                    <label for="ef1"> Error forzado </label>
+
+                    <input type="radio" name="game1" id="enf1" value="3">
+                    <label for="enf1"> Error no forzado </label>
+
+                </fieldset>
+
+                <br> <br>
+
+                <fieldset data-role="controlgroup">
+                    
+                    <button id="saque4"> Segundo jugador </button>
+
+                    <input type="radio" name="game2" id="win2" value="4">
+                    <label for="win2"> Tiro ganador </label>
+
+                    <input type="radio" name="game2" id="ef2" value="5">
+                    <label for="ef2"> Error forzado </label>
+
+                    <input type="radio" name="game2" id="enf2" value="6">
+                    <label for="enf2"> Error no forzado </label>
+
+                </fieldset>
+
+            </form>
+
+        </div>
+                
+
+        <!--  -----  Footer  -----  -->
+        <footer 
+            data-role="footer" 
+            data-position="fixed" 
+            data-theme="b" 
+            style="height: 70px; line-height: 50px; text-align: center;"
+        >
+            <h4> Todos los derechos reservados </h4>
+        </footer>
+
+    </main>
+
+
+    <!--  --------------------------------  -->
+    <!--  ----------  Página 4  ----------  -->
+    <!--  --------------------------------  -->
+    <main 
+        data-role="page"
+        id="pagina4" 
+        data-theme="a"
+        style="margin: 0; padding: 0; width: 100%; height: 100vh;">
+
+
+        <header data-role="header" data-position="fixed" style="height: 70px;" data-theme="b">
+
+            <h1 
+                style=" 
+                    font-size: 24px;
+                    color: #FCF7CD;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: #4b64b9ea;
+                    text-align: center;
+                "
+            >
+                jQuery Mobile - Aplicacion Marcador de Tenis - Página 4 - Sección 46
+            </h1>
+
+        </header>
+
+
+        <div data-role="header">
+            <h1 class="title-pagina"> Resultado </h1>
+        </div>
+
+        <!--  -----  Contenido  -----  -->
+        <div data-role="content">
+            
+            <div id="ganador"> </div>
+            <a href="#pagina1" data-role="button"> Regresar </a>
+
+        </div>
+                
+        <!--  -----  Footer  -----  -->
+        <footer 
+            data-role="footer" 
+            data-position="fixed" 
+            data-theme="b" 
+            style="height: 70px; line-height: 50px; text-align: center;">
+            <h4> Todos los derechos reservados </h4>
+        </footer>        
+
+    </main>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+
+        //  --------------------------------
+        //  -----  Variables Globales  -----
+        //  --------------------------------
+        
+        let jugador1 = "";
+        let jugador2 = "";
+        
+        const puntos=[0,0];
+        const juegos=[0,0];
+        const sets = [0,0];
+        
+        let saca = 0;       //  -----  0 Jugador 1  -  1 Jugador 2  -----
+        let ganador = "";
+
+        //  --------------------------------------------------------------------------------------
+        //  ----------  Documento Cargado  --  evento bind 'pageinit' en jQuery Mobile  ----------
+        //  --------------------------------------------------------------------------------------
+        
+        $(document).bind("pageinit", function() {
+            
+            //  -----  Documento Cargado  -----
+            console.warn('----------  Documento Cargado!!!  ----- ', 'jQuery version:', $.fn.jquery, ' ----------', '\n');
+
+
+            //  --------------------------------
+            //  ----------  Página 2  ----------
+            //  --------------------------------
+
+            $("#pagina2").on("pageinit", function(event) {
+                
+                event.stopPropagation();
+                
+                //  -----  Capturar los Datos del Juego  ----------
+                jugador1 = $("#nombre1").val();
+                jugador2 = $("#nombre2").val();
+                console.log(jugador1, '  -  ', jugador2)
+                
+                if( jugador1 === "") jugador1 = "jugador1";
+                if( jugador2 === "") jugador2 = "jugador2";
+                
+                $("#jugador11").html("<p>" + jugador1 + "</p>");
+                $("#jugador21").html("<p>" + jugador2 + "</p>");
+
+                //  -----  Desactivamos los botones del 2º Saque  -----
+                $("#s2").attr("disabled", "disabled").checkboxradio("refresh");
+		        $("#ace2").attr("disabled", "disabled").checkboxradio("refresh");
+		        $("#falta2").attr("disabled", "disabled").checkboxradio("refresh");
+
+            });
+            
+            
+            //  -----  pulso en Ace 1º Saque  -----
+            $("#ace1, #ace2").on("click", function(event) {
+		        limpiaBotones();
+                sumaPunto(true);
+	        });
+
+
+            //  -----  Si el primer o segundo servicio fueron buenos  -----
+	        $("#s1, #s2").on("click",function(event){
+		        $.mobile.changePage( $("#pagina3"), "none");
+	        });
+            
+
+            //  -----  pulso en Falta 1º Saque  -----
+            $("#falta1").on("click",function(event){
+                
+                //  -----  Desactivamos los botones del 1º Saque  -----
+                $("#s1").attr("disabled","disabled");
+                $("#ace1").attr("disabled","disabled");
+                $("#falta1").attr("disabled","disabled");
+
+                //  -----  Activamos los botones del 2º Saque  -----
+                $("#s2").removeAttr("disabled").checkboxradio("refresh");
+                $("#ace2").removeAttr("disabled").checkboxradio("refresh");
+                $("#falta2").removeAttr("disabled").checkboxradio("refresh");
+            });
+
+            
+            //  -----  pulso en Falta 2º Saque  --  Doble Falta  -----
+            $("#falta2").on("click",function(event){
+		        limpiaBotones();
+		        sumaPunto(false);
+	        });
+
+        });
+
+
+
+        //  --------------------------------
+        //  ----------  Página 3  ----------
+        //  --------------------------------
+
+        $("#pagina3").on("pageinit", function(event) {
+		    
+            event.stopPropagation();
+		    $("#jugador12").html("<p>" + jugador1 + "</p>");
+		    $("#jugador22").html("<p>" + jugador2 + "</p>");
+	    });
+
+        
+        //  -----  Si Hay un Win del Primero, 
+        //         Error Forzado del Primero 
+        //         o Error No Forzado del Segundo  -----
+        $("#win1, #ef1, #enf2").on("click", function(event) {
+		    
+            if(saca === 0) sumaPunto(true);
+		    else sumaPunto(false);
+		
+		    $(this).removeAttr("checked").checkboxradio("refresh");
+		    actualizaMarcador();
+
+            //  -----  Regresamos a la Página 2 para el siguiente saque  -----
+		    $.mobile.changePage($("#pagina2"), "none");
+	    });
+
+
+        //  -----  Si Hay un Win del Segundo,  
+        //         Error Forzado del Segundo 
+        //         o Error No Forzado del Primero  -----
+        $("#win2, #ef2, #enf1").bind("click",function(event){
+            
+            if(saca === 0) sumaPunto(false);
+            else sumaPunto(true);
+            
+            $(this).removeAttr("checked").checkboxradio("refresh");
+            actualizaMarcador();
+            
+            //  -----  Regresamos a la Página 2 para el siguiente saque  -----
+            $.mobile.changePage($("#pagina2"),"none");
+        });
+
+
+        //  --------------------------------
+        //  ----------  Página 4  ----------
+        //  --------------------------------
+
+        $("#pagina4").on("pageinit", function(event) {
+		    
+            event.stopPropagation();
+		    $("#ganador").html(ganador);
+	    });
+
+
+
+        //  -------------------------------------
+        //  -----  Definición de Funciones  -----
+        //  -------------------------------------
+
+        //  -----  Sumatorio de Puntos de Cada Jugador  -----
+        function sumaPunto(favor) {
+            
+            let numJugador;
+
+            if( favor === true ) numJugador = saca;
+            
+            else {
+                if( saca === 0 ) numJugador = 1;
+                else numJugador = 0;
+            }
+            
+            puntos[numJugador] += 15;
+            
+            if( puntos[numJugador] === 45 ) puntos[numJugador] = 40;
+            
+            if( puntos[numJugador] > 40 ) {
+                
+                puntos[0] = 0;
+                puntos[1] = 0;
+                juegos[numJugador]++;
+
+                //  -----  Si se ha llegado a 6 Juegos  -----
+                if( juegos[numJugador] == 6 ) sets[numJugador]++;
+		
+                //  -----  Si Ha llegado a 2 Sets  -----
+                if( sets[numJugador] === 2) {
+                    
+                    sets[0] = 0;
+                    sets[1] = 0;
+                    puntos[0] = 0;
+                    puntos[1] = 0;
+			        
+                    if( numJugador === 0 ) ganador = "Ganador del Partido es " + jugador1;
+			        else ganador = "Ganador del Partido es " + jugador2;
+			
+			        $.mobile.changePage($("#pagina4"),"none");
+		        }
+                
+                if( saca === 0 ) saca = 1;
+                else saca = 0;
+            }
+
+            actualizaMarcador();
+        }
+
+
+        //  -----  Actualizar Marcador de Puntos de Cada Jugador  -----
+        function actualizaMarcador() {
+	        
+            //  -----  Actualizamos Página 2  -----
+            $("#puntos11").text(puntos[0]);     //  -----  Jugador 1  -----
+	        $("#puntos21").text(puntos[1]);     //  -----  Jugador 2  -----
+            $("#juegos11").text(juegos[0]);     //  -----  Juegos Jugador 1  -----
+            $("#juegos21").text(juegos[1]);     //  -----  Juegos Jugador 2  -----
+	        $("#set11").text(sets[0]);           //  -----  Set Jugador 1  -----
+            $("#set21").text(sets[1]);           //  -----  Set Jugador 2  -----
+            
+            //  -----  Actualiza la página 3  -----
+            $("#puntos12").text(puntos[0]);     //  -----  Jugador 1  -----
+            $("#puntos22").text(puntos[1]);     //  -----  Jugador 2  -----
+            $("#juegos12").text(juegos[0]);     //  -----  Juegos Jugador 1  -----
+            $("#juegos22").text(juegos[1]);     //  -----  Juegos Jugador 2  -----
+            $("#set12").text(sets[0]);           //  -----  Set Jugador 1  -----
+            $("#set22").text(sets[1]);           //  -----  Set Jugador 2  -----
+	
+
+            if( saca === 0 ) {
+		        
+                //  -----  Actualiza Página 2  -----
+                $("#marca11").attr("src", "../imagenes/bolaNaranja.png");   //  -----  Marcador Jugador 1  -----
+		        $("#marca21").attr("src", "");                              //  -----  Marcador Jugador 2  -----
+
+                //  -----  Actualiza página 3  -----
+		        $("#marca12").attr("src","../imagenes/bolaNaranja.png");
+		        $("#marca22").attr("src","");
+
+	        } else {
+		        
+                //  -----  Actualiza Página 2  -----
+                $("#marca11").attr("src", "");                              //  -----  Marcador Jugador 1  ----
+		        $("#marca21").attr("src", "../imagenes/bolaNaranja.png");   //  -----  Marcador Jugador 2  -----
+
+                //  -----  Actualiza página 3  -----
+		        $("#marca12").attr("src","");
+		        $("#marca22").attr("src","../imagenes/bolaNaranja.png");
+	        }
+
+            limpiaBotones();
+        }
+
+
+        function limpiaBotones(){
+            
+            //  -----  Desactivamos los botones del primer saque  -----
+            $("#s2").attr("disabled","disabled");
+            $("#ace2").attr("disabled","disabled");
+            $("#falta2").attr("disabled","disabled");
+            
+            //  -----  Activamos los botones del segundo saque  -----
+            $("#s1").removeAttr("disabled").checkboxradio("refresh");
+            $("#ace1").removeAttr("disabled").checkboxradio("refresh");
+            $("#falta1").removeAttr("disabled").checkboxradio("refresh");
+            
+            //
+            $("#s1").removeAttr("checked").checkboxradio("refresh");
+            $("#s2").removeAttr("checked").checkboxradio("refresh");
+            $("#ace1").removeAttr("checked").checkboxradio("refresh");
+            $("#ace2").removeAttr("checked").checkboxradio("refresh");
+            $("#falta1").removeAttr("checked").checkboxradio("refresh");
+            $("#falta2").removeAttr("checked").checkboxradio("refresh");
+        }
+
+
+    </script>
+
+</body>
+
+</html>
