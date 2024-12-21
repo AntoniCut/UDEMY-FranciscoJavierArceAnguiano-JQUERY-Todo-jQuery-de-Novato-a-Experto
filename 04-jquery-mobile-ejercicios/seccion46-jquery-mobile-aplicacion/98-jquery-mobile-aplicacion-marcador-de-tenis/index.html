@@ -89,7 +89,7 @@
                     text-align: center;
                 "
             >
-                jQuery Mobile - Aplicacion Marcador de Tenis - Página 1 - Seccion 46
+                jQuery Mobile - Aplicacion Marcador de Tenis
             </h1>
 
             <a href="#pagina1"> 1 </a>
@@ -100,7 +100,7 @@
         </header>
 
         <div data-role="header">
-            <h1 class="title-pagina"> Tres sets sin ventaja </h1>
+            <h1 class="title-pagina"> Tres sets sin ventaja - Página 1 </h1>
         </div>
 
         <div data-role="content">
@@ -158,13 +158,13 @@
                     text-align: center;
                 "
             >
-                jQuery Mobile - Aplicacion Marcador de Tenis - Página 2 - Seccion 46
+                jQuery Mobile - Aplicacion Marcador de Tenis
             </h1>
 
         </header>
 
         <div data-role="header">
-            <h1 class="title-pagina"> Saque </h1>
+            <h1 class="title-pagina"> Saque - Página 2 </h1>
         </div>
 
         <!--  -----  Contenido  -----  -->
@@ -192,7 +192,7 @@
 
             <br> <br>
 
-            <form>
+            <form id="formulario">
                 
                 <fieldset data-role="controlgroup">
                     
@@ -266,14 +266,14 @@
                     text-align: center;
                 "
             >
-                jQuery Mobile - Aplicacion Marcador de Tenis - Página 3 - Seccion 46
+                jQuery Mobile - Aplicacion Marcador de Tenis
             </h1>
 
         </header>
 
 
         <div data-role="header">
-            <h1 class="title-pagina"> Juego </h1>
+            <h1 class="title-pagina"> Juego - Página 3 </h1>
         </div>
 
         <!--  -----  Contenido  -----  -->
@@ -360,7 +360,8 @@
         data-role="page"
         id="pagina4" 
         data-theme="a"
-        style="margin: 0; padding: 0; width: 100%; height: 100vh;">
+        style="margin: 0; padding: 0; width: 100%; height: 100vh;"
+    >
 
 
         <header data-role="header" data-position="fixed" style="height: 70px;" data-theme="b">
@@ -374,14 +375,14 @@
                     text-align: center;
                 "
             >
-                jQuery Mobile - Aplicacion Marcador de Tenis - Página 4 - Sección 46
+                jQuery Mobile - Aplicacion Marcador de Tenis
             </h1>
 
         </header>
 
 
         <div data-role="header">
-            <h1 class="title-pagina"> Resultado </h1>
+            <h1 class="title-pagina"> Resultado - Página 4 </h1>
         </div>
 
         <!--  -----  Contenido  -----  -->
@@ -431,7 +432,7 @@
             //  -----  Documento Cargado  -----
             console.warn('----------  Documento Cargado!!!  ----- ', 'jQuery version:', $.fn.jquery, ' ----------', '\n');
 
-
+            
             //  --------------------------------
             //  ----------  Página 2  ----------
             //  --------------------------------
@@ -580,8 +581,11 @@
                 juegos[numJugador]++;
 
                 //  -----  Si se ha llegado a 6 Juegos  -----
-                if( juegos[numJugador] == 6 ) sets[numJugador]++;
-		
+                if( juegos[numJugador] === 6 ) {
+                    sets[numJugador]++;
+                    juegos[numJugador] = 0;
+                }
+
                 //  -----  Si Ha llegado a 2 Sets  -----
                 if( sets[numJugador] === 2) {
                     
@@ -593,7 +597,8 @@
                     if( numJugador === 0 ) ganador = "Ganador del Partido es " + jugador1;
 			        else ganador = "Ganador del Partido es " + jugador2;
 			
-			        $.mobile.changePage($("#pagina4"),"none");
+                    alert( ganador );
+                    $.mobile.changePage($("#pagina4"),"none");
 		        }
                 
                 if( saca === 0 ) saca = 1;
